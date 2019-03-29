@@ -1,0 +1,18 @@
+## 编译附带文件
+*.aux
+*.log
+*.lof
+*.lot
+*.toc
+*.fls
+*.out
+*.dvi
+*.xdv
+*.synctex.gz
+*.symctex.gz(busy)
+*.fdb_latexmk
+
+## beamer文件
+*.nav
+*.vrb
+*.snm
