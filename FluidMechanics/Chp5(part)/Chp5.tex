@@ -1,0 +1,176 @@
+%!TEX program = xelatex
+\documentclass[a4paper,fleqn,twocolumn]{article}
+\usepackage{xeCJK}
+\usepackage{geometry}
+\geometry{left=2.0cm,right=2.0cm,top=2.5cm,bottom=2.5cm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphics}
+\setCJKmainfont{SimSun}
+\newcommand{\di}[1]{\mathrm{d}#1}
+\newcommand{\p}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pp}[2]{\frac{\partial ^2 #1}{\partial #2 ^2}}
+\newcommand{\dy}[2]{\frac{\di{#1}}{\di{#2}}}
+\newcommand{\ddy}[2]{\frac{\mathrm{d} ^2 #1}{\mathrm{d} #2 ^2}}
+
+\begin{document}
+\section*{第五章}
+    1.\par
+        由书P153知,$Re_{crit}=2100$
+        \begin{align*}
+            v_{柴crit}  &=\frac{Re\upsilon}{D}=\frac{2100\times4.41\times10^{-6}}{0.1524}\\
+                        &=0.0608\left(m/s\right)\\
+            v_{水crit}  &=\frac{Re\upsilon}{D}=\frac{2100\times1.13\times10^{-6}}{0.1524}\\
+                        &=0.0156\left(m/s\right)
+        \end{align*}
+    2.
+        \begin{align*}
+            &Re_水=\frac{VD}{\upsilon}=\frac{1.607\times0.305}{1.13\times10^{-6}}=2.88\times10^5\gg2100\\
+            &\therefore\text{为湍流}\\
+            &Re_柴=\frac{VD}{\upsilon}=\frac{1.607\times0.305}{205\times10^{-6}}=1.59\times10^5<2100\\
+            &\therefore\text{为层流}\\
+        \end{align*}
+    3.
+        \begin{align*}
+            &Re_{crit}=2100\\
+            &V=\frac{Q}{S}=\frac{Q}{\frac{\pi}{4}D^2}=\frac{4Q}{\pi D^2}\\
+            &\text{代入：}\\
+            &Re=\frac{VD}{\upsilon}=\frac{4QD}{\pi D^2\upsilon}=\frac{4Q}{\pi D\upsilon}\\
+            &\therefore D_{min}=\frac{4Q}{Re\pi\upsilon}=\frac{4\times5.67\times10^{-3}}{2100\pi\times6.08\times10^{-6}}=0.565(m)\\
+            &\therefore D\geqslant 0.565m
+        \end{align*}
+    4.\par
+        公式见书P332
+        \begin{align*}
+            \therefore Le  &=0.06Re_D\times D\\
+                            &=0.06\times1500\times0.01\\
+                            &=0.9(m)
+        \end{align*}
+    5.
+        \[V=\frac{4Q}{\pi D^2}\text{(推导见第3题)}\]
+        \begin{align*}
+            \therefore Re  &=\frac{VD}{\upsilon}=\frac{4Q}{\pi D\upsilon}\\
+                            &=\frac{4\times0.8\times10^{-3}}{\pi\times0.1\times\upsilon}=\frac{0.01019}{\upsilon}
+        \end{align*}
+        \begin{gather*}
+            \text{当}Re>2100\text{时，为湍流}\\
+            \text{此时:}\upsilon<\frac{0.01019}{Re}=\frac{0.01019}{2100}=4.85\times10^{-6}\\
+            \text{查表(书P534-535)：}\upsilon_空=1.51\times10^{-5}(m^2/s)\\
+            \upsilon_水=1.004\times10^{-6}(m^2/s)\\
+            \upsilon_{甘油}=\frac{1.49}{1260}=1.18\times10^{-3}(m^2/s)
+        \end{gather*}
+        $\therefore$(1)(2)(5)(6)为层流，(3)(4)为湍流。\\
+    6.\par
+        （此题默认球直径为0.1m）
+        \begin{align*}
+            \text{空气：}&V_{crit}=\frac{\upsilon Re}{D}&=\frac{1.51\times10^{-5}\times250000}{0.1}=37.75(m/s)\\
+            \text{水：}&V_{crit}&=\frac{1.004\times10^{-6}\times250000}{0.1}=2.51(m/s)\\
+            \text{氢气：}&V_{crit}&=\frac{\frac{0.9\times10^{-5}}{0.0839}\times250000}{0.1}=268.2(m/s)
+        \end{align*}
+    7.
+        \begin{gather*}
+            \because\nabla\cdot V=\p{u}{x}+\p{v}{y}+ \p{w}{z}=0.\therefore\text{为不可压流动}\\
+            \tau_{xx}=2\mu \p{u}{x}=0.\text{同理}\tau_{yy}=\tau_{zz}=0\\
+            \tau_{xy}=\mu\left( \p{u}{y}+ \p{v}{x}\right)=\mu(zt+zt)=2\mu zt=0.02zt\\
+            \tau_{xz}=\mu\left( \p{u}{z}+ \p{w}{x}\right)=\mu yt=0.01yt\\
+            \tau_{yz}=\mu\left( \p{v}{z}+ \p{w}{y}\right)=\mu xt=0.01xt
+        \end{gather*}
+    8.
+    \begin{gather*}
+        \because\nabla\cdot V=0.\therefore\text{为不可压流动}\\
+        \tau_{xx}=\tau_{yy}=\tau_{zz}=0\\
+        \tau_{xy}=\mu\left( \p{u}{y}+ \p{v}{x}\right)=\mu(2+1)=0.024{Pa\cdot s}\\
+        \tau_{xz}=\mu\left( \p{u}{z}+ \p{w}{x}\right)=\mu(3+2)=0.040{Pa\cdot s}\\
+        \tau_{yz}=\mu\left( \p{v}{z}+ \p{w}{y}\right)=\mu(3+4)=0.056{Pa\cdot s}
+    \end{gather*}
+    9.
+    \begin{gather*}
+        \because\text{层流}.\therefore v=0\text{(分层流动，y方向速度为0)}\\
+        \because\nabla\cdot V=0.\therefore\text{为不可压流动}
+    \end{gather*}
+    \begin{align*}
+        \therefore f_{sx}  &=\mu\nabla^2u=\mu\pp{u}{y}\\
+                            &=\mu u_{max}\left[-2\left(\frac{1}{n}\right)\frac{1}{n}\right]=-\frac{2\mu u_{max}}{h^2}\\
+                            &=-3.76(N/m^3)    
+    \end{align*}
+    	10.11.12三题大体思路一致，将速度场代入N-S方程，得到关于$p^*$的方程。以$p^*$有解为条件，可得到关于n或r的微分方程，求解即得到结果。由于过程过于复杂，笔者认为理解思路即可，此处不再赘述。\\
+    13.
+        \begin{gather*}
+            \text{已知条件：}v=0,\p{p^*}{x}=0.\\
+            \text{由连续方程：}\nabla\cdot V=\p{u}{x}+0=0,\therefore \p{u}{x}=0.\\
+            x\text{轴方向的$N-S$方程：}0=-\pp{u}{y}\\
+            \therefore u=Ay+B.\text{代入}u\left.\right|_{y=0}=U_1,u\left.\right|_{y=b}=U_2,\\
+            \therefore u=\frac{u_2-u_1}{b}y+u_1
+        \end{gather*}
+    14.\par 
+    (1)由书P143页，有：
+    \begin{gather}
+    	\ddy{u}{y}=\frac{1}{\mu}\dy{p^*}{x},\quad \therefore \dy{u}{y}=\frac{1}{\mu}\dy{p^*}{x}y+c_1.\notag\\
+    	\text{由书P149：}\dy{u}{y}\left.\right|_{y=h}=0\notag\\
+    	\therefore c_1=-\frac{h}{\mu}\dy{p^*}{x},\quad \dy{u}{y}=\frac{1}{\mu}\dy{p^*}{x}(y-h)\notag\\
+    	\text{再做积分：}u=\frac{y}{\mu}\dy{p^*}{x}(\frac{y}{2}-h)\\
+    	\text{而}\vec{g}=g(\sin\theta\vec{i}-\cos\theta\vec{j})\notag\\
+    	\therefore p^*=p+\rho g(\cos\theta y-\sin\theta x)\notag\\
+    	\because\text{上表面为自由液面}\therefore \dy{p}{x}=0\text{(见书P148)}\notag\\
+    	\therefore \dy{p^*}{x}=-\rho g\sin\theta\notag\\
+    	\text{代入(1)，得}u=\frac{\rho g}{\mu}y\left(h-\frac{y}{2}\right)\sin\theta\notag
+	\end{gather}    
+	(2)
+	\begin{align*}
+		\dot{Q}	&=\int_{y=0}^{y=h}u\mathrm{d}S=\int_{y=0}^{y=h}u(\mathrm{d}y\times 1)\text{(单位宽度为1)}\\
+				&=\int_{0}^{h}\frac{\rho g}{\mu}\sin\theta y\left(h-\frac{y}{2}\right)\mathrm{d}y\\
+				&=\frac{\rho g\sin\theta}{\mu}\left(\frac{1}{2}hy^2-\frac{1}{6}y^3\right)\left.\right|_0^h\\
+				&=\frac{\rho g\sin\theta h^3}{3\mu}
+	\end{align*}
+	(3)
+	\begin{gather*}
+		\bar{u}=\frac{\dot{Q}}{S}=\frac{\dot{Q}}{h\times 1}=\frac{\rho g\sin\theta h^2}{3\mu}\\
+		\text{代入速度分布式，得：}y\left(h-\frac{y}{2}\right)=\frac{h^2}{3}\\
+		\text{解得：}y=\frac{3-\sqrt{3}}{3}\text{(另一根超过h，舍去)}
+	\end{gather*}
+	15.
+	\begin{gather*}
+		\text{由z轴方向N-S方程：}\\
+		0=-\p{p}{z}+g\sin30^\circ+\upsilon\frac{1}{r}\frac{\di{}}{\di{r}}\left(r\dy{V_z}{r}\right)\\
+		\text{由于压强为常数，}\p{p}{z}=0\quad \therefore -\frac{g}{2\upsilon}=\frac{1}{r}\frac{\di{}}{\di{r}}\left(r\dy{V_z}{r}\right)\\
+		\text{解得：}V_z=-\frac{gr^2}{8\upsilon}+c_1\ln r+c_2\\
+		\text{代入边界条件：}V=\frac{\rho g}{8\mu}(r_0^2-r^2)
+	\end{gather*}
+	\begin{align*}
+		\therefore \dot{Q}=SV	&=\int_{0}^{r_0}\frac{\rho g}{8\mu}(r_0^2-r^2)\times 2\pi r\di{r}\\
+								&=\frac{\rho g}{8\mu}\pi\left(r_0^2r^2-\frac{1}{2}r^4\right)\\
+								&=\frac{\rho g\pi}{16\mu}r_0^4
+	\end{align*}
+	16.\par 
+	以$r=37.5mm+0.025mm$处为$y=0$面，$r=37.5mm$处为$y=h$面，问题化为平面库埃特流动。\\
+	\begin{gather*}
+		U=\frac{100}{60}\pi d=\frac{100\pi\times 0.075}{60}=\frac{\pi}{8}\\
+		\tau_w=-\mu\frac{U}{h}=-0.2\times\frac{pi}{8\times0.025\times10^{-3}}=-1000\pi\\
+		\text{而}S=\pi dh=\pi\times0.075\times0.16=0.03770(m^2)\\
+		M=F\times r=\tau Sr=-1000\pi\times0.03770\times\frac{0.075}{2}=-4.44(N\cdot m)
+	\end{gather*}
+	17.\par 
+	参考书P151下方对圆柱体流体微元的分析：
+	\begin{gather}
+		\tau=\frac{r}{2}\frac{\Delta p^*}{L}=K\left(\dy{u}{y}\right)^n\\
+		\text{重力在水平管道流动方向分量为0，}\therefore \Delta p^*=\Delta p\notag\\
+		\text{由几何意义，}|dy|=|dr|\therefore |\dy{u}{r}|=|\dy{u}{y}|\notag\\
+		\text{考虑到r增大时，u变小，}\dy{u}{r}<0\notag\\
+		\text{由(2)：}\dy{u}{r}=\pm\sqrt[n]{\frac{r\Delta p}{2KL}}\text{因此应取负号}\notag\\
+		\text{两边积分，}u=-\sqrt[n]{\frac{\Delta p}{2KL}}\frac{n}{n+1}r^{\frac{n+1}{n}}+c\notag\\
+		\text{由边界条件}r=R,u=0\notag\\
+		\therefore u=\sqrt[n]{\frac{\Delta p}{2KL}}\frac{n}{n+1}\left[R^{\frac{n+1}{n}}-r^{\frac{n+1}{n}}\right]\notag\\
+		\text{即}=\sqrt[n]{\frac{R\Delta p}{2KL}}\frac{nR}{n+1}\left[1-\frac{r}{R}^{\frac{n+1}{n}}\right]\notag
+	\end{gather}
+	18.\par 
+	可参考书P153例5.6
+	\begin{gather*}
+		V_z=\frac{1}{4\mu}\dy{p^*}{z}r^2+c_1\ln r+c_2\\
+		\text{由于压强为常数，重力在水平管道流动方向分量为0，}\p{p^*}{z}=\p{p}{z}=0\\
+		\text{代入边界条件}r=r_0,V=0;r=R,V=V_0:\\
+		\text{解得：}V=\frac{V_0\ln\frac{r}{r_0}}{\ln\frac{R}{r_0}}\\
+		\tau_w=-\mu\dy{V}{r}=\frac{\mu V_0}{\ln\frac{R}{r_0}}\frac{\frac{1}{r_0}}{\frac{r}{r_0}}\\
+		=\frac{\mu V_0}{R\ln\frac{R}{r_0}}\\
+		\therefore F=\tau S=\frac{\mu V_0}{R\ln\frac{R}{r_0}}\times(2\pi R\times1)=\frac{2\pi\mu V_0}{\ln\frac{R}{r_0}}
+	\end{gather*}
+\end{document}
