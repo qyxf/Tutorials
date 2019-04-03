@@ -1,5 +1,5 @@
 # Tutorials
-> **说明：**本仓库收录西安交通大学钱学森书院学业辅导中心的相关学习资料。未来，此仓库的功能将逐步转移到`qyxf`组织之下。
+> 说明：本仓库收录**西安交通大学钱学森书院学业辅导中心**（`qyxf`）的相关学习资料。
 
 ## 贡献教程
 - 请先使用`git clone https://github.com/edmundwsy/Tutorials.git`将本仓库克隆到本地，创建本仓库的本地分支
@@ -20,7 +20,9 @@
     > 72-character wrapped longer description. This should answer:
     >
     > * Why was this change necessary?
+    > 
     > * How does it address the problem?
+    > 
     > * Are there any side effects?
     >
     > Include a link to the ticket, if any.
