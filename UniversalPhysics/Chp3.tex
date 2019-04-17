@@ -1,0 +1,262 @@
+\documentclass[a4paper,fleqn,twocolumn]{ctexart}
+\usepackage{geometry}
+\geometry{left=2.0cm,right=2.0cm,top=2.5cm,bottom=2.5cm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\newcommand{\di}[1]{\mathrm{d}#1}
+\newcommand{\p}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pp}[2]{\frac{\partial ^2 #1}{\partial #2 ^2}}
+\newcommand{\dy}[2]{\frac{\di{#1}}{\di{#2}}}
+\newcommand{\ddy}[2]{\frac{\mathrm{d} ^2 #1}{\mathrm{d} #2 ^2}}
+
+\begin{document}
+\begin{section}{第三章}
+\begin{subsection}{选择题}
+1.A
+
+小球受到重力和弹簧弹力做的功，动能不守恒。小球受到的合外力不为0，因此动量不守恒。
+
+2.D
+
+两船在过程中受到了人的摩擦力的作用，合外力不为零，动量不守恒。
+
+3.C
+
+碰撞前后两球动量守恒，因此总动量为0，说明碰撞前两球动量大小相同，方向相反。
+
+4.D
+
+两球碰撞后一起运动，说明为完全非弹性碰撞，存在机械能损失，因此机械能不守恒。两球还受到了弹簧弹力作用，合外力不为零，动量不守恒。
+
+5.D
+
+运动半周前后小球的速度大小不变，方向相反，因此冲量大小\(I=m\Delta v=2mv=2mr \omega\)。
+
+6.C
+
+A人向右跳落入B船后，由动量守恒，A船具有向左的速度，A人具有向右的速度，落入B船后使得A人，B人，B船都具有了向右的速度。B人再跳回A船后，由动量守恒，B人获得的动量朝左，A人和B船获得的动量向右，因此最终B船的速度向右，\(v_B>0\)。B人和A船的动量都向左，因此最终B人落入A船后，A船速度向左，\(v_A<0\)。
+
+7.A
+
+由公式\(E=\frac{p^2}{2m}\)，\(p_1=\sqrt{2mE}\)，\(p_2=\sqrt{2\times 4m\times E}=2\sqrt{2mE}\)（此处\(p_1\)，\(p_2\)均为大小）。由于两个质点面对面运动，\(p_1\)和\(p_2\)符号相反，因此系统动量大小为\(p=p_2-p_1=\sqrt{2mE}\)。
+
+8.A
+
+小球转一周后速度大小和方向都与转前相同，因此动量增量为0，A对。由冲量定义式\(I=F\Delta t\)，\(F\)和\(\Delta t\)均不为0，因此\(I\)也不为0，B错，同理可知C错误。在转动过程中小球速度的方向发生了改变，因此过程中动量不守恒，D错。
+
+9.C
+
+小球下落直到与板碰撞之前，对小球分析，有\(v=\sqrt{2gh}\)，对板和弹簧分析，设此时弹簧的压缩量为\(x_0\)，则由胡克定律有\(x_0=\frac{Mg}{k}\)；此后对球与板的碰撞过程，有动量守恒\(mv=(m+M)v_0\)，解得，\(v_0=\frac{m}{m+M}\sqrt{2gh}\)；此后，小球与板一起运动，设弹簧最大压缩量为\(x\)，由能量守恒，\(\frac{1}{2}(m+M)v_0^2+(M+m)gx+\frac{1}{2}kx^2=\frac{1}{2}k(x+x_0)^2\)，代入数据解得，\(x=\frac{mg}{k}(1+\sqrt{1+\frac{2kh}{(M+m)g}})\)，所以选择C项。
+
+10.A
+
+两球碰撞后以相同速度运动，则为完全非弹性碰撞，必有机械能损失，与完全弹性碰撞矛盾，A错误；若两球碰撞前速度大小相同，方向相反，则碰撞后速度互换，B正确；完全弹性碰撞的定义即为机械能守恒的碰撞，C正确；碰撞过程中动量守恒，D正确。
+\end{subsection}
+\begin{subsection}{填空题}
+11. $10m/s$
+
+以人和船为系统，过程中所受外力为$ 0 $，因此动量守恒。有
+\begin{equation*}
+(m+M)v=m(v'+\frac{v}{2})+M\frac{v}{2} 
+\end{equation*}
+代入数据解得$ v'=10m/s $
+
+12. $ m\sqrt{2gh} $ \hspace{4em} 竖直向下
+
+$(1)$由$ I=\Delta p=F\Delta t $，小球下落时间为$\Delta t=\sqrt{\frac{2h}{g}}$，下落过程所受合外力为$F=mg$，故动量增量为
+\begin{equation*}
+\Delta p=mg\cdot\sqrt{\frac{2h}{g}}=m\sqrt{2gh}
+\end{equation*}
+
+$(2)$由合外力（重力）方向竖直向下，可得动量增量方向竖直向下。
+
+13.$\frac{5}{3}N\cdot s$，方向与力的方向同向 \hspace{2em} $\frac{5}{6}N$
+
+由冲量定义，$I = \int F \di t$，对于本题来说，$F$是时间的函数，所以有
+\begin{equation*}
+I = \int_0^1 2t \di t + \int_1^2 2(2-t)^2 \di t = \frac{5}{3}N \cdot s
+\end{equation*}
+平均冲力为
+\begin{equation*}
+\overline{F} = \frac{I}{t} = \frac{5}{6} N
+\end{equation*}
+
+14.$-m\vec{v}$
+
+对全过程，由动量定理，$\vec{I} = \Delta \vec{p} = -m\vec{v}$。
+
+15.$2350kg\cdot m/s$ \hspace{2em} 与跑弹飞行方向相反
+
+由动量定理，$I = \Delta p = m(v-v_0)$，代入数据得$I=2350kg\cdot m/s$，因为炮弹为减速运动，所以冲量方向与炮弹飞行方向相反。
+
+16.$\frac{m+M}{m}\sqrt{2 \mu gs}$
+
+设子弹刚发射时的速度为$v_0$，子弹射入木块后共速速度为$v$。对子弹射入木块的过程，有动量守恒$mv_0=(M+m)v$，此后木块和子弹共同运动，由动能定理
+\begin{equation*}
+\frac{1}{2}(m+M)v^2=\mu (m+M)gs
+\end{equation*}
+代入数据解得
+\begin{equation*}
+v_0=\frac{m+M}{m}\sqrt{2 \mu gs}
+\end{equation*}
+
+17.$\sqrt{\frac{kMl_0^2}{(M+m)^2}}$ \hspace{4em} $\sqrt{\frac{M}{M+nm}}l_0$
+
+分析：每次油滴落入容器等价于油滴与容器发生了一次完全非弹性碰撞，该过程满足动量守恒；此后直到下一滴油滴落入容器之前，整体运动满足能量守恒。
+
+求解：当弹簧第一次达到原长即容器第一次到达滴管下方（第一滴油滴未滴入）时，设容器速度为$v_0$，由能量守恒
+\begin{equation*}
+\frac{1}{2}Mv_0^2=\frac{1}{2}kl_0^2
+\end{equation*}
+可得
+\begin{equation*}
+v_0=\sqrt{\frac{k}{M}}l_0
+\end{equation*}
+再设第$n$滴油滴滴入容器后容器与油滴整体的速度为$v_n$;由动量守恒$P_0=P_n$，其中初状态动量$P_0=Mv_0$，第$n$滴油滴滴入后动量$P_n=(M+nm)v_n$，解得
+\begin{equation*}
+v_n=\frac{M}{M+nm}v_0
+\end{equation*}
+此后容器达到偏离$O$点的最大运动距离$x_n$过程中，由能量守恒，有
+\begin{equation*}
+\frac{1}{2}(M+nm)v_n^2=\frac{1}{2}kx_n^2
+\end{equation*}
+成立，从中可解出
+\begin{equation*}
+x_n=\sqrt{\frac{M+nm}{k}}v_n
+\end{equation*}
+
+故当$n=1$时，
+\begin{equation*}
+v_1=\sqrt{\frac{kMl_0^2}{(M+m)^2}}
+\end{equation*}
+滴入$n$滴油滴后，容器偏离$O$点的最大距离为
+\begin{equation*}
+x_n=\sqrt{\frac{M}{M+nm}}l_0
+\end{equation*}
+
+18.$m(\alpha\sin(\omega t)\vec{i}-(\beta\cos(\omega t)-\beta)\vec{j})$
+
+由已知条件$a_x=\omega\alpha\cos(\omega t)，a_y=\omega\beta\sin(\omega t)$，所以$v_x=\int a_x\di t=\alpha\sin(\omega t)+C_1，v_y=\int a_y\di t=-\beta\cos(\omega t)+C_2$，又由初始条件$t=0$时，$vec{v}=0$，可得$C_1=0，C_2=\beta$，所以质点在任一时刻的动量$\vec{p}(t)=m(\alpha\sin(\omega t)\vec{i}-(\beta\cos(\omega t)-\beta)\vec{j})$。
+
+19.$\frac{mv}{\Delta t}$
+
+由平均力计算公式可得$\overline{F}=\frac{I}{\Delta t}=\frac{mv}{\Delta t}$。
+
+20.$\frac{1}{6}m(2v_B-v_A)^2$
+
+因为发生完全弹性碰撞，结合能量守恒，可得碰撞过程中系统动能最小的时刻为弹性势能最大的时刻，亦即A、B共速的时刻，设共速时速度为$v$，则设B运动的方向为正方向由动量守恒有$2mv_B-mv_A=3mv$，此时的动能为
+\begin{equation*}
+E_k=\frac{1}{2}\cdot 3mv^2=\frac{1}{6}m(2v_B-v_A)^2
+\end{equation*}
+\end{subsection}
+\begin{subsection}{计算题}
+21.分析：$(1)$动量定理$(2)$因为$\overline{F}>>G$，所以可以忽略重力，再由平均力公式可以求解。
+
+解：$(1)$由动量定理
+\begin{equation*}
+I=\Delta(mv)=m(v_2-v_1)=1.0\times(10+25)=35kg\cdot m/s
+\end{equation*}
+方向竖直向上
+
+$(2)$设球对地面的平均冲力为$F$，地面对球的平均冲力为$F_0$。
+
+对小球撞击地面的过程分析：
+
+因为$\overline{F_0}>>G$，所以可以忽略重力\\
+由平均力计算公式得
+\begin{equation*}
+\overline{F_0}=\frac{I}{t}=\frac{35}{0.02}N=1750N
+\end{equation*}
+再由牛顿第三定律可得
+\begin{equation*}
+\overline{F}=\overline{F_0}=1750N
+\end{equation*}
+方向竖直向下。
+
+22.分析：全过程可分为两部分：一是子弹嵌入木块过程，动量守恒，二是子弹木块整体沿斜面上滑，能量守恒
+
+解：子弹嵌入木块瞬间动量守恒，有
+\begin{equation*}
+mv=(m+M)v`
+\end{equation*}
+再由运动分解，木块速度可分解为垂直于斜面的速度和沿斜面方向的速度，因为木块此后被约束在斜面上运动，所以垂直于斜面的速度突变为$0$，即木块的运动速度为
+\begin{equation*}
+V=v'\cos\theta
+\end{equation*}
+对于木块和子弹的沿斜面上滑过程，有能量守恒
+\begin{equation*}
+\frac{1}{2}(m+M)V^2=(M+m)gl\sin\theta
+\end{equation*}
+联立上述三式可解得：
+\begin{equation*}
+V=\frac{mv\cos\theta}{M+m}\\
+l=\frac{m^2v^2\cos^2\theta}{2(M+m)^2g\sin\theta}
+\end{equation*}
+
+23.分析：对于碰撞问题可以从能量守恒动量守恒两方面考虑
+
+证明：设运动的小球为球1，质量为$m_1$，静止的小球为球2，质量为$m_2$，碰撞前球1的速度为$\vec{v}_0$，碰撞后球1、球2的速度分别为$\vec{v}_1、\vec{v}_2$，且有$\vec{v}_1$垂直于$\vec{v}_2$。
+
+对碰撞过程：\\能量守恒
+\begin{equation*}
+\frac{1}{2}m_1v_0^2=\frac{1}{2}m_1v_1^2+\frac{1}{2}m_2v_2^2
+\end{equation*}
+即
+\begin{equation}
+v_0^2=v_1^2+\frac{m_2}{m_1}v_2^2
+\end{equation}
+动量守恒
+\begin{equation*}
+m_1\vec{v}_0=m_1\vec{v}_1+m_2\vec{v}_2
+\end{equation*}
+因为$\vec{v}_1$垂直于$\vec{v}_2$
+所以由勾股定理可得
+\begin{equation*}
+m_1^2 v_1^2 + m_2^2 v_2^2 = m_1^2 v_0^2
+\end{equation*}
+\begin{equation}
+v_0^2=v_1^2+\frac{m_2^2}{m_1^2}v_2^2
+\end{equation}
+$(2)-(1)$得
+\begin{equation*}
+\frac{m_2}{m_1}(\frac{m_2}{m_1}-1)v_2^2=0
+\end{equation*}
+因为$v_2^2 \ne 0$且$m_2 \ne 0$，所以
+\begin{equation*}
+\frac{m_2}{m_1}-1=0
+\end{equation*}
+即$m_1=m_2$
+
+得证。
+
+24.分析：将尘埃与飞船共同作为研究对象，则系统动量守恒，从而得到通过$m$与$v$的关系，再通过$\di m$的表达式与前式联立可以消去$\di m$再积分得到$v$和$t$的关系
+
+解：设$t$时刻飞船的质量为$m$，速度为$v$。由初末状态系统动量守恒
+\begin{equation*}
+m_0 v_0=mv
+\end{equation*}
+即
+\begin{equation*}
+m=\frac{m_0 v_0}{v}
+\end{equation*}
+对上式取微分，可得
+\begin{equation}
+\di m=- \frac{m_0 v_0}{v^2} \di v
+\end{equation}
+又有
+\begin{equation}
+\di m=\rho sv\di t
+\end{equation}
+$(3)(4)$联立消去$\di m$再求积分，可得
+\begin{equation*}
+-\int_{v_0}^v \frac{\di v}{v^3}=\int_0^t \frac{\rho s}{m_0 v_0} \di t
+\end{equation*}
+
+解得
+\begin{equation*}
+v=\sqrt{\frac{m_0}{\rho sv_0 t+m_0}v_0}
+\end{equation*}
+\end{subsection}
+\end{section}
+\end{document}
