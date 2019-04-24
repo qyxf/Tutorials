@@ -29,7 +29,7 @@
 
 \DeclareVoidOption{pc}{\ekv{device = pc}}
 \DeclareVoidOption{pad}{\ekv{device = pad}}
-\DeclareVoidOption{kindle}{\ekv{device = kindle}}
+\DeclareVoidOption{phone}{\ekv{device = phone}}
 \DeclareVoidOption{normal}{\ekv{device = normal}}
 
 \DeclareVoidOption{cn}{\ekv{lang = cn}}
@@ -188,7 +188,7 @@
 	\RequirePackage[margin=8mm, paperwidth=6in, paperheight=8in,includefoot]{geometry}
 	%197mm*148mm
 }{\relax}
-\ifdefstring{\ELEGANT@device}{kindle}{
+\ifdefstring{\ELEGANT@device}{phone}{
 	\RequirePackage[margin=8mm, paperwidth=3.68in, paperheight=4.92in]{geometry}
 	% 160mm*115mm
 }{\relax}

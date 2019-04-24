@@ -1,12 +1,11 @@
-\documentclass[blue, pad]{./templete/qyxfnote}
+\documentclass[blue, normal]{./templete/qyxfnote}
 
 \usepackage{xeCJK}
-
+\usepackage{multicol}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{subcaption}
-
 \usepackage{draftwatermark}
 \SetWatermarkText{钱院学辅}
 \SetWatermarkLightness{0.9}
@@ -38,8 +37,9 @@
 	\updatetext{此版本为试用版}
 	\tableofcontents
 	\newpage
-		\section{第一章}
-		\noindent
+	\begin{multicols}{2}
+
+	\section{第一章}
 	\subsection{选择题}
 		1.A\\
 		\indent
@@ -212,10 +212,14 @@
 		t^2-10t+50,&t\in[5,+\infty)
 		\end{cases}
 		\end{gather*}
-
-	\section{第二章}
-	\subsection{选择题}
 	
+
+	
+	\section{第二章}
+	
+
+	\subsection{选择题}
+	\noindent
 	1.C\par
 	质点沿力方向位移为零。$\therefore A=0$.\\
 	2.B\par
@@ -438,6 +442,8 @@
 
 	
 	\section{第三章}
+	
+
 		\subsection{选择题}
 			1.A
 			
@@ -689,7 +695,8 @@
 		\noindent 笔者并不建议按照转动定理等名称记忆刚体运动的公式。实际上这些公式都是质点运动学各定律的延伸（如角动量对应动量，转动惯量对应质量，转动定理和动量矩定理对应牛顿第二定律等），做题的时候只需要认定该问题需要用质点运动学的哪些定律，再将质量，力等物理量换成刚体运动学中的转动惯量，力矩等即可。但为了与课本表述一致，在本解析中仍然按照刚体运动学公式名称引用，但会在其后附注数学表达式以方便对应。
 	\end{note}
 		\subsection{选择题}
-			\[1.C\]\par
+			1.C
+			
 			直观地理解，两个系统所受合外力均为$ Mg $，图A要驱动滑轮和重物（他们都获得了加速度），图B只需要驱动滑轮，因此$ \beta_A<\beta_B $。驱动滑轮的力为$ T_A $和$ T_B $，因此必有$ T_A<T_B $。\par
 			从定量计算来看，显然$ T_B=F=Mg $。对A滑轮，对物体应用牛顿第二定律$F=ma$，对滑轮应用转动定律$M=J\beta$：
 			\[Mg-T_A=Ma\]
@@ -697,7 +704,9 @@
 			与$ a=\beta R $联立解得：
 			\[T_A=\frac{Mg}{\frac{MR^2}{J}+1}\]
 			则有$ T_A< Mg=T_B$
-			\[2.D\]\par
+			
+			2.D
+			
 			%此处需要配一个图来说明\theta，与竖直方向的夹角，从\pi/2到0
 			\begin{tikzpicture}
 			\draw[dashed](0,0) -- (3,0);
@@ -709,14 +718,20 @@
 			首先此题讨论的是细棒对于$ O $点的转动惯量。由于细棒对于其一个端点的转动惯量恒为$ \frac{1}{3}ml^2 $，因此转动惯量不变。至于角加速度$ \beta $，由转动定律$M=J\beta$：
 			\[Mg\frac{l}{2}\sin\theta=\frac{1}{3}ml^2\times\beta\]\par
 			解得：$ \beta=\frac{3Mg\sin\theta}{2ml} $，可知$ \beta $随下落过程中$ \theta $的减少而减少，因此角加速度从大到小。
-			\[3.D\]\par
+			
+			3.D
+			
 			本题默认水平圆盘放在桌子上，力矩均指对轴的力矩。在玻璃球自由滚动的时候，系统受三个力：重力，支持力（与重力抵消，合力矩为0），还受轴对圆盘的支持力，但由于该力的$ \vec{r}=0 $，因此该力力矩也为0，合外力矩也为0。由动量矩定理$ M=\dy{L}{t} $知，此系统角动量守恒，D正确。若小球处于滚动状态，则轴对圆盘可能会有支持力的作用，由冲量定理$ (I=\Delta p) $，动量不守恒，A，B均错误。若小球与轴或者盘边缘碰撞，由于题目中未说明小球与轴或盘边缘的碰撞是否是完全弹性碰撞，因此碰撞可能会产生机械能损失，C错误。\\
 			\begin{note}
 			笔者希望同学们对这类圆盘（或细棒）受到固定轴约束转动的问题有更多了解。轴对圆盘的力有且仅有两个，分别是摩擦力和支持力。对于支持力，其垂直于作用面，因此总是指向轴心，$ \vec{r}=0 $，该力对转轴的力矩为0。至于摩擦力，由于其与相对转动速度相反，因此该力与轴相切，由于轴是有半径的（不是一条线），因此$ \vec{r}=R $（R为转轴的半径，显然摩擦力的力矩不为0（但在碰撞过程中，由于$ \Delta t\to 0 $，由动量矩定理，该力矩导致的角动量变化$ \Delta L\to 0 $，因此也可认为角动量守恒）。该题中已经说明忽略轴的摩擦，因此圆盘和小球受到的合外力矩为0。更多相关内容请参考《力学（物理类）》（舒幼生著）。
 			\end{note}
-			\[4.C\]\par
+			
+			4.C
+			
 			角动量的定义为$ L=\vec{r}\times m\vec{v} $，$ m $为质点质量，$ \vec{v} $为质点速度（运动状态），$ \vec{r} $为质点的向径（与坐标原点有关），C正确，ABD均错误。
-			\[5.D\]\par
+			
+			5.D
+		
 			%此处插一张图
 			\begin{tikzpicture}
 			\zbj{-0.5}{3}{-2}{2}
@@ -739,14 +754,20 @@
 			%&=\frac{1}{8}ma^2
 			\end{align*}\par
 			解得：$ J=\frac{1}{8}ma^2 $
-			\[6.A\]\par
+			
+			6.A
+			
 			直观上理解，$ \sigma(\theta) $在$ \theta=\frac{\pi}{2} $时最大，在$ \theta=0 $或$ \theta=\pi $时最小，此即球面质量更多地分布在赤道附近，两极附近质量面密度小。由于赤道附近距离$ z $轴距离更大，因此分布不均匀的球面转动惯量更大，A正确。\par
 			通过计算也可以得到相同的结论，此处不再赘述。
-			\[7.A\]\par
+			
+			7.A
+			
 			碰撞过程中$ \Delta t\to 0 $，小球和系杆组成的系统受到4个力：重力，支持力（与重力相互抵消），O点对杆的支持力，O点对杆的摩擦力。因此系统角动量守恒（详细分析可见选择题3的“注”部分），有：
 			\[0+rmv=(\frac{1}{12}ml^2+m\left(\frac{l}{2}\right))^2\omega\]
 			解得：$\omega=\frac{3v}{2l}$
-			\[8.C\]\par
+		
+			8.C
+			
 			%此处少一张图
 			\begin{tikzpicture}
 			\zbj{-0.5}{3}{-2}{2}
@@ -764,9 +785,13 @@
 			&=\frac{8m}{\sqrt{3}a^2}\int_0^{\frac{\sqrt{3}}{2}a}\di{x}\int_0^{\frac{\sqrt{3}}{3}x}(x^2+y^2)\di{y}
 			\end{align*}\par
 			解得：$ J=\frac{5}{12}ma^2 $
-			\[9.A\]\par
+			
+			9.A
+			
 			由动量矩定理易知A正确。BCD均为充分条件。小球在绳子的束缚下绕定点做匀速圆周运动，则所受合外力不为0（绳子的拉力），B错误，且小球受到的重力和支持力对定点的力矩均不为0，因此受到了外力矩的作用，C错误。对于D，可令$ J=t,\omega=\frac{1}{t} $，则$ L=J\omega=1 $，角动量守恒，但转动惯量和角速度都在随时间变化，因此D错误。
-			\[10.A\]\par
+			
+			10.A
+			
 			卫星做匀速圆周运动，则$ m,v,r $均不变，$ \vec{r}\times\vec{v} $的方向也不变，因此角动量守恒。卫星与地球的万有引力与卫星的运动方向恒垂直，因此卫星与地球构成的系统的内力（万有引力）不做功，同时又不受外力作用，因此卫星的动能守恒。
 	\subsection{填空题}
 			\[11.\frac{3M}{ma} \hspace{2em} \frac{18M^2}{m^2a^3}t^2\]\par
@@ -922,7 +947,7 @@
 			&=\frac{1}{2}\frac{9m_2^2(v_1+v_2)^2}{m_1^2l^2}\frac{\frac{1}{3}m_1l^2}{\frac{\mu m_1gl}{2}}\\
 			&=\frac{3m_2^2(v_1+v_2)^2}{m_1^2l\mu g}
 			\end{align*}
-
+		\end{multicols}
 	
 	
 \end{document}

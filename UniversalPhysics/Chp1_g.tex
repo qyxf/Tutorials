@@ -1,0 +1,191 @@
+%!TEX program = xelatex
+\documentclass[a4paper,fleqn,twocolumn]{ctexart}
+\usepackage{xeCJK}
+\usepackage{geometry}
+\geometry{left=2.0cm,right=2.0cm,top=2.5cm,bottom=2.5cm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\setCJKmainfont{SimSun}
+\newcommand{\di}[1]{\mathrm{d}#1}%积分式的d
+\newcommand{\p}[2]{\dfrac{\partial #1}{\partial #2}}%一阶偏导
+\newcommand{\pp}[2]{\dfrac{\partial ^2 #1}{\partial #2 ^2}}%二阶偏导
+\newcommand{\dy}[2]{\dfrac{\di{#1}}{\di{#2}}}%一阶导数
+\newcommand{\ddy}[2]{\dfrac{\mathrm{d} ^2 #1}{\mathrm{d} #2 ^2}}
+\linespread{1.2}
+\begin{document}
+	\section*{第一章}
+		\noindent
+		一、选择题\\
+		1.A\\
+		\indent
+		如图1.1，对M，在x方向上:
+		\vspace{-1em}
+		\begin{figure}[htbp]
+			\centering
+			\includegraphics[width=10em,height=15em]{c1_1.png}
+			\quad
+			\centering
+			\includegraphics[width=10em,height=15em]{c1_2.png}
+		\end{figure}
+		\vspace{-3.5em}
+		\begin{gather}
+		N\cos\theta=Ma_a\text{(M对地)}\\
+		\text{如图1.2，对m，以M为参考系，m受一惯性}\notag\\
+		\text{力，合加速度沿二者接触面。沿x，y方向分解：}\notag\\
+		mg-N\cos\theta=ma_r\sin\theta\\
+		ma_a+N\sin\theta=ma_r\cos\theta\\
+		\text{(1)代入(2)，(2)(3)联立解得：}\notag\\
+		a_r=\dfrac{(M+m)g\sin\theta}{M+m{\sin\theta}^2}\notag
+		\end{gather}
+		2.B\\ \indent
+		如图1.3，$u=v\cos\theta$,v不变而$\theta$增大，需要u减小。\\
+		\vspace{-3.5em}
+		\begin{figure}[htbp]
+			\centering
+			\includegraphics[width=6.5em,height=10em]{c1_3.png}
+			%\caption{}
+			\label{fig:c1_2}
+		\end{figure}
+		\vspace{-4.5em} \\
+		3.A\par
+		匀速圆周运动的速度、加速度（受力）均是大小不变、方向时刻变化。
+		注意一个矢量为常量包括大小和方向两个方面。否则就是变化的量。\\
+		4.B\par
+		以前面的货车为参考系，货车静止，火车速率为$v_1-v_2$，加速度为$a$（反向），那么火车最多前进$s=\dfrac{{(v_1-v_2)}^2}{2a}$。要求$d>s$，故选B。或采用地面参考系的追逐问题法，计算从$v_1\text{减速到}v_2$两车走过的距离之差：$s=\dfrac{{v_1}^2-{v_2}^2}{2a}-v_2\cdot \dfrac{v_1-v_2}{a}=\dfrac{{(v_1-v_2)}^2}{2a}$\\
+		5.C\par
+		两次求导得：$a=30t\neq$常数而大于零。\\
+		6.B\par
+		求导得：$v=8t-6t^2,a=8-12t$\par
+		$\text{令}y=0\Rightarrow t=0\text{（舍去）或}2$，代入得结果。\\
+		7.B\par
+		物体做匀加速直线运动。\vspace{-1em}
+		\begin{gather*}
+		s=\dfrac{b}{\cos\alpha},a=g\sin\alpha\\
+		t=\sqrt{\dfrac{2s}{a}}=\sqrt{\dfrac{4b}{g\sin(2\alpha)}}
+		\end{gather*}
+		\par $t$最小时，$\sin(2\alpha)$最大，$\alpha=45^\circ$。\\
+		8.B\par 
+		类比从静止出发的匀加速直线运动。$t=\dfrac{2\cdot 2\pi}{\beta}$\\
+		9.B\par 
+		曲线的定义：“动点运动方向连续变化的轨迹”\footnote{来源：汉典网http://www.zdic.net/c/2/111/299079.htm}。A,C的反例：匀速圆周运动。\\
+		10.D\par 
+		反例：平抛运动\\		
+		二、填空题\\
+		11.\ 0\qquad2g\\
+		\indent
+		设A、B质量为m。抽走C之前，弹簧中的弹力大小为mg。撤去C时，弹簧长度未突变，弹力不变,A受合力为0；支持力则消失。\par
+		故$a_A=0；a_B=\dfrac{mg+mg}{m}=2g$,竖直向下。\\
+		12.\ $\dfrac{25}{12}\pi\ rad/s^2$ \qquad$\dfrac{24}{5}s$
+		\begin{gather*}
+		\text{简单公式应用。}\theta=60\times2\pi=120\pi\\
+		\beta=\dfrac{\omega_2^2-\omega_1^2}{2\theta}=\dfrac{25}{12}\pi\ rad/s^2\\
+		\delta t=\dfrac{\omega_2-\omega_1}{\beta}=\dfrac{24}{5}s
+		\end{gather*}
+		13. $m(\sin\theta-\omega^2l\sin\theta\cos\theta)$
+		\vspace{-1em}
+		\begin{figure}[htbp]
+			\centering
+			\includegraphics[width=15em, height=15em]{c1_4.png}
+			%\caption{}
+			\label{fig:c1}
+		\end{figure}
+		\vspace{-3em}
+		\begin{gather*}
+			\text{如图1.4，在x，y方向上分解受力，得：}\\		
+			T\sin\theta-N\cos\theta=m\omega^2l\sin\theta\\
+			T\cos\theta+N\sin\theta=mg\\
+			\text{联立可解得T、N的大小。}
+		\end{gather*}
+		14.\ $2\sqrt{\dfrac{r}{g}}$ \qquad $2\sqrt{\dfrac{r}{g}}$
+		\vspace{-0.5em}
+		\begin{gather*}
+		\text{设弦与PC的夹角为}\theta,\text{则有}\\
+		s=2r\cos\theta,a=g\cos\theta\\
+		t=\sqrt{\dfrac{2s}{a}}=2\sqrt{\dfrac{r}{g}}
+		\end{gather*}
+		15.\ $4\sqrt{5}m/s$ \qquad $16m/s^2 $ 
+		\vspace{-1em}
+		\begin{gather*}	
+		\text{抛物线的切线方向即为质点的速度方向，且}x=4t\\
+		\therefore \dfrac{v_y}{v_x}=\dy{y}{x}=x\Rightarrow v_y=4x=16t\\
+		\therefore t=2\text{时，}v_y=8\mathrm{m/s},
+		v=\sqrt{{v_x}^2+{v_y}^2}=4\sqrt{5}\mathrm{m/s}\\
+		v_x\text{不变，}a=a_y=\dy{v_y}{t}=16\mathrm{m/s^2}
+		\end{gather*}
+		16. 长度、质量、时间\par
+		见课本，解答略。\\
+		17. 3\quad 3\quad 6\par
+		x分别对t求一阶两阶导即是v、a，由图像即可判断其正负号。\\
+		18. $y={(x+5)}^3$
+		\vspace{-1em}
+		\begin{gather*}\text{由题，}x=2t-5\Rightarrow 2t=x+5\\
+		\text{代入}y=8t^3={(2t)}^3\text{,消去t即可}
+		\end{gather*}	
+		19. $\dfrac{1}{2}g$\qquad 竖直向下\par
+		初始时受力平衡，两根弹簧上力均为$\dfrac{1}{2}mg$；一根断掉后，向上的力减半，则小球受的合力是$\dfrac{1}{2}mg$，竖直向下。\\
+		20.\ 9m/s 
+		\vspace{-1em}
+		\begin{gather*}\text{(SI)} x=3t+6t^2-2t^3\xrightarrow{\text{求导}}v=3+12t-6t^2\\
+		\xrightarrow{\text{求导}}a=12-12t\\\
+		令a=0\ \text{解得}\ t=1\xrightarrow{\text{代入得}} v(1)=9\mathrm{m/s}
+		\end{gather*}
+		三、计算题\\
+		%21，22，24题对原作者代码有改动
+		21.
+		\begin{gather*}
+			\text{由图知：}\\
+			\tan\alpha=\dfrac{|\vec{a}_n|}{|\vec{a}_\tau|}=\dfrac{\dfrac{v^2}{R}}{\dy{v}{t}}\\
+			\therefore \dy{v}{t}\frac{1}{v^2}=\frac{1}{R\tan\alpha}\\
+			\text{积分得：}-\frac{1}{v}=\frac{1}{R\tan\alpha}t+C\\
+			\text{代入}t=0,v=v_0\\
+			\therefore \frac{1}{v_0}-\frac{1}{v}=\frac{1}{R\tan\alpha}t
+			\ \text{即}v=\frac{v_0R\tan\alpha}{\tan\alpha-v_0t}
+		\end{gather*}
+		22.
+		\begin{gather*}
+			\vec{v}=\dy{s}{t}\vec{\tau}=(c+2dt)\vec{\tau}\\  
+			\vec{a}_n=\frac{v^2}{R}\vec{n}=\frac{(c+2dt)^2}{R}\vec{n}\\
+			\vec{a}_\tau=\dy{v}{t}\vec{\tau}=2d\vec{\tau}\\
+			\text{令}|\vec{a}_n|=|\vec{a}_\tau|,
+			\text{则}\frac{(c+2dt)^2}{R}=2d\\
+			\therefore t_1=\frac{\sqrt{2dR}-c}{2d}\left(t_2=\frac{-\sqrt{2dR}-c}{2d}<0\text{,舍去}\right)\\
+			\therefore\text{要使t}\geqslant\text{0，条件为}\sqrt{2dR}-c\geqslant0,\text{即}2dR\leqslant c^2
+		\end{gather*}
+		23.
+		\begin{gather*}
+			-kx=a=\dy{v}{t}=\dy{v}{x}\cdot \dy{x}{t}=\dy{v}{x}\cdot v\\
+			\text{分离变量，积分得：}-\dfrac{1}{2}kx^2=\dfrac{1}{2}v^2+C_1\\
+			\text{令}C=2C_1,\text{则}-kx^2=v^2+C\\
+			\text{代入}x=x_0,v=v_0\text{\,得：}C=-(kx_0^2+v_0^2)\\
+			\text{整理得：}v=\pm\sqrt{kx_0^2+v_0^2-kx^2}
+		\end{gather*}
+		24.
+		\begin{align*}
+		(1)v&=10\left(1-\frac{t}{5}\right)\\
+		&=-2t+10\\
+		\dy{x}{t}&=-2t+10
+		\end{align*}
+		\vspace{-2.5em}
+		\begin{gather*}
+		\text{积分得：}x=-t^2+10t+c\\
+		\text{代入}t=0,x=0,\quad \therefore x=-t^2+10t\\
+		\text{代入}t=10s\\
+		\therefore x=0.\quad
+		\therefore\text{坐标为}0\\
+		(2)\text{令}x=10m,\therefore t^2-10t+10=0\\
+		\therefore t=5\pm\sqrt{15}s\\
+		\text{令}x=-10m,\therefore t^2-10t+10=0\\
+		\therefore t=5+\sqrt{35}(5-\sqrt{35}<0,\text{舍去})\\
+		\therefore\text{时刻为}5-\sqrt{15}\ s,5+\sqrt{15}\ s\text{或}5+\sqrt{35}\,s\\
+		(3)\text{令}v=0,\therefore t=\ 5s\\
+		\therefore t\in[0,5],\quad s=x=-t^2+10t\\
+		t\in[5,+\infty),\quad s=s(5)+[s(5)-x]=25\\+[25-(-t^2+10t)]
+		=t^2-10t+50\\
+		\therefore s=
+		\begin{cases}
+		-t^2+10t,&t\in[0,5)\\
+		t^2-10t+50,&t\in[5,+\infty)
+		\end{cases}
+		\end{gather*}
+\end{document}
