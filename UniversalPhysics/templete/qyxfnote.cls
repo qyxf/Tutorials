@@ -130,6 +130,22 @@
 \RequirePackage[shortlabels]{enumitem}
 \setlist{nolistsep}
 
+%% device settings
+%% default = pad
+\ifdefstring{\ELEGANT@device}{pc}{
+	\RequirePackage[margin=8mm, paperwidth=6.2in, paperheight=6in,includefoot]{geometry}
+}{\relax}
+\ifdefstring{\ELEGANT@device}{pad}{
+	\RequirePackage[margin=8mm, paperwidth=6in, paperheight=8in,includefoot]{geometry}
+	%197mm*148mm
+}{\relax}
+\ifdefstring{\ELEGANT@device}{phone}{
+	\RequirePackage[margin=8mm, paperwidth=3.68in, paperheight=4.92in]{geometry}
+	% 160mm*115mm
+}{\relax}
+\ifdefstring{\ELEGANT@device}{normal}{
+	\RequirePackage[margin=1in, a4paper]{geometry}
+}{\relax}
 
 % headings
 \RequirePackage{fancyhdr}
@@ -178,23 +194,6 @@
 \definecolor{eblue}{RGB}{20,50,104}
 \definecolor{sakura}{RGB}{255,183,197}
 % \definecolor{black}{RGB}{255,183,197}
-
-%% device settings
-%% default = pad
-\ifdefstring{\ELEGANT@device}{pc}{
-	\RequirePackage[margin=8mm, paperwidth=6.2in, paperheight=6in,includefoot]{geometry}
-}{\relax}
-\ifdefstring{\ELEGANT@device}{pad}{
-	\RequirePackage[margin=8mm, paperwidth=6in, paperheight=8in,includefoot]{geometry}
-	%197mm*148mm
-}{\relax}
-\ifdefstring{\ELEGANT@device}{phone}{
-	\RequirePackage[margin=8mm, paperwidth=3.68in, paperheight=4.92in]{geometry}
-	% 160mm*115mm
-}{\relax}
-\ifdefstring{\ELEGANT@device}{normal}{
-	\RequirePackage[margin=1in, a4paper]{geometry}
-}{\relax}
 
 \allsectionsfont{\color{ecolor}}
 %\sectionfont{\color{ecolor}}
