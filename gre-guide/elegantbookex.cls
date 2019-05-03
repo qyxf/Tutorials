@@ -443,6 +443,7 @@
 \renewcommand{\sectionmark}[1]{\markright{\thesection\; #1}{} }
 \renewcommand{\chaptermark}[1]{\markboth{\chaptername \; #1\;}{}}
 
+
 %%封面
 \newcommand*{\equote}[1]{\def\@equote{#1}}
 
@@ -450,8 +451,9 @@
  \def\@logo{\includegraphics[width=0.3\textwidth]{#1}
  }
 }
+
 \newcommand*{\cover}[1]{
- \def\@logo{\includegraphics[width=\linewidth]{cover.jpg}
+ \def\@logo{\includegraphics[width=\linewidth]{cover.png}
  }
 }
 
@@ -469,7 +471,7 @@ false,bottomline=false]
 {\fontsize{40pt}{\baselineskip}\selectfont\itshape \@title}\\[\baselineskip]
 {\Huge\bfseries \the\subtitle}\\[0.3\baselineskip]
 \end{mdframed}
-\begin{mdframed}[linecolor=red,linewidth=2pt,%
+\begin{mdframed}[linecolor=black,linewidth=2pt,%
 leftmargin=0.5cm,rightmargin=0cm,topline=false,rightline=%
 false,bottomline=false]
 {\Large 作者：\@author\\[0.3\baselineskip]
@@ -478,19 +480,30 @@ false,bottomline=false]
 \vfill
 \texttt{钱学森书院学业辅导中心}\\[0.5\baselineskip]
 \textsc{Qian Yuan Xue Fu}\\[0.5\baselineskip]
-\fbox{$\mathcal{QYXF}$}
+\includegraphics[width=0.5\textwidth]{name.png}
 \end{center}
+
+\begin{tikzpicture}[remember picture,overlay]
+	\begin{pgfonlayer}{background}
+	\node at ($(current page.east) +(-1.0in,0in)$) {\includegraphics[width=0.8\textwidth]{cover.png}};
+
+	\end{pgfonlayer}
+
+\end{tikzpicture}
+
 \end{titlepage}
+
 \thispagestyle{empty}
 \newpage
 \phantom{s}
 \vfill
 \begin{center}
-广告位招租
+\cover{cover.png}
 \end{center}
 \thispagestyle{empty}
 \newpage
 }
+
 
 \RequirePackage{listings} 
 \definecolor{lightgrey}{rgb}{0.9,0.9,0.9}
