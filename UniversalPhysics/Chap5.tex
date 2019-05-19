@@ -1,0 +1,258 @@
+\documentclass[b5paper,opensource]{./template/qyxf-book}
+
+\usepackage{subcaption}
+% 添加水印的宏包
+\usepackage{draftwatermark}
+\SetWatermarkText{钱院学辅}
+\SetWatermarkLightness{0.9}
+\SetWatermarkScale{0.9}
+
+% 基本不需要改动
+\title{大物题解}
+\subtitle{Key to Universal Physics}
+\author{钱院学辅大物编写小组}
+\typo{钱院学辅排版组}
+\date{\today}
+\version{v1.0}
+\sourcepage{\url{https://github.com/qyxf/Tutorials/}}
+
+% 这里可以自定义一些命令
+\newcommand{\di}[1]{\mathrm{d}#1}
+\newcommand{\p}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pp}[2]{\frac{\partial ^2 #1}{\partial #2 ^2}}
+\newcommand{\dy}[2]{\frac{\di{#1}}{\di{#2}}}
+\newcommand{\ddy}[2]{\frac{\mathrm{d} ^2 #1}{\mathrm{d} #2 ^2}}
+\newcommand{\zbj}[4]
+{
+	\draw (0,0) node[below left] {$ O $};
+	\draw [->] (#1,0) -- (#2,0) node[right] {$ x $};
+	\draw [->] (0,#3) -- (0,#4) node[right] {$ y $};
+}
+
+
+\begin{document}
+\chapter{狭义相对论}  % 使用章节\chapter{}来做一级标题
+\section{选择题}  % 选择题、填空题和解答题使用\section{}
+
+\exercise{1}C  % 题号使用这个命令，会自动生成标记，注记后写主要答案
+
+%\solve
+飞船系中看，光信号走过一个飞船长度，为$l_0=c\Delta t$，此长度换回地球系，由尺缩公式有$l=l_0\sqrt{1-(\frac{u}{c})^2}$，所以在地球系中看，飞船尾部接收器和光信号相向运动，最后相遇，此过程的时间为$\Delta t'=\frac{l}{c+u}=\frac{l_0\sqrt{1-(\frac{u}{c})^2}}{c+u}=0.6\mu s$.
+
+%% 空一行开始下一个题目
+\exercise{2}A
+
+\solve
+因为该立方体是沿面对角线方向运动，所以在地面系中观察，面对角线方向上发生尺缩，正方形底面不再是正方形，而是菱形，菱形的其中一条对角线仍为$\sqrt{2}L$，另一条对角线尺缩后为$\sqrt{2}L\sqrt{1-(\frac{v}{c})^2}$，面积就变成了$S=\frac{1}{2}\sqrt{2}L\sqrt{2}L\sqrt{1-(\frac{v}{c})^2}$，在地面系中看，它的体积为$V=SL=0.8L^3$.
+
+\exercise{3}A
+
+\solve
+题中仅说了在$S$系中观察到一物体以$0.3c$的速度运动，并没有说速度的方向，所以可以假设该物体沿$x$轴正向运动或沿$x$轴负向运动用速度变换求出在$S'$系中可能观测到的最大最小速度，得到速度范围为$\frac{4}{17}c<v<\frac{16}{23}c$，约为$0.24c<v<0.70c$.
+
+\exercise{4}C
+
+\solve
+在$S$系和$S'$系中看都是同时发生的，即$\Delta t=\Delta t'=0$，由洛伦兹变换可得$\Delta x=0$，所以这两个事件发生地点的$x$坐标一定相同.
+
+\exercise{5}C
+
+\solve
+本题为第一题的延续，所以地面系中看，飞船在此过程中飞行的时间为$\Delta t'=0.5\mu s$，飞行的速度为$u=0.6c$，飞行的距离为$s=u\Delta t'=90m$.
+
+\exercise{6}A
+
+\solve
+在$S'$系中两个事件同地发生，满足钟缓的条件，所以有$\Delta t=\frac{\Delta t'}{\sqrt{1-(\frac{v}{c})^2}}$成立，从中解得$v=0.8c$.（有关尺缩钟缓的疑问可以参考qyxf推出的《狭义相对论不得不说的那些事》）
+
+\exercise{7}C
+
+\solve
+由题目信息可得，$E=1.25E_0$，又有$E=\frac{E_0}{\sqrt{1-\beta^2}}$，两式联立可得$\beta=0.6$.
+
+\exercise{8}B
+
+\solve
+（1）真空中的光速是目前所发现的自然界物体运动的最大速度；（2）狭义相对论有尺缩、钟缓、质量变大等结论；（3）根据洛伦兹变换，当$\Delta t=0$但$\Delta x$不为零时，$\Delta t'$不为零，即在$S$系同时发生的两个不同地事件在$S'$系中不同时发生；（4）根据钟缓的条件，相对观察者静止不动的参考系观测到的事件最短.
+
+\exercise{9}C
+
+\solve
+设碰后的合粒子质量为$M$，运动速度为$v'$，碰撞过程中，有能量守恒：$\frac{m_0}{\sqrt{1-(\frac{v}{c})^2}}c^2+m_0c^2=\frac{M}{\sqrt{1-(\frac{v'}{c})^2}}c^2$，还有量守恒：$\frac{m_0}{\sqrt{1-(\frac{v'}{c})^2}}v=\frac{M}{\sqrt{1-(\frac{v'}{c})^2}}v'$，两式相除以约去比较复杂的因子，计算后得出$v'=\frac{c}{3}$.本题读者应注意，两个质量为$m_0$的粒子碰撞后，质量并不是$2m_0$，因为非弹性碰撞中能量有耗散，所以质量应设为$M$然后再求解.
+
+\exercise{10}D
+
+\solve
+\begin{equation*}
+\overrightarrow{F}=\frac{\di \overrightarrow{p}}{\di t}=\frac{\di m\overrightarrow{v}}{\di t}=\frac{\di m}{\di t}\overrightarrow{v}+m\frac{\di\overrightarrow{v}}{\di t}=\frac{\di m}{\di t}\overrightarrow{v}+m\overrightarrow{a}
+\end{equation*}
+
+故质点的加速度和合外力可以不在同各一方向上，且加速度的大小不与合外力大小成正比.
+
+\section{填空题}
+\exercise{11} 相对的 \qquad 运动状态
+
+\exercise{12} $=0.6m\qquad >0.6m$
+
+\solve 简单公式应用
+因为$A$和$B$两个飞船相向匀速运动，$A$、$B$两者相对运动速度恒定，所以从$A$观察$B$与从$B$观察$A$的洛伦兹变换具有等价形式，故$B$中测得$A$上的米尺长度与$A$测得$B$中的米尺长度应相等；地球上观测者看来，若在地面系中看$A$和$B$二者的运动速度均为$v$，则$A$看$B$的运动速度由速度变换公式可得应为$v'=\frac{v+v}{1+\frac{v^2}{c^2}}>v$，因为尺缩公式为$l=l_0\sqrt{1-(\frac{v}{c})^2}$，相对速度越大，尺缩效应越明显，所以地球上观测者观察到两船上的米尺长度都$>0.6m$.
+
+\exercise{13} $\frac{\sqrt{3}}{2}c$
+
+\solve
+根据题目已知信息可得，$\frac{m_0}{\sqrt{1-(\frac{v}{c})^2}}c^2-m_0c^2=m_0c^2$，从中解得$v=\frac{\sqrt{3}}{2}c$.
+
+\exercise{14} 如下三式
+\begin{equation*}
+u'_x=\frac{u_x\sqrt{1-(\frac{v}{c})^2}}{1-\frac{v}{c^2}u_y}\quad u'_y=\frac{u_y-v}{1-\frac{v}{c^2}u_y}\quad u'_z=\frac{u_z\sqrt{1-(\frac{v}{c})^2}}{1-\frac{v}{c^2}u_y}
+\end{equation*}
+
+\exercise{15} $c$
+
+\solve
+设这个粒子的动质量为$m$，则$E=mc^2$，$p=mc$，所以$\frac{E}{p}=c$.
+
+\exercise{16} $0.8c$
+
+\solve
+根据速度变换，有$v=\frac{v'+u}{1+\frac{u}{c^2}v'}=0.8c$.
+
+\exercise{17}一切物理定律在不同的惯性系中具有相同的表达形式.
+
+\exercise{18}$15s \qquad 5s$
+
+\solve
+$\analysis$（1）地面系中看，两信号发出间隔过程飞船走了$0.8c\cdot3s$的路程，地面上观测到信号被接收的时间应为“信号传递到飞船时间”加上“飞船向地球返回接收信号的传递时间”，设信息传递的速度也为光速，所以一个信号从发出到地球观测到被接受所花费的时间为两倍的传递时间.所以，地面上的工作者观测到两信号被接受的时间间隔为
+\begin{equation*}
+\Delta t=2\cdot(\frac{s_2}{c-0.8c}-\frac{s_1}{c-0.8c})+3s=2\cdot\frac{0.8c\cdot3s}{c-0.8c}+3s=15s
+\end{equation*}
+
+（2）地面系中发射信号为同地时间，满足钟缓条件，所以在飞船系中观测到两信号发射的时间间隔为
+\begin{equation*}
+\Delta t=\frac{\Delta t_0}{\sqrt{1-(\frac{v}{c})^2}}=\frac{3s}{\sqrt{1-0.8^2}}=5s
+\end{equation*}
+
+\exercise{19} $\frac{1-\alpha\beta^2}{\sqrt{1-\beta^2}}L$
+
+\solve
+方法一：利用洛伦兹变换
+\begin{equation*}
+\Delta x=\frac{\Delta x'+u\Delta t'}{\sqrt{1-\beta^2}}=\frac{-L+u\frac{L}{v}}{\sqrt{1-\beta^2}}
+\end{equation*}
+
+方法二：利用速度变换，子弹在$S$系中沿$x$轴负方向的速度为
+\begin{equation*}
+v_{S1}=\frac{u-v}{1-\frac{uv}{c^2}}
+\end{equation*}
+变换到正方向为
+\begin{equation*}
+v_S=-v_{S1}=\frac{v-u}{1-\frac{uv}{c^2}}
+\end{equation*}
+在$S$系中车厢的长度为
+\begin{equation*}
+L_S=L\sqrt{1-(\frac{u}{c})^2}
+\end{equation*}
+所以子弹在$S$系中通过的距离为
+\begin{equation*}
+l=\frac{L_S}{v_S+u}\cdot v_S=\frac{1-\alpha\beta^2}{\sqrt{1-\beta^2}}L
+\end{equation*}
+
+\exercise{20}$\tau=1.0\times10^{-5}s$
+
+\solve
+满足钟缓条件，故
+\begin{equation*}
+\tau=\frac{\tau_0}{\sqrt{1-(\frac{v}{c})^2}}=\frac{2.0\times10^{-6}s}{\sqrt{1-0.98^2}}=1.0\times10^{-5}.
+\end{equation*}
+
+
+\section{计算题}
+%21，22，24题对原作者代码有改动
+\exercise{21}
+
+\analysis
+衰变问题可以看做发生完全非弹性碰撞后静止的逆过程，所以可以采用动量守恒、能量守恒联立方程组求解.
+
+\solve 
+设$\beta_p=\frac{v_p}{c},\beta_\pi=\frac{v_\pi}{c}$
+
+能量守恒
+\begin{equation*}
+M_\Lambda c^2=M_pc^2+E_{kp}+M_\pi c^2+E_{k\pi}
+\end{equation*}
+动量守恒
+\begin{equation*}
+P_p=\frac{M_p}{\sqrt{1-\beta_p^2}}v_p=\frac{M_\pi}{\sqrt{1-\beta_\pi^2}}v_\pi=P_\pi
+\end{equation*}
+又有
+\begin{align*}
+E_{kp}=(\frac{M_p}{\sqrt{1-\beta_p^2}}-M_p)c^2\\
+E_{k\pi}=(\frac{M_\pi}{\sqrt{1-\beta_\pi^2}}-M_\pi)c^2\\
+P^2c^2=M^2c^4-M_0^2c^4
+\end{align*}
+
+联立解得$v_p=0.106c,v_\pi=0.584c$
+
+所以可得$E_{kp}=5.35MeV,E_{k\pi}=32.35MeV$.
+
+\exercise{22}
+
+\solve 
+设$\beta=\frac{v}{c}$
+
+根据洛伦兹变换：
+\begin{equation*}
+\Delta x'=\frac{\Delta x-v\Delta t}{\sqrt{1-\beta^2}}
+\end{equation*}
+
+又由题意得$\Delta x'=0$
+
+所以$v=\frac{\Delta x}{\Delta t}=5\times10^7m/s$.
+
+\exercise{23}
+
+\analysis
+$S'$系相对于$S$系沿$x$轴正方向匀速运动，所以在$x$方向会发生尺缩，但是在$y$方向则不会，所以会产生在$S$系和$S'$系中观测到的角度不同的结果.
+
+\solve
+$S'$系中，细棒速率为
+\begin{equation*}
+u'=\frac{u-v}{1-\frac{uv}{c^2}}
+\end{equation*}
+设相对细棒静止的参考系为$S''$系，$S''$系中，细棒在坐标轴上的投影为$\Delta x'',\Delta y''$，$S'$系中的投影为$\Delta x',\Delta y'$，$S$系中的投影为$\Delta x,\Delta y$.
+
+由洛伦兹变换，
+\begin{align*}
+\Delta x''=\frac{\Delta x'}{\sqrt{1-(\frac{u'}{c})^2}}=\frac{\Delta c}{\sqrt{1-(\frac{u}{c})^2}}\\\Delta y''=\Delta y'=\Delta y
+\end{align*}
+而
+\begin{equation*}
+\tan{\theta}=\frac{\Delta y}{\Delta x}\quad \tan{\theta'}=\frac{\Delta y'}{\Delta x'}
+\end{equation*}
+所以
+\begin{equation*}
+\frac{\tan{\theta}}{\tan{\theta'}}=\frac{\Delta x'}{\Delta x}=\frac{\sqrt{1-(\frac{u'}{c})^2}}{\sqrt{1-(\frac{u}{c})^2}}\Rightarrow u'^2=\frac{3}{4}c^2
+\end{equation*}
+当$u'=\frac{\sqrt{3}}{2}c$时，代入速度变换式中解得
+\begin{equation*}
+v=\frac{2(1-3\sqrt{3})}{13}c<0
+\end{equation*}
+因为惯性系$S'$向$x$轴正方向运动，所以舍去.
+
+当$u'=-\frac{\sqrt{3}}{2}c$时，代入速度变换式中解得
+\begin{equation*}
+v=\frac{2(1+3\sqrt{3})}{13}c
+\end{equation*}
+
+\exercise{24}
+
+\solve
+相对于实验室参考系
+\begin{equation*}
+\tau=\frac{\tau_0}{\sqrt{1-(\frac{v}{c})^2}}
+\end{equation*}
+又$l=v\tau$
+
+联立上式可得$v=\sqrt{\frac{225}{901}c}=0.5c$.
+
+\end{document}
