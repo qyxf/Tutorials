@@ -1,9 +1,9 @@
-\documentclass[b5paper,opensource]{qyxf-book}
+\documentclass[b5paper,opensource,sourcefont,parskip]{qyxf-book}
 
 \usepackage{subcaption}
 \usepackage{draftwatermark}
 \SetWatermarkText{钱院学辅}
-\SetWatermarkLightness{0.9}
+\SetWatermarkLightness{0.92}
 \SetWatermarkScale{0.9}
 
 \title{大物题解}
@@ -47,13 +47,11 @@
 \begin{equation}
 N\cos\theta=Ma_a\text{(M对地)}
 \end{equation}
-
 如图1.2，对$m$，以$M$为参考系，$m$受一惯性力，合加速度沿二者接触面。沿$x,y$方向分解：
 \begin{gather}
 mg-N\cos\theta=ma_r\sin\theta\\
 ma_a+N\sin\theta=ma_r\cos\theta
 \end{gather}
-
 将(1)代入(2)，由(2)(3)联立解得：
 \[a_r=\dfrac{(M+m)g\sin\theta}{M+m{\sin\theta}^2}\]
 
@@ -77,7 +75,10 @@ ma_a+N\sin\theta=ma_r\cos\theta
 
 \exercise{4}B
 
-\solve 以前面的货车为参考系，货车静止，火车速率为$v_1-v_2$，加速度为$a$（反向），那么火车最多前进$s=\dfrac{{(v_1-v_2)}^2}{2a}$。要求$d>s$，故选B。或采用地面参考系的追逐问题法，计算从$v_1\text{减速到}v_2$两车走过的距离之差：$s=\dfrac{{v_1}^2-{v_2}^2}{2a}-v_2\cdot \dfrac{v_1-v_2}{a}=\dfrac{{(v_1-v_2)}^2}{2a}$
+\solve 以前面的货车为参考系，货车静止，火车速率为$v_1-v_2$，加速度为$a$（反向），那么火车最多前进$s={(v_1-v_2)}^2/{2a}$。要求$d>s$，故选B。或采用地面参考系的追逐问题法，计算从$v_1\text{减速到}v_2$两车走过的距离之差为
+\[
+s=\dfrac{{v_1}^2-{v_2}^2}{2a}-v_2\cdot \dfrac{v_1-v_2}{a}=\dfrac{{(v_1-v_2)}^2}{2a}.
+\]
 
 \exercise{5}C
 
@@ -94,7 +95,6 @@ ma_a+N\sin\theta=ma_r\cos\theta
 s=\dfrac{b}{\cos\alpha},a=g\sin\alpha\\
 t=\sqrt{\dfrac{2s}{a}}=\sqrt{\dfrac{4b}{g\sin(2\alpha)}}
 \end{gather*}
-
 当$t$最小时，$\sin(2\alpha)$最大，$\alpha=45^\circ$。
 
 \exercise{8}B
@@ -104,7 +104,7 @@ t=\sqrt{\dfrac{2s}{a}}=\sqrt{\dfrac{4b}{g\sin(2\alpha)}}
 \exercise{9}B
 
 \solve 曲线的定义：“动点运动方向连续变化的轨迹”\footnote{来源：汉典网，\url{http://www.zdic.net/c/2/111/299079.htm}}。
-A,C的反例：匀速圆周运动。
+A、C的反例：匀速圆周运动。
 
 \exercise{10}D
 
@@ -113,178 +113,161 @@ A,C的反例：匀速圆周运动。
 \section{填空题}
 \exercise{11}$0$\qquad$2g$
 
-\solve 设A、B质量为m。抽走C之前，弹簧中的弹力大小为mg。撤去C时，弹簧长度未突变，
-弹力不变,A受合力为0；支持力则消失。故$a_A=0；a_B=\dfrac{mg+mg}{m}=2g$,竖直向下。
+\solve 设A、B质量为$m$。抽走C之前，弹簧中的弹力大小为$mg$。撤去C时，弹簧长度未突变，
+弹力不变,A受合力为0；支持力则消失。故$a_A=0,a_B=\dfrac{mg+mg}{m}=2g$,竖直向下。
 
-\exercise{12}\ $\dfrac{25}{12}\pi\ rad/s^2$ \qquad$\dfrac{24}{5}s$
+\exercise{12}\ $\dfrac{25}{12}\pi$\ rad/s${}^2$ \qquad$\dfrac{24}{5}$s
 
+\solve 简单公式应用。
 \begin{gather*}
-\text{简单公式应用。}\theta=60\times2\pi=120\pi\\
-\beta=\dfrac{\omega_2^2-\omega_1^2}{2\theta}=\dfrac{25}{12}\pi\ rad/s^2\\
-\delta t=\dfrac{\omega_2-\omega_1}{\beta}=\dfrac{24}{5}s
+\theta=60\times2\pi=120\pi\\
+\beta=\dfrac{\omega_2^2-\omega_1^2}{2\theta}=\dfrac{25}{12}\pi\text{\ rad/s}^2\\
+\delta t=\dfrac{\omega_2-\omega_1}{\beta}=\dfrac{24}{5}\mathrm{s}
 \end{gather*}
 \exercise{13}$m(\sin\theta-\omega^2l\sin\theta\cos\theta)$
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=15em, height=15em]{Chp1_illus4.png}
 	%\caption{}
 	\label{fig:c1}
 \end{figure}
 
+\solve 如图1.4，在$x$，$y$方向上分解受力，得：
+
 \begin{gather*}
-\text{如图1.4，在x，y方向上分解受力，得：}\\		
 T\sin\theta-N\cos\theta=m\omega^2l\sin\theta\\
-T\cos\theta+N\sin\theta=mg\\
-\text{联立可解得T、N的大小。}
+T\cos\theta+N\sin\theta=mg
 \end{gather*}
+联立可解得$T$、$N$的大小。
 
 \exercise{14}\ $2\sqrt{\dfrac{r}{g}}$ \qquad $2\sqrt{\dfrac{r}{g}}$
 
-\begin{gather*}
-\text{设弦与PC的夹角为}\theta,\text{则有}\\
-s=2r\cos\theta,a=g\cos\theta\\
-t=\sqrt{\dfrac{2s}{a}}=2\sqrt{\dfrac{r}{g}}
-\end{gather*}
+\solve 设弦与PC的夹角为$\theta$，则有$s=2r\cos\theta$，$a=g\cos\theta$，故$t=\sqrt{\dfrac{2s}{a}}=2\sqrt{\dfrac{r}{g}}$。
 
-\exercise{15}\ $4\sqrt{5}m/s$ \qquad $16m/s^2 $ 
 
-\begin{gather*}	
-\text{抛物线的切线方向即为质点的速度方向，且}x=4t\\
-\therefore \dfrac{v_y}{v_x}=\dy{y}{x}=x\Rightarrow v_y=4x=16t\\
-\therefore t=2\text{时，}v_y=8\mathrm{m/s},
-v=\sqrt{{v_x}^2+{v_y}^2}=4\sqrt{5}\mathrm{m/s}\\
-v_x\text{不变，}a=a_y=\dy{v_y}{t}=16\mathrm{m/s^2}
-\end{gather*}
+\exercise{15}\ $4\sqrt{5}$m/s \qquad 16m/s${}^2$ 
+
+\solve 抛物线的切线方向即为质点的速度方向，且$x=4t$，故
+\[\dfrac{v_y}{v_x}=\dy{y}{x}=x\ \Rightarrow\ v_y=4x=16t\]
+而$t=2$时，$v_y=8\mathrm{m/s}$，故
+\[v=\sqrt{{v_x}^2+{v_y}^2}=4\sqrt{5}\mathrm{m/s}\]
+$v_x$不变，故
+\[a=a_y=\dy{v_y}{t}=16\mathrm{m/s^2}\]
 
 \exercise{16} 长度、质量、时间
 
-见课本，解答略。
+\solve 见课本，解答略。
 
 \exercise{17} 3\quad 3\quad 6
 
-x分别对t求一阶两阶导即是v、a，由图像即可判断其正负号。
+\solve $x$分别对$t$求一阶、两阶导，即是$v$、$a$，由图像即可判断其正负号。
 
 \exercise{18} $y={(x+5)}^3$
 
-\begin{gather*}\text{由题，}x=2t-5\Rightarrow 2t=x+5\\
-\text{代入}y=8t^3={(2t)}^3\text{,消去t即可}
-\end{gather*}
+\solve 由题，$x=2t-5\Rightarrow 2t=x+5$，代入$y=8t^3={(2t)}^3$，消去t即可。
 
 \exercise{19} $\dfrac{1}{2}g$\qquad 竖直向下
 
-初始时受力平衡，两根弹簧上力均为$\dfrac{1}{2}mg$；一根断掉后，向上的力减半，则小球受的合力是$\dfrac{1}{2}mg$，竖直向下。\\
+\solve 初始时受力平衡，两根弹簧上力均为$\dfrac{1}{2}mg$；一根断掉后，向上的力减半，则小球受的合力是$\dfrac{1}{2}mg$，竖直向下。
+
 \exercise{20}\ 9m/s 
 
-\begin{gather*}\text{(SI)} x=3t+6t^2-2t^3\xrightarrow{\text{求导}}v=3+12t-6t^2\\
-\xrightarrow{\text{求导}}a=12-12t\\\
-令a=0\ \text{解得}\ t=1\xrightarrow{\text{代入得}} v(1)=9\mathrm{m/s}
-\end{gather*}
+\solve 直接求导得
+\[\text{(SI)} x=3t+6t^2-2t^3\xrightarrow{\text{求导}}v=3+12t-6t^2
+\xrightarrow{\text{求导}}a=12-12t\]
+令$a=0$，解得$t=1$，代入得$v(1)=9\mathrm{m/s}$。
 
 \section{计算题}
 
 %21，22，24题对原作者代码有改动
 
 \exercise{21}
-\begin{gather*}
-\text{由图知：}\\
-\tan\alpha=\dfrac{|\vec{a}_n|}{|\vec{a}_\tau|}=\dfrac{\dfrac{v^2}{R}}{\dy{v}{t}}\\
-\therefore \dy{v}{t}\frac{1}{v^2}=\frac{1}{R\tan\alpha}\\
-\text{积分得：}-\frac{1}{v}=\frac{1}{R\tan\alpha}t+C\\
-\text{代入}t=0,v=v_0\\
-\therefore \frac{1}{v_0}-\frac{1}{v}=\frac{1}{R\tan\alpha}t
-\ \text{即}v=\frac{v_0R\tan\alpha}{\tan\alpha-v_0t}
-\end{gather*}
+
+\solve 由图知$\tan\alpha=\dfrac{|\vec{a}_n|}{|\vec{a}_\tau|}=\dfrac{v^2/R}{\di{v}/\di{t}}$，故得
+\[\dy{v}{t}\frac{1}{v^2}=\frac{1}{R\tan\alpha}\]
+积分得
+\[-\frac{1}{v}=\frac{1}{R\tan\alpha}t+C\]
+代入$t=0,v=v_0$就有
+\[\frac{1}{v_0}-\frac{1}{v}=\frac{1}{R\tan\alpha}t
+\text{，即}v=\frac{v_0R\tan\alpha}{\tan\alpha-v_0t}
+\]
 
 \exercise{22}
+
+\solve 根据已知条件，可以依次求导得到
 \begin{gather*}
 \vec{v}=\dy{s}{t}\vec{\tau}=(c+2dt)\vec{\tau}\\  
 \vec{a}_n=\frac{v^2}{R}\vec{n}=\frac{(c+2dt)^2}{R}\vec{n}\\
-\vec{a}_\tau=\dy{v}{t}\vec{\tau}=2d\vec{\tau}\\
-\text{令}|\vec{a}_n|=|\vec{a}_\tau|,
-\text{则}\frac{(c+2dt)^2}{R}=2d\\
-\therefore t_1=\frac{\sqrt{2dR}-c}{2d}\left(t_2=\frac{-\sqrt{2dR}-c}{2d}<0\text{,舍去}\right)\\
-\therefore\text{要使t}\geqslant\text{0，条件为}\sqrt{2dR}-c\geqslant0,\text{即}2dR\leqslant c^2
+\vec{a}_\tau=\dy{v}{t}\vec{\tau}=2d\vec{\tau}
 \end{gather*}
+令$|\vec{a}_n|=|\vec{a}_\tau|$，则有$\frac{(c+2dt)^2}{R}=2d$，故
+\[t_1=\frac{\sqrt{2dR}-c}{2d}\ \left(t_2=\frac{-\sqrt{2dR}-c}{2d}<0\text{,舍去}\right)\]
+可见，要使$t\geqslant\text0$，条件为$\sqrt{2dR}-c\geqslant0$，即$2dR\leqslant c^2$。
+
 
 \exercise{23}
-\begin{gather*}
--kx=a=\dy{v}{t}=\dy{v}{x}\cdot \dy{x}{t}=\dy{v}{x}\cdot v\\
-\text{分离变量，积分得：}-\dfrac{1}{2}kx^2=\dfrac{1}{2}v^2+C_1\\
-\text{令}C=2C_1,\text{则}-kx^2=v^2+C\\
-\text{代入}x=x_0,v=v_0\text{\,得：}C=-(kx_0^2+v_0^2)\\
-\text{整理得：}v=\pm\sqrt{kx_0^2+v_0^2-kx^2}
-\end{gather*}
+
+\solve 根据已知条件有$-kx=a=\dy{v}{t}=\dy{v}{x}\cdot \dy{x}{t}=\dy{v}{x}\cdot v$，此即关于$x$与$v$的微分方程
+\[-kx=\dy{v}{x}\cdot v\]
+分离变量，积分得
+\[-\dfrac{1}{2}kx^2=\dfrac{1}{2}v^2+C_1\]
+令$C=2C_1$，则有$-kx^2=v^2+C$，进一步代入$x=x_0,v=v_0$得$C=-(kx_0^2+v_0^2)$。经过整理可得
+\[v=\pm\sqrt{kx_0^2+v_0^2-kx^2}.\]
+
 
 \exercise{24}
-\begin{align*}
-(1)v&=10\left(1-\frac{t}{5}\right)\\
-&=-2t+10\\
-\dy{x}{t}&=-2t+10
-\end{align*}
 
-\begin{gather*}
-\text{积分得：}x=-t^2+10t+c\\
-\text{代入}t=0,x=0,\quad \therefore x=-t^2+10t\\
-\text{代入}t=10s\\
-\therefore x=0.\quad
-\therefore\text{坐标为}0\\
-(2)\text{令}x=10m,\therefore t^2-10t+10=0\\
-\therefore t=5\pm\sqrt{15}s\\
-\text{令}x=-10m,\therefore t^2-10t+10=0\\
-\therefore t=5+\sqrt{35}(5-\sqrt{35}<0,\text{舍去})\\
-\therefore\text{时刻为}5-\sqrt{15}\ s,5+\sqrt{15}\ s\text{或}5+\sqrt{35}\,s\\
-(3)\text{令}v=0,\therefore t=\ 5s\\
-\therefore t\in[0,5],\quad s=x=-t^2+10t\\
-t\in[5,+\infty),\quad s=s(5)+[s(5)-x]=25\\+[25-(-t^2+10t)]
-=t^2-10t+50\\
-\therefore s=
+\solve (1) 易得$v=10\left(1-\dfrac{t}{5}\right)=-2t+10$，此即
+\[
+\dy{x}{t}=-2t+10
+\]
+积分得$x=-t^2+10t+c$，代入$t=0,x=0$可求得$c=0$。故有
+\[x=-t^2+10t\]
+代入$t=10s$得$x(10)=0$，即坐标为0。\\
+(2) 令$x=10$m，则有$t^2-10t+10=0$，解得
+\[t=5\pm\sqrt{15}\text{ s}\]
+同理，令$x=-10$m，有$t^2-10t+10=0$，解得
+\[t=5+\sqrt{35}(5-\sqrt{35}<0,\text{舍去})\]
+综上可知，时刻为$5-\sqrt{15}$\ s,$5+\sqrt{15}$\ s或$5+\sqrt{35}$\ s。\\
+(3) 令$v=0$，有$t=5$s，故可见对t\in[0,5]，有$s=x=-t^2+10t$；而对$t\in[5,+\infty)$，有
+\[s=s(5)+[s(5)-x]=25\\+[25-(-t^2+10t)]=t^2-10t+50\]
+综上得$s=
 \begin{cases}
 -t^2+10t,&t\in[0,5)\\
 t^2-10t+50,&t\in[5,+\infty)
-\end{cases}
-\end{gather*}
-
-
+\end{cases}$
 
 \chapter{牛顿运动定律}
 \section{选择题}
 
 \exercise{1}C
 
-质点沿力方向位移为零。$\therefore A=0$.
+\solve 质点沿力方向位移为零，故$A=0$.
 
 \exercise{2}B
 
-$B$离开$A$时为弹簧恢复原长的时刻(该时刻之后，$A$受到弹簧拉力，加速度为负，$v_A<v_B$.)
-此时$v_A=v_B$.由动能定理：
-\begin{align*}
-\frac{1}{2}mv_A^2+\frac{1}{2}mv_B^2-0=\frac{1}{2}kd^2\\
-\therefore{}E_B=\frac{1}{2}mv_B^2=\frac{1}{4}kd^2
-\end{align*}
+\solve 可见$B$离开$A$时为弹簧恢复原长的时刻(该时刻之后，$A$受到弹簧拉力，加速度为负，$v_A<v_B$.)，
+此时$v_A=v_B$.由动能定理易得
+\[\frac{1}{2}mv_A^2+\frac{1}{2}mv_B^2-0=\frac{1}{2}kd^2\]
+故$E_B=\frac{1}{2}mv_B^2=\frac{1}{4}kd^2$.
+
 
 \exercise{3}C
 
-对$\vec{r}$求导：
-\begin{align*}
-\vec{v}&=\frac{\di{\vec{r}}}{\di{t}}\\
-&=-\frac{2\pi}{T}A\sin\frac{2\pi t}{T}\vec{i}+\frac{2\pi}{T}B\cos\frac{2\pi t}{T}\vec{j}
-\end{align*}
-\par$t=0$时，
-\begin{align*}
-v_1&=\sqrt{v_{x1}^2+v_{y1}^2}\\
-&=\sqrt{0^2+\left(\frac{2\pi}{T}B\right)^2}=\frac{2\pi}{T}B
-\end{align*}
-\[\therefore{}E_{k1}=\frac{1}{2}mv_1^2=\frac{2m\pi^2}{T^2}\left(B^2\right)\\\]
-\par$t=\frac{T}{4}$时，
+\solve 对$\vec{r}$求导得$\vec{v}=\frac{\di{\vec{r}}}{\di{t}}=-\frac{2\pi}{T}A\sin\frac{2\pi t}{T}\vec{i}+\frac{2\pi}{T}B\cos\frac{2\pi t}{T}\vec{j}$.
+$t=0$时，有
+\[
+v_1=\sqrt{v_{x1}^2+v_{y1}^2}=\sqrt{0^2+\left(\frac{2\pi}{T}B\right)^2}=\frac{2\pi}{T}B
+\]
+故$E_{k1}=\frac{1}{2}mv_1^2=\frac{2m\pi^2}{T^2}\left(B^2\right)$.而$t=\frac{T}{4}$时，
 \begin{align*}
 v_2&=\sqrt{v_{x2}^2+v_{y2}^2}\\
 &=\sqrt{\left(-\frac{2\pi}{T}A\right)^2+0^2}=\frac{2\pi}{T}A
 \end{align*}
-\begin{gather*}
-\therefore{}E_{k2}=\frac{1}{2}mv_2^2=\frac{2m\pi^2}{T^2}\left(A^2\right)\\
-\therefore\Delta{}E_k=\frac{2\pi^2}{T^2}(B^2-A^2)
-\end{gather*}
+故$E_{k2}=\frac{1}{2}mv_2^2=\frac{2m\pi^2}{T^2}\left(A^2\right)$，从而
+\[\Delta{}E_k=\frac{2\pi^2}{T^2}(B^2-A^2)\]
+
 
 \exercise{4}D
 
