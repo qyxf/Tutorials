@@ -1,0 +1,335 @@
+\documentclass[b5paper,opensource]{./template/qyxf-book}
+
+% 这里可以自定义一些命令
+\newcommand{\di}[1]{\mathrm{d}#1}
+\newcommand{\p}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pp}[2]{\frac{\partial ^2 #1}{\partial #2 ^2}}
+\newcommand{\dy}[2]{\frac{\di{#1}}{\di{#2}}}
+\newcommand{\ddy}[2]{\frac{\mathrm{d} ^2 #1}{\mathrm{d} #2 ^2}}
+\newcommand{\zbj}[4]
+{
+	\draw (0,0) node[below left] {$ O $};
+	\draw [->] (#1,0) -- (#2,0) node[right] {$ x $};
+	\draw [->] (0,#3) -- (0,#4) node[right] {$ y $};
+}
+
+
+\begin{document}
+
+chapter{静电场1}
+\section{选择题}
+
+\exercise{1}C
+
+\solve
+两极板间场强为$E=\dfrac{q}{\varepsilon_0S}$，但这是由两极板共同贡献而成。
+研究两板间作用力时，一个为施力物体，一个为受力物体。
+单个无穷大带电平板的场强为$E_0=\dfrac{q}{2\varepsilon_0S}$，即在板的同侧是匀强电场，故作用力为$F=E_0\cdot q$
+
+\exercise{2}D
+
+\solve
+取以O为圆心、$r,r+\Delta r$为内、外径的圆环面元，其上各点到通过圆心、垂直盘面的轴线上的任一点距离相等。
+则:
+\begin{gather*}
+	\Delta S=2\pi r\di{r}\\
+	\sigma=\dfrac{q}{\pi R^2}
+\end{gather*}
+故
+\begin{equation*}
+	\di{q}=\sigma \Delta S=\dfrac{2q}{R^2}r\di{r}
+\end{equation*}
+
+\exercise{3}C
+
+\solve
+计算面积分即可。在这里$x=x_0$,$\vec{E}$与$S$垂直。
+\begin{equation*}
+	 \iint\limits_S \vec{E}\di{S}=bx_0\cdot S=x_0bS
+\end{equation*}
+
+\exercise{4}A
+
+\solve
+由高斯定理，$E=\dfrac{q}{4\pi\varepsilon_0 r^2}$，只与$q$有关。
+
+\exercise{5}D
+
+\solve
+由高斯定理，通过闭合曲面$S$的电通量只与面内的电荷有关，故电通量不变；由电场强度的叠加原理知，$q$在P点产生的场强不变，但Q的改变。由于是矢量加法，场强一定会改变。
+
+\exercise{6}C
+
+\solve
+由高斯定理：
+\begin{align*}
+	E\cdot 4\pi r^2&=\dfrac{1}{\varepsilon_0}\int_0^r\rho\cdot 4\pi r^2\di{r}\\
+	&=\dfrac{4\pi b}{\varepsilon_0}\int_0^r e^{-kr}\di{r}\\
+	&=\dfrac{4\pi b}{\varepsilon_0 k}(1-e^{-kr})\\
+\end{align*}
+所以
+\begin{gather*}
+	E=\dfrac{b}{\varepsilon_0 k}\dfrac{1-e^{-kr}}{r^2}\\
+	r=\dfrac{1}{k}\textbf{时,}E_1=\dfrac{b}{\varepsilon_0}\cdot k(1-e^{-1})\\
+	r=\dfrac{2}{k}\textbf{时,}E_2=\dfrac{b}{\varepsilon_0}\cdot \dfrac{k}{4}(1-e^{-2})
+\end{gather*}
+故
+\begin{equation*}
+	E_2=\dfrac{1-e^{-2}}{4(1-e^{-1})}E_1\approx 0.34E_1
+\end{equation*}
+
+\exercise{7}D
+
+\solve
+简单定积分。以棒上远离场点的一端点为原点，指向场点的方向为x轴正方向。
+\begin{align*}
+	E&=\int_{0}^{L}\dfrac{1}{4\pi \varepsilon_0}\dfrac{\lambda\di{x}}{{(r+\frac{L}{2}-x)}^2}\\
+	&=\dfrac{Q}{4\pi \varepsilon_0 L}\cdot \dfrac{1}{{r+\frac{L}{2}-x}}\bigg|_0^L\\
+	&=\dfrac{Q}{\pi \varepsilon_0(4r^2-L^2)}
+\end{align*}
+
+\exercise{8}B
+
+\solve
+由高斯定理知，$\sum q_{\text{内}}=0$，即净电荷为零，但不能说明高斯面$S$内任一点都没有电荷。
+
+\exercise{9}D
+
+\solve
+题中所谓的“点”是一个固定的点，只不过刚开始在气球外，最后在气球内。如图1。注意气球是有厚度的！
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{Chp6_illus1.ai}
+	\caption{练习9\quad 气球膨胀}
+\end{figure}
+点在气球外时，球外场强不变；点在球壳中时，高斯面包围的电荷减小，场强减小；点在气球内时，场强为0。
+
+\exercise{10}B
+
+\solve
+该系统可以看作是半径为$R_1$、电荷体密度为$\rho$的均匀带电球体和半径为$R_2$、电荷体密度为$-\rho$的均匀带电球体的组合。应用均匀带电球体内部电场强度的矢量式
+\footnote{
+	$E=
+	\begin{cases}
+	\dfrac{\rho}{3\varepsilon_0}\vec{r} & r\leqslant R,\\
+	\dfrac{\rho R^3}{3\varepsilon_0 r^3}\vec{r} & r > R
+	\end{cases}$
+
+	标量式中，$r>R$时，$E=\dfrac{\rho R^3}{3\varepsilon_0 r^2}$。
+}得：
+\begin{align*}
+	E&=\dfrac{\rho}{3\varepsilon_0}\vec{r}_1+\dfrac{-\rho}{3\varepsilon_0}\vec{r}_2\\
+	&\text{($r_1,r_2$分别是$O_1,O_2$到场点的矢径)}\\
+	&=\dfrac{\rho}{3\varepsilon_0}(\vec{r}_1-\vec{r}_2)\\
+	&=\dfrac{\rho}{3\varepsilon_0}\overrightarrow{O_1O_2}
+\end{align*}
+即空腔内为匀强电场。
+
+\section{填空题}
+
+\exercise{11}$-\dfrac{2VR}{3r^2}$\quad 沿球心到该点的矢径向外
+
+\solve
+由电势的定义和均匀带电球体电场强度公式（见练习10脚注）得：
+\[
+0-V=\int_{0}^{R}\dfrac{\rho r}{3\varepsilon_0}\di{r}+\int_{R}^{+\infty}\dfrac{\rho R^3}{3\varepsilon_0 r^2}\di{r}
+\]
+整理得：
+\[
+V=-\dfrac{\rho R^2}{2\varepsilon_0}
+\]
+与场强公式对比即知：
+\[
+E=-\dfrac{2VR}{3r^2}
+\]
+由于$V<0$，可知球体带正电荷，故场强方向沿球心到该点的矢径向外。
+
+\exercise{12}$\dfrac{\lambda_1\lambda_2}{2\pi \varepsilon_0}\ln\dfrac{a+l}{a}$\quad 沿有限长带电线指向无限长带电线（或在纸面上向左）
+
+\solve
+以两直线交点为原点（或有限长带电线左端点），远离无限长直线为x轴正方向，沿有限长带电线建立坐标系。
+
+由无限长带电直线场强公式得：
+\begin{align*}
+	F&=\int_{a}^{a+l}\dfrac{\lambda_1}{2\pi \varepsilon_0 x}\lambda_2\di{x}\\
+	&=\dfrac{\lambda_1\lambda_2}{2\pi \varepsilon_0}\ln\dfrac{a+l}{a}
+\end{align*}
+两线均带正电，故有限长带电线受力方向为x轴正向。注意题目问的是无限长带电线的受力，而且答题时不要引入“x轴”。
+
+\exercise{13}$-\dfrac{\sigma a^2}{2\varepsilon_0}$\quad$\dfrac{\sigma a^2}{2\varepsilon_0}$\quad 0
+
+\solve
+情景参见练习3、练习5。注意此处考虑曲面的外侧为正向，内侧为负。
+
+\exercise{14}0\quad $\dfrac{(Q+4a\lambda)}{\varepsilon_0}$
+
+\solve
+第一空由对称性易得。第二空使用高斯定理，$\sum q_{\text{内}}=Q+4a\cdot\lambda$。注意题目问的不是场强。
+
+\exercise{15}$\dfrac{\sqrt{2}a}{2}$
+
+\solve
+如图2，设$q_0$与$A$的连线和$AB$的夹角为$\theta$。由对称性，合力方向与$AB$平行。
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Chp6_illus2.ai}
+	\caption{练习15\quad 受力分析}
+\end{figure}
+\begin{align*}
+	E&=2\cdot \dfrac{1}{4\pi\varepsilon_0}\dfrac{qq_0}{r^2+a^2}\cos\theta\\
+	&=\dfrac{qq_0}{2\pi\varepsilon_0}\dfrac{r}{{(r^2+a^2)}^{\frac{3}{2}}}
+\end{align*}
+令$f(r)=\dfrac{r}{{(r^2+a^2)}^{\frac{3}{2}}}$，则$f'(r)=\dfrac{a^2-2r^2}{{(r^2+a^2)}^{\frac{5}{2}}}$。
+由导数知识得：$a^2-2r^2=0\text{即}r=\dfrac{\sqrt{2}}{2}a$时，$f(r)$取得极大值。
+
+或者用三角换元。令$r=a\tan\theta$，则
+\begin{gather*}
+	f(\theta)=\dfrac{1}{a^2}\sin\theta\cos^2\theta\\
+	f'(\theta)=\dfrac{1}{a^2}\cos\theta(\cos^2\theta-2\sin^2\theta)
+\end{gather*}
+由导数知识得：$\tan\theta=\dfrac{\sqrt{2}}{2}\text{即}r=\dfrac{\sqrt{2}}{2}a$时，$f(\theta)$取得极大值。
+
+\exercise{16}$\dfrac{\sigma^2\Delta S}{2\varepsilon_0}$
+
+\solve
+均匀带电球面在其表面处产生的电场强度为
+\[
+E=\dfrac{\sigma\cdot 4\pi R^2}{4\pi\varepsilon_0R^2}=\dfrac{\sigma}{\varepsilon_0}\\
+\]
+但该电场也是由所取的面元和剩余部分共同贡献而成（同练习1），故作如下分析：
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Chp6_illus3.ai}
+	\caption{练习16\quad 场强分布}
+\end{figure}
+如图3，红色部分为$\Delta S$，我们分球壳内外来研究。剩余部分球壳在$\Delta S$内、外侧（无限接近$\Delta S$且对称的）两点P、Q处产生的场强均可看作是$E_0$，而$\Delta S$在P、Q处产生的场强$E_1=E_2$。那么由题意知：
+\begin{gather*}
+	\text{(P点)}E_0-E_1=0\\
+	\text{(Q点)}E_0+E_1=E\\
+\end{gather*}
+解得：
+\[
+E_0=E_1=\dfrac{1}{2}E=\dfrac{\sigma}{2\varepsilon_0}
+\]
+那么
+\begin{gather*}
+	q_S=\sigma\Delta S\\
+	F=E_0q_S=\dfrac{\sigma^2\Delta S}{2\varepsilon_0}
+\end{gather*}
+
+\exercise{17}$-\dfrac{\lambda}{2\pi\varepsilon_0R}\vec{j}$
+
+\solve
+\[
+\di{E}=\dfrac{\lambda \di{s}}{4\pi \varepsilon_0 R^2}=\dfrac{\lambda \di{\theta}}{4\pi \varepsilon_0 R}
+\]
+注意到电场强度是由圆环指向O点，故：
+\[
+\di{E_x}=\di{E}\cdot (-\cos\theta),\di{E_y}=\di{E}\cdot (-\sin\theta)
+\]
+积分\footnote{此后因对称性而场强为零的情景不再积分计算}得：
+\begin{gather*}
+	E_x=\dfrac{\lambda}{4\pi \varepsilon_0 R}\int_0^{\pi} -\cos\theta\di{\theta}=0\\
+	E_y=\dfrac{\lambda}{4\pi \varepsilon_0 R}\int_0^{\pi} -\sin\theta\di{\theta}=-\dfrac{\lambda}{2\pi\varepsilon_0R}
+\end{gather*}
+故得$E=-\dfrac{\lambda}{2\pi\varepsilon_0R}\vec{j}$
+
+\exercise{18}$\dfrac{\vec{p}}{2\pi\varepsilon_0x^3}$
+
+\solve
+设电偶极子的两电荷电量为$q$，距离为$l$。
+\begin{align*}
+	E&=\dfrac{q}{4\pi\varepsilon_0}\cdot \dfrac{1}{(x-\frac{l}{2})^2}+\dfrac{-q}{4\pi\varepsilon_0}\cdot \dfrac{1}{(x+\frac{l}{2})^2}\\
+	&=\dfrac{q}{2\pi\varepsilon_0}\dfrac{xl}{{(x^2-\frac{l^2}{4})}^2}
+\end{align*}
+$x\gg l$时，$x^2-\dfrac{l^2}{4}\approx x^2$。同时考虑方向，可以得到：
+\begin{align*}
+	E&=\dfrac{q\vec{l}}{2\pi\varepsilon_0x^3}\\
+	&=\dfrac{\vec{p}}{2\pi\varepsilon_0x^3}
+\end{align*}
+
+\exercise{19}0
+
+\solve
+复习高斯定理。
+
+\exercise{20}$\dfrac{\lambda d}{\pi\varepsilon_0 a^2}$\quad 从O点指向细线端点连线中点
+
+\solve
+使用补偿法即可。而且$d\ll a$，故将空缺处看作点电荷。
+\[
+E=\dfrac{\lambda d}{4\pi\varepsilon_0{(\frac{a}{2})}^2}=\dfrac{\lambda d}{\pi\varepsilon_0 a^2}
+\]
+空缺了一些产生向下场强的电荷，故场强方向向上。
+
+\section{解答题}
+
+
+%注：改
+\exercise{21}
+
+\solve
+以O为极点，建立如图3所示的坐标系。极轴穿过圆弧的终点。
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Chp6_illus4.ai}
+	\caption{练习21\quad 坐标系}
+\end{figure}
+把柱面分成无限根无限长直导线（沿母线方向），设无限长导线长度为$l$,则其线密度$\lambda=\dfrac{\di{q}}{l}=\dfrac{\di{(\sigma l\cdot R\theta)}}{l}=\sigma R\di{\theta}$
+
+则
+\begin{gather*}
+	\di{E}=\dfrac{\lambda}{2\pi\varepsilon_0R}=\dfrac{\sigma}{2\pi\varepsilon_0}\di{\theta}\\
+	\di{E_x}=-\di{E}\cos\theta,\di{E_y}=-\di{E}\sin\theta\\
+	E_x=\dfrac{\sigma}{2\pi\varepsilon_0}\int_{-\frac{\theta}{2}}^{\frac{\theta}{2}}-\cos\theta\di{\theta}=-\dfrac{\sigma\sin\frac{\theta}{2}}{\pi\varepsilon_0}\\
+	E_y=\dfrac{\sigma}{2\pi\varepsilon_0}\int_{-\frac{\theta}{2}}^{\frac{\theta}{2}}-\sin\theta\di{\theta}=0
+\end{gather*}
+故所求场强大小为$\dfrac{\sigma\sin\frac{\theta}{2}}{\pi\varepsilon_0}$
+
+\exercise{22}
+
+\solve
+由对称性，场强方向沿x轴。取面积微元（见练习2），则：
+\begin{align*}
+	E=&\int_0^R\dfrac{1}{4\pi\varepsilon_0}\cdot\dfrac{\frac{\sigma_0r}{R}\cdot 2\pi r\di{r}}{r^2+x^2}\cdot\dfrac{x}{\sqrt{r^2+x^2}}\\
+	&=\dfrac{\sigma_0x}{2\varepsilon_0R}\int_0^R\dfrac{r^2\di{r}}{{(r^2+x^2)}^\frac{3}{2}}\\
+	&=\dfrac{\sigma_0x}{2\varepsilon_0R}[-\dfrac{r}{\sqrt{r^2+x^2}}+\ln(r+\sqrt{r^2+x^2})]\Big|_0^R\\
+	&=\dfrac{\sigma_0x}{2\varepsilon_0R}\big(\ln\dfrac{R+\sqrt{R^2+x^2}}{x}-\dfrac{R}{\sqrt{R^2+x^2}}\big)
+\end{align*}
+方向沿x轴正向。
+
+\exercise{23}
+
+\solve
+由题，取半径为$r(R_1<r<R_2)$的球面为高斯面。由高斯定理：
+\begin{equation*}
+	E\cdot 4\pi r^2=\dfrac{1}{\varepsilon_0}(Q+\int_{R_1}^r\dfrac{A}{r}\cdot 4\pi r^2\di{r})
+\end{equation*}
+计算得：
+\begin{equation*}
+	E=\dfrac{A}{2\varepsilon_0}+\dfrac{Q-2\pi AR_1^2}{4\pi r^2\varepsilon_0}
+\end{equation*}
+题目中$E$与$r$无关，故：
+\begin{gather*}
+	Q-2\pi AR_1^2=0\\
+	A=\dfrac{Q}{2\pi R_1^2}
+\end{gather*}
+
+
+%画图？？
+\exercise{24}
+
+\solve
+由对称性，场强方向沿z轴。
+以垂直于z轴的平面去截球壳得到小圆，取该圆为长、$R\di{\theta}$为宽的面元。注意代入$\sigma_0$。
+\begin{align*}
+	\di{E}&=\dfrac{\sigma_0\cdot 2\pi R\sin \theta R\di{\theta}}{4\pi \varepsilon_0 R^2}\\
+	&=\dfrac{\sigma}{2\varepsilon_0}\sin\theta\cos\theta\di{\theta}\\
+	E_z&=\int_0^{\frac{\pi}{2}}\di{E}\cdot(-\cos\theta)\di{\theta}\\
+	&=-\dfrac{\sigma_0}{2\varepsilon_0}\int_0^{\frac{\pi}{2}}\sin\theta\cos^2\theta\di{\theta}\\
+	&=-\dfrac{\sigma_0}{6\varepsilon_0}
+\end{align*}
+$\therefore$所求电场强度为$\dfrac{\sigma_0}{6\varepsilon_0}$，方向沿z轴负方向。
+
+\end{document}

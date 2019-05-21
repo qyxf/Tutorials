@@ -1,0 +1,354 @@
+\documentclass[b5paper,opensource]{qyxf-book}
+
+\usepackage{subcaption}
+% 添加水印的宏包
+\usepackage{draftwatermark}
+\SetWatermarkText{钱院学辅}
+\SetWatermarkLightness{0.9}
+\SetWatermarkScale{0.9}
+
+% 基本不需要改动
+\title{大物题解}
+\subtitle{Key to Universal Physics}
+\author{钱院学辅大物编写小组}
+\typo{钱院学辅排版组}
+\date{\today}
+\version{v1.0}
+\sourcepage{\url{https://github.com/qyxf/Tutorials/}}
+
+% 这里可以自定义一些命令
+\newcommand{\di}[1]{\mathrm{d}#1}
+\newcommand{\p}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pp}[2]{\frac{\partial ^2 #1}{\partial #2 ^2}}
+\newcommand{\dy}[2]{\frac{\di{#1}}{\di{#2}}}
+\newcommand{\ddy}[2]{\frac{\mathrm{d} ^2 #1}{\mathrm{d} #2 ^2}}
+\newcommand{\zbj}[4]
+{
+	\draw (0,0) node[below left] {$ O $};
+	\draw [->] (#1,0) -- (#2,0) node[right] {$ x $};
+	\draw [->] (0,#3) -- (0,#4) node[right] {$ y $};
+}
+
+
+\begin{document}
+
+%\maketitle 
+\tableofcontents
+
+%% 对于章节编写，可以不加封面和目录
+\chapter{静电场2}  % 使用章节\chapter{}来做一级标题
+\section{选择题}  % 选择题、填空题和解答题使用\section{}
+
+\exercise{1}B  % 题号使用这个命令，会自动生成标记，注记后写主要答案
+
+\solve  % 解答使用这个命令，解答与题号之间空一行
+两个平板之间的电场为匀强电场，若记向右为正方向，则电场强度：
+\[E=\frac{\sigma}{2\epsilon_0}-\frac{2\sigma}{2\epsilon_0}=-\frac{\sigma}{2\epsilon_0}\]
+
+即电场强度向左，电场线也指向左。由于电势沿着电场线降低，因此$V_B>V_A$。
+
+%% 空一行开始下一个题目
+\exercise{2}B
+
+\solve 加入电介质之前，$ C_1,C_2 $电容相同，由于并联，则$ U $也相同，由电容定义$ C=\frac{Q}{U} $，两个电容器所带电荷$ Q_1=Q_2 $。
+
+由于电键断开，因此电容器与外界没有电荷交换，过程中两个电容器的总带电量$ Q=Q_1'+Q_2' $不变。
+插入电介质稳定后，相连的极板电势差应为$ 0 $（否则电荷会顺着电势减小的方向移动），则求$ C_1,C_2 $的电势差：
+\[\Delta u'=\frac{Q_1'}{C\epsilon_r}=\frac{Q_2'}{C}\]
+
+有：$Q_1'=\epsilon_r Q_2'$，因此$Q_2'<Q_2$，有电荷从$C_2$流向$C_1$，知$C_1$电量增大。
+
+又因为$\Delta u'<\Delta u$，有$E'd<Ed$，$d$不变，可知场强变小，因此选B。
+
+\note 做此类电容题目需要寻找过程中的不变量，若电容器的大小、形状等不变，则过程中电容$ C $不变；若电容器与外界没有电荷交换，则电量$ Q $不变。
+
+\exercise{3}D
+
+\solve A，电位移矢量会受到束缚电荷的影响，书上写道，若电介质是各向异性的，则$ D $与$ E $的方向可不一样。
+
+B，电位移先起始于自由正电荷，终止于自由负电荷，不形成闭合线，不中断。
+
+C，电位移线可以出现在真空中，此时电位移线与电场线相同。
+
+D正确，由电介质中高斯定理可直接得到。
+
+\exercise{4}D
+
+\solve 两板间为匀强电场，电场强度大小为：
+\[E=\left|\frac{-\sigma}{2\epsilon_0}-\frac{-2\sigma}{2\epsilon_0}\right|=\frac{\sigma}{2\epsilon_0}\]
+
+则电势差大小：
+\[\Delta u=Ed=\frac{\sigma d}{2\epsilon_0}\]
+
+\exercise{5}C
+
+\solve A，放入q2之前球外场强关于O是球对称的，而q2产生的电场关于O不是球对称的，由电场叠加原理，放入q2后两个电场叠加，关于O不是球对称的，因此A错。
+
+B，由静电屏蔽，q2在外球壳内部产生的电场强度被外球壳的电荷所抵消，则导体内部的电场强度仅受到q和内表面上电荷的影响。由于q产生的电场关于O球对称，导体内部的电场强度由于静电平衡，均为0，也是关于O球对称，那么内表面电荷分布也必然是球对称，B错。
+
+C，由于静电平衡，导体内部是等势体，自然内外表面电势差恒为0，C对。
+
+D，$ q_1,q_2 $之间的静电作用力即使库仑力，大小为$ F_c=\frac{1}{4\pi\epsilon_0}\frac{q_1q_2}{r^2} $，显然不为0，D错。
+
+\exercise{6}B
+
+\solve 设均带有$ Q $的电荷，半径为$ R $和$ 2R $。
+
+则孤立导体球的电势：$ U_1=\frac{Q}{4\pi\epsilon_0R} $，$ U_2=\frac{Q}{8\pi\epsilon_0R} $，有$ U_1:U_2=2:1 $。
+
+而电场能量$ W=\frac{QU}{2} $，则可知$ W_1=W_2 $。
+
+\exercise{7}C
+
+\solve 电容与导体带电情况无关，因此电荷面密度$ \sigma $变化前后C不变，而$ Q_1:Q_2=1:2 $。
+
+由$ W=\frac{Q^2}{2C} $，则$ W_1:W_2=1:4 $，电场能量变为原来了的4倍。
+
+\exercise{8}D
+
+\solve 由电介质定义式，$ E=\frac{E_0}{\epsilon_r} $，$ E_0 $为自由电荷的贡献。
+
+而电场强度可拆分为自由电荷与束缚电荷的贡献之和，有$ E=E_0-E_r $。
+
+联立两式，消去$ E_0 $，得到$ E_r=(\epsilon_r-1)E $。
+
+\exercise{9}C
+
+\solve 由高斯定理，P点所在球面仍然只包含$ +q $电荷，因此电场强度不变。事实上，同理可知r-R之间的电场强度也不变。
+
+但对于R之外的电场强度，由高斯定理，大球面外包含的电荷为$ Q+q $，比加入球面之前$ (+q) $大，因此球面外的场强变大。因此对于整个空间上的任意一点，有$ E_2>=E_1 $。
+
+由电势计算式，$ u=\int_a^{+\infty} E\cdot\di{l} $，由定积分的大小性质，有$ u_2>u_1 $，因此电势也增大。
+
+\exercise{10}A
+
+\solve 电容与电容器带电情况无关，因此变化前后电容不变，记为$ C $。
+
+并联之前，充电的电容器电场能量$ W=\frac{Q^2}{2C} $，并联之后，两个电容器电势差相同。
+
+由$ Q=CU $知带电量相同，又因为与外界没有电荷交换，则总带电量相同。则每个电容器电荷量为$ \frac{Q}{2} $。
+
+总电场能量为$ W=2\times \frac{Q^2}{8C}=\frac{Q^2}{4C} $，有$ W_1:W_2=2:1 $，静电能减小。
+
+\section{填空题}
+\exercise{11} $4\pi\epsilon_0\epsilon_r\frac{R_1R_2}{R_2-R_1}$
+
+\solve 见教材P149 例6.32，积分时不考虑$E_2$即可。
+
+\exercise{12} $\frac{Q}{4\pi\epsilon_0 R}$ \quad $-\frac{Qq}{4\pi\epsilon_0 R}$
+
+\solve 点电荷在一点产生的电势（见课本）为：
+\[u=\frac{q}{4\pi\epsilon_0 R}\]
+
+此处可将半圆形微元$R\di{\alpha}$视为点电荷，在O点产生的电势为：
+
+\[\di{u}=\frac{R\di{\alpha}\lambda_0\sin\alpha}{4\pi\epsilon_0 R}\]
+
+积分可得：
+\begin{align*}
+u&=\int_{\alpha=0}^{\alpha=\pi} \di{u}\\
+&=\int_0^{\pi} \frac{R\di{\alpha}\lambda_0\sin\alpha}{4\pi\epsilon_0 R}\\
+&=\frac{\lambda_0}{2\pi\epsilon_0}
+\end{align*}
+
+或由于微元到$O$点距离相同，直接用$Q$作为总电量写为$\frac{Q}{4\pi\epsilon_0 R}$即可
+
+当取无穷远处为电势零点时，$ u $表示将单位点电荷移动到无穷远处的过程中，电场力做的功，因此此处需要取负号，并乘$q$即可。
+
+\exercise{13} $\frac{Q}{4\pi\epsilon_0\epsilon}\left(\frac{1}{R_1}+\frac{\epsilon-1}{R_2}\right)$
+
+\solve 当金属球静电平衡时，电荷集中分布在球面上。由高斯定理可求出电场分布：
+
+\begin{equation}
+E=\left\{
+\begin{aligned}
+&\frac{Q}{4\pi\epsilon_0 r^2}\quad &R_2\leqslant r\\
+&\frac{Q}{4\pi\epsilon_0\epsilon r^2}\quad &R_1\leqslant r<R_2\\
+&0	&r<R_1
+\end{aligned}
+\right.
+\end{equation}
+
+则$ P $点电势为：
+
+\begin{align*}
+u&=\int_r^{+\infty}E\cdot\di{r}\\
+&=\int_r^{R_1}E\cdot\di{r}+\int_{R_1}^{R_2}E\cdot\di{r}+\int_{R_2}^{+\infty}E\cdot\di{r}\\
+&=0+\frac{Q}{4\pi\epsilon_0 R_2}+\frac{Q}{4\pi\epsilon_0\epsilon}\left(\frac{1}{R_1}-\frac{1}{R_2}\right)\\
+&=\frac{Q}{4\pi\epsilon_0\epsilon}\left(\frac{1}{R_1}+\frac{\epsilon-1}{R_2}\right)
+\end{align*}
+
+\exercise{14} $1:1$
+
+\solve 由电介质中的高斯定理，在$ Q $和$ S $都不变的情况下，$ D $也相同。
+
+\exercise{15} $\frac{q}{4\pi \epsilon_0 r_1^2}$ \quad $\frac{q+Q}{4\pi\epsilon_0 r_2^2}$ \quad $\frac{1}{4\pi\epsilon_0}\left(\frac{q}{r_1}+\frac{Q}{R_2}-\frac{q+Q}{r_2}\right)$
+
+\solve 由高斯定理计算得到电场强度：
+\begin{equation}
+E=\left\{
+\begin{aligned}
+&\frac{Q}{4\pi\epsilon_0 r^2}\quad &R_2\leqslant r\\
+&\frac{q+Q}{4\pi\epsilon_0 r^2}\quad &R_1\leqslant r<R_2\\
+&0	&r<R_1
+\end{aligned}
+\right.
+\end{equation}
+
+将A,B离O点的距离$ r_1,r_2 $代入即可得到场强大小。
+
+而电势差则需要积分，积分路径为：A-OA连线与外球壳交点-沿外球壳移动到OB与外球壳交点-沿OB到B。球壳为等势面，因此在球壳上移动电场力做功为0。则电势差：
+\begin{align*}
+\Delta u&=\int_{r_1}^{R_2}E\cdot\di{r}+0+\int_{R_2}^{r_2}E\cdot\di{r}\\
+&=\frac{q}{4\pi\epsilon_0}\left(\frac{1}{r_1}-\frac{1}{R_2}\right)+\frac{q+Q}{4\pi\epsilon_0}\left(\frac{1}{R_2}-\frac{1}{r_2}\right)
+&=\frac{1}{4\pi\epsilon_0}\left(\frac{q}{r_1}+\frac{Q}{R_2}-\frac{q+Q}{r_2}\right)
+\end{align*}
+
+\exercise{16} 尖端放电
+
+\exercise{17} $ -\frac{1}{12\pi\epsilon_0 R(3Q+q)} $
+
+\solve 静电平衡时，金属球的电荷全部分布在表面上，且整个金属球为一个等势体，因此求出金属球上任意一点的电势即为金属球的电势，这里我们来求O点电势。
+
+由电势叠加原理，O点电势为球表面电荷和-q产生的电势之和。球表面电荷到O点的距离都相同。
+
+因此所有球面上的电荷微元$\di{q}$在O点产生的电势均为$\frac{\di{q}}{4\pi\epsilon_0 R}$，因此这部分的电势为$\frac{-Q}{4\pi\epsilon_0 R}$。
+
+而$ -q $在O点产生的电势为$\frac{-q}{4\pi\epsilon_0 \times 3R}$，两部分相加即得到答案。
+
+\exercise{18} $\frac{2\pi l\epsilon_0\epsilon_r}{\ln \frac{R_2}{R_1}}$
+
+\solve 设内外面带电$ +Q $和$ -Q $，$ l>>R_1,R_2 $，因此可以当作无限长圆柱面。
+
+由书P141例6.27，无电介质时电容为$ C=\frac{2\pi l\epsilon_0}{\ln \frac{R_2}{R_1}} $。
+
+插入电介质后电容变为原来的$ \epsilon_r $倍，因此得到答案。
+
+\exercise{19} 击穿场强
+
+\exercise{20} $ 0 $\quad$ -q_1 $
+
+\solve 外球壳静电平衡，因此为了保证外球壳内部场强为0，由高斯定理，外球壳内表面必须带电荷$ -q1 $。
+
+当我们先不考虑外球壳外表面的电荷（如果有的话）时，外球壳外表面所处位置电场强度处处为0。
+
+由于接地，外球壳外表面和大地电势为0，因此外表面不能带电荷（否则会在外表面和大地的导线处产生电场强度，导致外球壳外表面和大地不为等势体）。
+
+\section{计算题}
+
+\exercise{21}
+
+\solve 
+
+(1).
+
+记金属片左侧面与左边极板间距为$ a $，右侧面与右边极板间距为$ b $，则有$ d=a+t+b $。
+
+可将电容器视作两个电容的串联：左边极板和金属片左侧（记为1），右边极板和金属片右侧（记为2）。则：
+\[C_1=\frac{\epsilon_0 S}{a}.C_2=\frac{\epsilon_0 S}{b}\]
+
+串联之后，总电容：
+\[C=\frac{C_1C_2}{C_1+C_2}=\frac{\epsilon_0 S}{a+b}=\frac{\epsilon_0 S}{d-t}\]
+
+(2).
+
+由(1)推导知，$ C $与$ a,b $无关，因此放置位置对电容值无影响。
+
+\exercise{22}
+
+\solve 
+(1).
+
+$ \because A$接地，$ \therefore u_A=0 $
+
+由无限远处为电势零点：
+
+\begin{equation}
+\therefore u_A=\int_a^{3a} E_1\cdot\di{r} +\int_{3a}^{+\infty} E_2\cdot\di{r} =0
+\end{equation}
+
+记$ A $带点$ q_1 $，则有
+\begin{equation}
+\begin{aligned}
+E_1&=\frac{q_1}{4\pi r^2\epsilon_0\epsilon_r}=\frac{q_1}{8\pi r^2\epsilon_0}\\
+E_2&=\frac{q_1+q_2}{4\pi r^2\epsilon_0}\\
+\therefore u_A&=\int_a^{3a}\frac{q_1}{8\pi r^2\epsilon_0}\di{r}+\int_{3a}^{+\infty}\frac{q_1+q_2}{4\pi r^2\epsilon_0}\di{r}\\
+&=\frac{q_1}{8\pi\epsilon_0}\left(\frac{1}{a}-\frac{1}{3a}\right)+\frac{q_1+q_2}{4\pi\epsilon_0}\times \frac{1}{3a}\\
+&=\frac{q_1}{12\pi\epsilon_0a}+\frac{q_1+q_2}{12\pi\epsilon_0a}=0
+\end{aligned}
+\end{equation}
+
+解得：$ q_1=-\frac{q_2}{2} $
+
+(2).
+
+\[u_B=\int_{3a}^{+\infty}E_2\cdot \di{r}=\frac{q_1+q_2}{12\pi\epsilon_0a}=\frac{q_2}{24\pi\epsilon_0a}\]
+
+(3).
+
+电容大小与电容器实际带电情况无关，因此可以考虑内外球分别带$ +Q/-Q $电荷时，计算出电容，即为答案。此时有：
+\[\Delta u=\int_a^{3a}E\cdot \di{r}=\int_a^{3a}\frac{Q}{4\pi r^2\epsilon_0\epsilon_r}\di{r}=\frac{Q}{24\pi\epsilon_0a}\]
+\[\therefore C=\frac{Q}{\Delta u}=24\pi\epsilon_0a\]
+
+(4).
+\begin{align*}
+W&=\int_a^{3a}\frac{1}{2}\epsilon_0 E_1^2\di{V}+\int_{3a}^{+\infty}\frac{1}{2}\epsilon_0 E_2^2\di{V}\\
+&=\int_a^{3a}\frac{q_2^2}{128\pi r^2\epsilon_0} \di{V}+\int_{3a}^{+\infty}\frac{q_2^2}{32\pi r^2\epsilon_0}\di{V}\\
+&=\frac{q_2^2}{64\pi\epsilon_0a}
+\end{align*}
+
+\exercise{23}
+
+\solve 取圆柱高斯面，由高斯定理可求出电场强度分布：
+\begin{equation}
+E=\left\{
+\begin{aligned}
+&0\quad &R_2<r\\
+&\frac{\lambda}{2\pi\epsilon_0 r}\quad &R_1<r\leqslant R_2\\
+&0	&r\leqslant R_1
+\end{aligned}
+\right.
+\end{equation}
+
+则电势差可以积分得到：
+
+\begin{align*}
+u_{R_1}-u_{R_2}&=\int_{R_1}^{R_2} \frac{\lambda}{2\pi r\epsilon_0} \di{r}\\
+&=\frac{\lambda}{\pi\epsilon_0}\ln\frac{R_2}{R_1}\\
+&=500
+\end{align*}
+
+
+解得：
+\[\lambda=\frac{2\pi\epsilon_0\times 500}{\ln\frac{R_2}{R_1}}=1.208\times 10^{-8}\]
+
+\exercise{24}
+
+\solve 
+(1).记金属板靠近$ \sigma_1 $一侧的电荷密度为$ \sigma_1' $，靠近$ \sigma_2 $一侧的电荷密度为$ \sigma_2' $。
+
+由静电平衡，则金属板内部一点的场强为$ 0 $，则有：
+\[E=\frac{\sigma_1}{2\epsilon_0}+\frac{\sigma_1'}{2\epsilon_0}-\frac{\sigma_2'}{2\epsilon_0}-\frac{\sigma_2}{2\epsilon_0}=0\]
+
+又因为金属板不带电，有：
+\[\sigma_1'+\sigma_2'=0\]
+
+解得：$\sigma_1'=-10^{-8}C/m^2,\sigma_2'=10^{-8}C/m^2$
+
+(2).原电场强度：
+\[E=\frac{\sigma_1}{2\epsilon_0}-\frac{\sigma_2}{2\epsilon_0}=10^{-8}\frac{1}{\epsilon_0}\]
+
+则原电势差：
+\[\Delta u=Ed=10^{-10}\frac{1}{\epsilon_0}\]
+
+插入金属板后，由于金属板左右两侧带电相反，因此对两边的空间场强不产生影响，此结论证明详见课本P126上方。
+
+因此两板间空间处电场强度不变，$ E'=10^{-8}\frac{1}{\epsilon_0} $，金属板内部电场强度为$ 0 $。
+
+因此电势差为：
+\[\Delta u'=E'd=10^{-8}\frac{1}{\epsilon_0}\times(0.01-0.002)=8\times 10^{-11}\frac{1}{\epsilon_0}\]
+
+电势差的变化：
+\[U=2\times10^{-11}\frac{1}{\epsilon_0}=2.26(V)\]
+
+\end{document}
