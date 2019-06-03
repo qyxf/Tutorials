@@ -292,11 +292,9 @@ E_p &=\frac{1}{2}m_1v_1^2+\frac{1}{2}m_2v_2^2\\
 \exercise{6}D
 
 \solve 弹簧上任意一点弹力相同，记为N。截去一半后，伸长量缩短了一半，而弹力不变，因此k变为原来的两倍。并联在一起后，每一根弹簧受力为原先的一半。由$F=kA$，伸长量为原来的$\frac{1}{4}$。写成数学式子如下：
-\begin{align*}
-E_k &=2\times\left(\frac{1}{2}k'A'^2\right)\\
-&=\left(2k\right)\times\left(\frac{1}{4}A\right)^2\\
-&=\frac{1}{8}kA^2
-\end{align*}
+\[
+E_k=2\times\left(\frac{1}{2}k'A'^2\right)\\=\left(2k\right)\times\left(\frac{1}{4}A\right)^2\\=\frac{1}{8}kA^2
+\]
 
 \exercise{7}D
 
@@ -372,9 +370,7 @@ mgh=\frac{1}{2}mv_1^2+\frac{1}{2}Mv_2^2
 ,v_2=\sqrt{\frac{2m^2gh}{(m+M)M}}$。由动能定理知，物块对滑道做的功就是滑道动能改变量
 \[\Delta E_k=\frac{1}{2}Mv_2^2=\frac{m^2gh}{M+m}\]
 
-\exercise{17}
-
-\solve 第$i$个质点所受合力做的功（类似说法均正确）
+\exercise{17} 第$i$个质点所受合力做的功（类似说法均正确）
 
 \exercise{18}1m/s \qquad 200J
 
@@ -392,11 +388,16 @@ mgh=\frac{1}{2}mv_1^2+\frac{1}{2}Mv_2^2
 
 \exercise{20}$0.8\sqrt{2}$
 
-\solve 
-{\centering\includegraphics[height=100pt]{Chp2_illus1.png}}\\
-图1
+\solve 参照下面的图\ref{fig:t20}，功可直接按定义计算为：
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[height=100pt]{Chp2_illus1.png}
+\caption{练习20示意图}\label{fig:t20}
+\end{figure}
+
 \begin{align*}
-A	&=\int_{\theta=0}^{\theta=\frac{\pi}{4}}{vec{F}}\cdot\di{vec{x}}\\
+A&=\int_{\theta=0}^{\theta=\frac{\pi}{4}}{\vec{F}}\cdot\di{\vec{x}}\\
 &=\int_{\theta=0}^{\theta=\frac{\pi}{4}}F\di{x}\cos\left(\frac{\pi}{2}-\theta\right)\\
 &=\int_{0}^{\frac{\pi}{4}}k(2R\cos\theta-0.1)\times\di{(R\times 2\theta)}\times\sin\theta\\
 &=\int_{0}^{\frac{\pi}{4}}(-4R^2k\cos\theta+0.2Rk)\di{(\cos\theta)}\\
@@ -409,100 +410,88 @@ A	&=\int_{\theta=0}^{\theta=\frac{\pi}{4}}{vec{F}}\cdot\di{vec{x}}\\
 \section{计算题}
 \exercise{21}
 
-(1)
-\begin{gather*}
-\Delta l=\frac{F}{k}\\
-E_p=\frac{1}{2}k(\Delta l)^2=\frac{F^2}{2k}\\
-\text{由机械能守恒，}E_{kright}-0=E_p-0\\
-\therefore\frac{1}{2}Mv_{\text{右}}^2=\frac{F^2}{2k}\\
-\therefore v_{\text{右}}=\frac{F}{\sqrt{Mk}}
-\end{gather*}
+\solve 分别求解。
 
-(2)
-\begin{gather*}
-\text{由受力分析知，}a_{\text{左}}=a_{\text{右}},\quad\text{即}\dy{v_{\text{左}}}{t}=-\dy{v_{\text{右}}}{t}\\
-\text{两边积分：}\therefore v_{\text{左}}=-v_{\text{右}}+c\\
-\text{代入刚恢复原长时：}v_{\text{左}}=0,v_{\text{右}}=\frac{F}{\sqrt{Mk}}\\
-\therefore v_{\text{左}}+v_{\text{右}}=\frac{F}{\sqrt{Mk}}\\
-\therefore\text{当}v_{\text{左}}=v_{\text{右}}\text{时},v'_{\text{左}}=v'_{\text{右}}=\frac{F}{\sqrt{2Mk}}\\
-\text{由机械能守恒：}\\
-0+\frac{1}{2}M(v_{\text{右}})^2=\frac{1}{2}k(\Delta l)^2+\frac{1}{2}M(v'_{\text{左}})^2+\frac{1}{2}M(v'_{\text{右}})^2\\
-\therefore\Delta l=\pm\sqrt{\frac{M\left(\frac{F^2}{Mk}-2\times\frac{F^2}{4Mk}\right)}{k}}\\
-=\pm\frac{\sqrt{2}}{2}\frac{F}{k}\\
-\text{即伸长或压缩}\frac{\sqrt{2}}{2}\frac{F}{k}
-\end{gather*}
+(1) 首先，有$\Delta l=\frac{F}{k}$，进而可得$E_p=\frac{1}{2}k(\Delta l)^2=\frac{F^2}{2k}$.由机械能守恒，可列出
+$E_k-0=E_p-0$，代入各条件得
+\[\frac{1}{2}Mv_{\text{右}}^2=\frac{F^2}{2k}\]
+故得$v_{\text{右}}=\frac{F}{\sqrt{Mk}}$.
 
-\exercise{22} 记x为链条右端的位移，l为桌边链条的长度。
+(2) 由受力分析知，$a_{\text{左}}=a_{\text{右}}$，即
+\[\dy{v_{\text{左}}}{t}=-\dy{v_{\text{右}}}{t}\]
+两边积分便得$v_{\text{左}}=-v_{\text{右}}+c$，代入刚恢复原长时的条件$v_{\text{左}}=0,v_{\text{右}}=\frac{F}{\sqrt{Mk}}$得
+\[v_{\text{左}}+v_{\text{右}}=\frac{F}{\sqrt{Mk}}\]
+故可见当$v_{\text{左}}=v_{\text{右}}$时，$v'_{\text{左}}=v'_{\text{右}}=\frac{F}{\sqrt{2Mk}}$。由机械能守恒可进一步得到
+\[0+\frac{1}{2}M(v_{\text{右}})^2=\frac{1}{2}k(\Delta l)^2+\frac{1}{2}M(v'_{\text{左}})^2+\frac{1}{2}M(v'_{\text{右}})^2\]
+解得$\Delta l=\pm\sqrt{\frac{M\left(\frac{F^2}{Mk}-2\times\frac{F^2}{4Mk}\right)}{k}}=\pm\frac{\sqrt{2}}{2}\frac{F}{k}$，即伸长或压缩$\frac{\sqrt{2}}{2}\frac{F}{k}$。
+
+\exercise{22} 
+
+\solve 记$x$为链条右端的位移，$l$为桌边链条的长度。据功的定义，有$\di{A}=F\cdot\di{x}=F\di{x}$；而当链条被匀速拉起，可知
+\[F=G=M'g=\frac{l}{L}Mg\]
+由几何意义，$\di{x}=-\di{l}$，故得
+\[
+A=\int_{\frac{L}{3}}^{0} -\frac{l}{L}Mg\di{l}
+=\frac{Mg}{2L}l^2\left.\right|_{0}^{\frac{L}{3}}
+=\frac{MgL}{18}
+\]
+如果有摩擦力$f$，则只需计算新的力
+\[
+F'=G+f=\frac{l}{L}Mg+\mu\left(\frac{L-l}{L}Mg\right)=\frac{Mg}{L}[\mu L+(1-\mu)l]
+\]
+进而就有
 \begin{align*}
-dA	&=F\cdot\di{x}\\
-&=F\di{x}
-\end{align*}
-链条被匀速拉起，可知$F=G$
-\begin{align*}
-F	&=G=M'g\\
-&=\frac{l}{L}Mg
-\end{align*}
-由几何意义，$\di{x}=-\di{l}$
-\begin{align*}
-\therefore A&=\int_{\frac{L}{3}}^{0} -\frac{l}{L}Mg\di{l}\\
-&=\frac{Mg}{2L}l^2\left.\right|_{0}^{\frac{L}{3}}\\
-&=\frac{MgL}{18}
-\end{align*}
-如果有摩擦力f，则
-\begin{align*}
-\di{A}	&=F'\di{x}\\
-F'		&=G+f=\frac{l}{L}Mg+\mu\left(\frac{L-l}{L}Mg\right)\\
-&=\frac{Mg}{L}[\mu L+(1-\mu)l]\\
-\therefore A&=\int_{\frac{L}{3}}^{0} -\frac{Mg}{L}[\mu L+(1-\mu)l] \di{l}\\
-&=\frac{Mg}{L}\left(\mu Ll+\frac{1-\mu}{2}l^2\right)\left.\right|_{0}^{\frac{L}{3}}\\
-&=\frac{Mg}{L}\left(\frac{\mu}{3}L^2+\frac{1-\mu}{18}L^2\right)\\
-&=MgL\frac{5\mu +1}{18}
+A&=\int_{\frac{L}{3}}^{0} -\frac{Mg}{L}[\mu L+(1-\mu)l] \di{l}=\frac{Mg}{L}\left.\left(\mu Ll+\frac{1-\mu}{2}l^2\right)\right|_{0}^{L/3}\\
+&=\frac{Mg}{L}\left(\frac{\mu}{3}L^2+\frac{1-\mu}{18}L^2\right)=MgL\frac{5\mu +1}{18}
 \end{align*}
 
 \exercise{23}
 
-{\centering\includegraphics[height=100pt]{Chp2_illus2.png}}\\
-图2
+\solve 首先，由图\ref{fig:t23-1}，对小球应用牛顿第二定律：
 
-由图2，对小球应用牛顿第二定律：
-\[m\frac{v^2}{R}=mg\cos\theta-N\]
-{\centering\includegraphics[height=100pt]{Chp2_illus3.png}}\\
-图3\\
+\begin{figure}[htbp]
+\centering
+\includegraphics[height=100pt]{Chp2_illus2.png}
+\caption{练习23示意图1}\label{fig:t23-1}
+\end{figure}
 
-由受力分析知，圆环竖直方向受力F为：
-\begin{gather*}
+\[m\dfrac{v^2}{R}=mg\cos\theta-N\]
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[height=100pt]{Chp2_illus3.png}
+\caption{练习23示意图2}\label{fig:t23-2}
+\end{figure}
+
+由受力分析知，圆环竖直方向受力$F$为
+\[
 F=(N'+N')\cos\theta=2N\cos\theta
-\text{当}\theta\in[0,\frac{\pi}{2}]\text{时},\cos\theta>0\\
-\therefore\text{当}N<0\text{时},F\text{向上，圆环上升}\\
-\therefore N=mg\cos\theta-m\frac{v^2}{R}<0\\
-\text{由机械能守恒（见图4）：}\frac{1}{2}mv^2=mgh=mg(1-\cos\theta)R\\
-\end{gather*}
-{\centering\includegraphics[height=100pt]{Chp2_illus4.png}}\\
-图4
-\begin{gather*}
-\text{代入，}\therefore mg\cos\theta-2mg(1-\cos\theta)<0\\
-\therefore 3\cos\theta<2,\quad \theta>\arccos\frac{2}{3}\\
-\text{即当}\theta>\arccos\frac{2}{3}\text{时，圆环会上升}
-\end{gather*}
+\]
+当$\theta\in[0,\frac{\pi}{2}]$时，$\cos\theta>0$，故当$N<0$时，$F$向上，圆环上升。从而有
+\[N=mg\cos\theta-m\frac{v^2}{R}<0\]
+由机械能守恒（见图\ref{fig:t23-3}）得
+\[\frac{1}{2}mv^2=mgh=mg(1-\cos\theta)R\]
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[height=100pt]{Chp2_illus4.png}
+\caption{练习23示意图3}\label{fig:t23-3}
+\end{figure}
+
+代入$N<0$的条件便得
+\[mg\cos\theta-2mg(1-\cos\theta)<0\]
+化简得$3\cos\theta<2$，解得$\theta>\arccos\frac{2}{3}$。即当$\theta>\arccos\frac{2}{3}$时，圆环会上升。
 
 \exercise{24}
-\begin{gather*}
-T_1\text{提供}G1+G2\\
-\therefore k_1\Delta l=(m_1+m_2)g\\
-\Delta l=\frac{(m_1+m_2)g}{k_1}\\
-\text{由机械能守恒：}\\
--mgx+\frac{1}{2}k_1(\Delta l+x)^2+\frac{1}{2}m_1v^2=0+\frac{1}{2}k_1(\Delta l)^2+0
-\end{gather*}
-\begin{align*}
-\therefore v&=\sqrt{\frac{-kx^2-2(k_1\Delta l-m_1g)x}{m_1}}\\
-&=\sqrt{-\frac{k_1}{m_1}x^2-\frac{2m_2g}{m_1}x}
-\end{align*}
-利用二次函数最大值为$\frac{4ac-b^2}{4a}$的性质：
-\begin{align*}
-v_{max}	&=\sqrt{\frac{0-\frac{4m_2^2g^2}{m_1^2}}{4\left(-\frac{k_1}{m_1}\right)}}\\
-&=\sqrt{\frac{m_2^2g^2}{m_1k_1}}=\frac{0.3\times 9.8}{\sqrt{0.5\times 8.9\times 10^4}}\\
-&=0.0139(m/s)
-\end{align*}
+\solve $T_1$提供$G1+G2$，故有$k_1\Delta l=(m_1+m_2)g$，解得
+\[\Delta l=\frac{(m_1+m_2)g}{k_1}\]
+由机械能守恒有：
+\[-mgx+\frac{1}{2}k_1(\Delta l+x)^2+\frac{1}{2}m_1v^2=0+\frac{1}{2}k_1(\Delta l)^2+0\]
+解得
+$v=\sqrt{\frac{-kx^2-2(k_1\Delta l-m_1g)x}{m_1}}=\sqrt{-\frac{k_1}{m_1}x^2-\frac{2m_2g}{m_1}x}$.利用二次函数最大值为$\frac{4ac-b^2}{4a}$的性质即得其最大值
+\[
+v_{\text{max}}=\sqrt{\frac{0-\frac{4m_2^2g^2}{m_1^2}}{4\left(-\frac{k_1}{m_1}\right)}}=\sqrt{\frac{m_2^2g^2}{m_1k_1}}=\frac{0.3\times 9.8}{\sqrt{0.5\times 8.9\times 10^4}}=0.0139(m/s)
+\]
 
 
 
