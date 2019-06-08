@@ -1,17 +1,23 @@
-\documentclass[b5paper,opensource,sourcefont,parskip,color]{qyxf-book}
+\documentclass[b5paper,opensource,sourcefont,parskip]{qyxf-book}
 \usepackage{subcaption}
 \usepackage{draftwatermark}
 \SetWatermarkText{钱院学辅}
 \SetWatermarkLightness{0.92}
 \SetWatermarkScale{0.9}
 
-\title{大物题解}
-\subtitle{Key to Universal Physics}
+% --------------------警告--------------------
+% 由于副标题较长，因此私自在使用的qyxf-book.cls
+% 文件中将副标题的字体尺寸由 \Huge 改为了 \huge，
+% 请其他人编译时注意。
+% --------------------------------------------
+
+\title{大学物理题解（上）}
+\subtitle{Key to University Physics: Part I}
 \author{钱院学辅大物编写小组}
 \typo{钱院学辅排版组}
-\date{\today}
+\date{2019 年 6 月 9 日}
 \version{v1.0}
-\sourcepage{\url{https://github.com/qyxf/Tutorials/}}
+\sourcepage{\url{https://github.com/qyxf/BookHub/}}
 
 
 \newcommand{\di}[1]{\mathrm{d}#1}
@@ -26,17 +32,54 @@
 	\draw [->] (0,#3) -- (0,#4) node[right] {$ y $};
 }
 
+\usepackage{siunitx}%输入角度
 
 \begin{document}
 \maketitle
 
+\pagestyle{plain}
 \chapter*{前言}
-\subsection*{贡献统计}
+大学物理（University Physics）是本校理工科学生在大一、大二年级所要学习的一门自然科学
+基础课程。这门课程课时较多、内容丰富，相关的练习题与考试题则尤显花样繁多，充分考验着每一个
+学生对相关知识的掌握程度与应用能力。从掌握知识的角度来说，多做、精做大物习题是学好这门
+课程的必经之路；从备考、应试的角度来说，若不熟练掌握各类大物习题的思路与解法，而仅依靠课内所
+学到的基本知识点，则不可能在考试中取得令人满意的成绩。因此，熟练掌握本课程相关练习题的
+解题技巧，是非常必要的。
+
+目前，大多数大学物理的课堂均以一套统一印制的活页练习题作为课下作业。这套题目按章布置，
+每章均有选择题、填空题、计算题三个部分，体量适中，覆盖了各章所有较为重要的知识点，并能
+够使同学们充分地将课上所学知识用于实际问题的解决过程中。基于种种原因，这份题目的答案未见
+公开；这能够保证大多数同学独立地完成作业，但不利于大家检查错误、在参考过程中发现自己的
+问题。
+
+为了解决这一问题，自2019年3月以来，钱院学辅组织了一些正在学习本课程的同学，编写了这份
+大学物理题解（目前仅涵盖上半学期的相关内容）。该题解囊括了这一学期布置的所有作业之题解，
+均有较详细的分析与求解过程可供参考。全书始终采用\LaTeX 整理，这使得本题解的排版效果得到
+了充分的保证。我们希望，这份精心制作的题解，能够给正在学习与将要学习这门课程的同学提供
+充分的帮助，使他们能够更好的掌握这项重要的基础课之内容。
+
+本题解由\textbf{钱院学辅大物编写小组}完成，成员包括（按姓名拼音顺序）：钱学森84班费立涵、
+化生81班高旭帆、钱学森84班李浩天。其中，费立涵编写了第二、四、七章及第
+一章计算题部分，李浩天编写了第三、五、八章，高旭帆编写了第六、九章及第一章的选择题与填空
+题部分。钱院学辅学研部的越杰81班唐智忆、自动化钱71班吴思源与能动少C71班尤佳睿参加了稿件
+的整理、校对、汇总与发布工作。在此，应向这些同学——特别是花费课余时间撰写题解的同学们表示
+感谢。
+
+“不积跬步，无以至千里。”一份可靠的题解，需要经过多次的改进才可望真正铸造出来。虽然这份题解的确可谓“精心制作”，但
+笔误、错漏等在所难免，特别需要各位使用者帮助我们指正。如您在参考的过程中发现有任何错误
+之处，欢迎您通过下面的方式联系我们，帮助我们改进这份题解：
 \begin{itemize}
-	\item 费立涵：第二、四、七章，及第一章计算题
-	\item 高旭帆：第六、九章，及第一章选择题、填空题
-	\item 李浩天：第三、五、八章，及狭义相对论小助手
+	\item GitHub平台论坛（\textbf{推荐，但需要注册}）：\url{https://github.com/qyxf/BookHub/issues}
+	\item 钱院学辅邮箱：\texttt{qianxiaofu.mail@qq.com}
+	\item 钱院学辅QQ号：206713407
 \end{itemize}
+
+作为钱院学辅出品的第一份“重量级”作品，希望它能够带给每一位同学最好的体验！
+
+\begin{flushright}
+钱院学辅大物编写小组\\
+2019 年 6 月 9 日
+\end{flushright}
 
 \cleardoublepage
 
@@ -243,7 +286,7 @@ $v_x$不变，故
 \[t=5+\sqrt{35}(5-\sqrt{35}<0,\text{舍去})\]
 综上可知，时刻为$5-\sqrt{15}$\ s,$5+\sqrt{15}$\ s或$5+\sqrt{35}$\ s。\\
 (3) 令$v=0$，有$t=5$s，故可见对t\in[0,5]，有$s=x=-t^2+10t$；而对$t\in[5,+\infty)$，有
-\[s=s(5)+[s(5)-x]=25\\+[25-(-t^2+10t)]=t^2-10t+50\]
+\[s=s(5)+[s(5)-x]=25+[25-(-t^2+10t)]=t^2-10t+50\]
 综上得$s=
 \begin{cases}
 -t^2+10t,&t\in[0,5)\\
@@ -304,7 +347,7 @@ E_p &=\frac{1}{2}m_1v_1^2+\frac{1}{2}m_2v_2^2\\
 
 \solve 弹簧上任意一点弹力相同，记为N。截去一半后，伸长量缩短了一半，而弹力不变，因此k变为原来的两倍。并联在一起后，每一根弹簧受力为原先的一半。由$F=kA$，伸长量为原来的$\frac{1}{4}$。写成数学式子如下：
 \[
-E_k=2\times\left(\frac{1}{2}k'A'^2\right)\\=\left(2k\right)\times\left(\frac{1}{4}A\right)^2\\=\frac{1}{8}kA^2
+E_k=2\times\left(\frac{1}{2}k'A'^2\right)=\left(2k\right)\times\left(\frac{1}{4}A\right)^2=\frac{1}{8}kA^2
 \]
 
 \exercise{7}D
@@ -459,6 +502,7 @@ A&=\int_{\frac{L}{3}}^{0} -\frac{Mg}{L}[\mu L+(1-\mu)l] \di{l}=\frac{Mg}{L}\left
 \exercise{23}
 
 \solve 首先，由图\ref{fig:t23-1}，对小球应用牛顿第二定律：
+\[m\dfrac{v^2}{R}=mg\cos\theta-N\]
 
 \begin{figure}[htbp]
 \centering
@@ -466,7 +510,10 @@ A&=\int_{\frac{L}{3}}^{0} -\frac{Mg}{L}[\mu L+(1-\mu)l] \di{l}=\frac{Mg}{L}\left
 \caption{练习23示意图1}\label{fig:t23-1}
 \end{figure}
 
-\[m\dfrac{v^2}{R}=mg\cos\theta-N\]
+由受力分析（参见图\ref{fig:t23-2}）知，圆环竖直方向受力$F$为
+\[
+F=(N'+N')\cos\theta=2N\cos\theta
+\]
 
 \begin{figure}[htbp]
 \centering
@@ -474,10 +521,6 @@ A&=\int_{\frac{L}{3}}^{0} -\frac{Mg}{L}[\mu L+(1-\mu)l] \di{l}=\frac{Mg}{L}\left
 \caption{练习23示意图2}\label{fig:t23-2}
 \end{figure}
 
-由受力分析知，圆环竖直方向受力$F$为
-\[
-F=(N'+N')\cos\theta=2N\cos\theta
-\]
 当$\theta\in[0,\frac{\pi}{2}]$时，$\cos\theta>0$，故当$N<0$时，$F$向上，圆环上升。从而有
 \[N=mg\cos\theta-m\frac{v^2}{R}<0\]
 由机械能守恒（见图\ref{fig:t23-3}）得
@@ -656,7 +699,7 @@ E_k=\frac{1}{2}\cdot 3mv^2=\frac{1}{6}m(2v_B-v_A)^2.
 
 \solve $(1)$由动量定理
 \begin{equation*}
-I=\Delta(mv)=m(v_2-v_1)=1.0\times(10+25)=35kg\cdot m/s
+I=\Delta(mv)=m(v_2-v_1)=1.0\times(10+25)=35\mathrm{kg\cdot m/s}
 \end{equation*}
 方向竖直向上。
 
@@ -664,11 +707,11 @@ $(2)$设球对地面的平均冲力为$F$，地面对球的平均冲力为$F_0$�
 
 对小球撞击地面的过程分析：因为$\overline{F_0}>>G$，所以可以忽略重力。由平均力计算公式得
 \begin{equation*}
-\overline{F_0}=\frac{I}{t}=\frac{35}{0.02}N=1750N
+\overline{F_0}=\frac{I}{t}=\frac{35}{0.02}\mathrm{N}=1750\mathrm{N}
 \end{equation*}
 再由牛顿第三定律可得
 \begin{equation*}
-\overline{F}=\overline{F_0}=1750N
+\overline{F}=\overline{F_0}=1750\mathrm{N}
 \end{equation*}
 方向竖直向下。
 
@@ -816,12 +859,11 @@ $(\ref{eq:c3-t24-1})(\ref{eq:c3-t24-2})$两式联立消去$\di m$，再求积分
 \caption{练习5示意图}\label{fig:c4-t5}
 \end{figure}
 
+按转动惯量之定义作积分，可得：
 \begin{align*}
-J&=2\iint\limits_{\sigma_1}\left(m\frac{\di{\sigma}}{\frac{\sqrt{3}}{4}a^2}\right)x^2\\
-&=\frac{8m}{\sqrt{3}a^2}\int_0^{\frac{\sqrt{3}}{2}a}\di{x}\int_0^{\frac{1}{2}a-\frac{\sqrt{3}}{3}x}x^2\di{y}\\
-&=\frac{8m}{\sqrt{3}a^2}\int_0^{\frac{\sqrt{3}}{2}a}\di{x}\left(\frac{1}{2}ax^2-\frac{\sqrt{3}}{3}x^3\right)\\
-&=\frac{8m}{\sqrt{3}a^2}\left.\left(\frac{1}{6}ax^3-\frac{\sqrt{3}}{12}x^4\right)\right|_0^{\frac{\sqrt{3}}{2}a}\\
-&=\frac{8m}{\sqrt{3}a^2}\left(\frac{\sqrt{3}}{16}a^4-\frac{3\sqrt{3}}{64}a^4\right)\\
+J&=2J_1=2\iint\limits_{\sigma_1}x^2\cdot\di{m}=2\iint\limits_{\sigma_1}x^2\cdot\left(m\frac{\di{\sigma}}{\frac{\sqrt{3}}{4}a^2}\right)\\
+&=\frac{8m}{\sqrt{3}a^2}\int_0^{\frac{\sqrt{3}}{2}a}\di{x}\int_0^{\frac{1}{2}a-\frac{\sqrt{3}}{3}x}x^2\di{y}=\frac{8m}{\sqrt{3}a^2}\int_0^{\frac{\sqrt{3}}{2}a}\di{x}\left(\frac{1}{2}ax^2-\frac{\sqrt{3}}{3}x^3\right)\\
+&=\frac{8m}{\sqrt{3}a^2}\left.\left(\frac{1}{6}ax^3-\frac{\sqrt{3}}{12}x^4\right)\right|_0^{\frac{\sqrt{3}}{2}a}=\frac{8m}{\sqrt{3}a^2}\left(\frac{\sqrt{3}}{16}a^4-\frac{3\sqrt{3}}{64}a^4\right)\\
 &=\frac{8m}{\sqrt{3}a^2}\frac{\sqrt{3}}{64}a^4=\frac{1}{8}ma^2
 \end{align*}
 
@@ -857,10 +899,10 @@ J&=2\iint\limits_{\sigma_1}\left(m\frac{\di{\sigma}}{\frac{\sqrt{3}}{4}a^2}\righ
 
 \solve 参考图\ref{fig:c4-t8}，微元$ \di{\sigma} $到轴（就是到原点）的距离为$ \sqrt{x^2+y^2} $。由于积分域关于$ x $轴对称，被积函数关于$ y $为偶函数，因此$ J=2J_1 $，$ J_1 $为第一象限部分的转动惯量。则
 \begin{align*}
-J&=2\iint\limits_{\sigma_1}\left(m\frac{\di{\sigma}}{\frac{\sqrt{3}}{4}a^2}\right)(x^2+y^2)\\
+J&=2J_1=2\iint\limits_{\sigma_1}\left(m\frac{\di{\sigma}}{\frac{\sqrt{3}}{4}a^2}\right)(x^2+y^2)\\
 &=\frac{8m}{\sqrt{3}a^2}\int_0^{\frac{\sqrt{3}}{2}a}\di{x}\int_0^{\frac{\sqrt{3}}{3}x}(x^2+y^2)\di{y}
 \end{align*}
-进一步计算可得$ J=\frac{5}{12}ma^2 $.
+进一步计算\footnote{可参考本章练习5中类似积分式的计算过程。}可得$ J=\frac{5}{12}ma^2 $.
 
 \exercise{9}A
 
@@ -873,14 +915,16 @@ J&=2\iint\limits_{\sigma_1}\left(m\frac{\di{\sigma}}{\frac{\sqrt{3}}{4}a^2}\righ
 \section{填空题}
 \exercise{11}$\frac{3M}{ma} \hspace{2em} \frac{18M^2}{m^2a^3}t^2$
 
-\solve 本题中转动方向固定，用标量形式计算即可。
+\solve 本题中转动方向固定，用标量形式计算即可。首先有
+\[\beta=\frac{M}{J}=\frac{6M}{ma^2}\]
+开始时$\omega=0$，故对$\beta$积分即可依次得到
 \begin{gather*}
-\beta=\frac{M}{J}=\frac{6M}{ma^2}\\
-\text{开始时}\omega=0,\quad\therefore \omega=\frac{6M}{ma^2}t\\
-v=\omega r=\frac{6M}{ma^2}t\times\frac{a}{2}=\frac{3M}{ma}t\\
+\omega=\frac{6M}{ma^2}t\\
+v=\omega r=\frac{6M}{ma^2}t\times\frac{a}{2}=\frac{3M}{ma}t
 \alpha_{\tau}=\dy{v}{t}=\frac{3M}{ma}\\
 \alpha_n=\frac{v^2}{r}=\frac{\left(\frac{3M}{ma}t\right)^2}{\frac{a}{2}}=\frac{18M^2}{m^2a^3}t^2
 \end{gather*}
+
 
 \exercise{12}$\frac{1}{12}mR^2\omega_0^2$
 
@@ -890,23 +934,16 @@ v=\omega r=\frac{6M}{ma^2}t\times\frac{a}{2}=\frac{3M}{ma}t\\
 
 圆柱做纯滚动的瞬间，即$ v_c=\omega R $。因此求得$ v_c $和$ \omega $对时间的函数，解出$ t $即可。
 
-对圆柱使用牛顿第二定律$F=ma$和转动定律$M=J\beta$：
-\begin{gather*}
-a_c=\frac{f}{m}=\mu g\quad\therefore v_c=0+\mu gt=\mu gt\\
-\beta=\frac{M}{J}=\frac{-\mu mgR}{\frac{1}{2}mR^2}=-\frac{2\mu g}{R}\\
-\therefore \omega=\omega_0+\beta t=\omega_0-\frac{2\mu g}{R}t\\
-\text{代入纯滚关系式：}\mu gt=\omega_0R-2\mu gt\\
-\therefore t=\frac{\omega_0R}{3\mu g}\\
-\text{此时}v_c=\mu g\frac{\omega_0R}{3\mu g}=\frac{\omega_0R}{3}\\
-\hspace{2em}\omega=\omega_0-\frac{2\mu g}{R}\frac{\omega_0R}{3\mu g}=\frac{\omega_0}{3}
-\end{gather*}
-
-由柯尼希定理：
-\begin{align*}
-E_{\text{总}}&=\frac{1}{2}mv_c^2+\frac{1}{2}J\omega^2\\
-&=\frac{1}{2}m\left(\frac{\omega_0R}{3}\right)^2+\frac{1}{2}\left(\frac{1}{2}mR^2\right)\left(\frac{\omega_0}{3}\right)^2\\
-&=\frac{1}{12}mR^2\omega_0^2
-\end{align*}
+对圆柱使用牛顿第二定律$F=ma$和转动定律$M=J\beta$，可得
+\[\begin{cases}
+a_c=\dfrac{f}{m}=\mu g&\Rightarrow v_c=0+\mu gt=\mu gt\\[0.5cm]
+\beta=\dfrac{M}{J}=\dfrac{-\mu mgR}{\dfrac{1}{2}mR^2}=-\dfrac{2\mu g}{R}&\Rightarrow\omega=\omega_0+\beta t=\omega_0-\dfrac{2\mu g}{R}t
+\end{cases}\]
+代入纯滚关系式，有
+\[\mu gt=\omega_0R-2\mu gt\]
+解得$t=\frac{\omega_0R}{3\mu g}$，此时
+$v_c=\mu g\frac{\omega_0R}{3\mu g}=\frac{\omega_0R}{3}$，$\omega=\omega_0-\frac{2\mu g}{R}\frac{\omega_0R}{3\mu g}=\frac{\omega_0}{3}$。由柯尼希定理，可算得
+\[E_{\text{总}}=\frac{1}{2}mv_c^2+\frac{1}{2}J\omega^2=\frac{1}{2}m\left(\frac{\omega_0R}{3}\right)^2+\frac{1}{2}\left(\frac{1}{2}mR^2\right)\left(\frac{\omega_0}{3}\right)^2=\frac{1}{12}mR^2\omega_0^2\]
 
 \exercise{14}$\frac{1}{8}Mg$
 
@@ -958,26 +995,24 @@ l\sin 30^\circ mv_0+J\omega_1=(J+ml^2)\omega\\
 
 由垂直轴定理，$ J=2J_1=2J_2 $，因此$ J_1=J_2 $。
 
-\exercise{18}75rad/s
+\exercise{18}75 rad/s
 
 \solve 物块受到重力，支持力（相互抵消），绳的拉力。由于绳的向径与拉力的方向在同一条直线上，因此小物块所受合外力矩为0，角动量守恒。则：
-\begin{gather*}
-(mR_1^2)\omega_0=(mR_2^2)\omega\\
-\therefore \omega=\frac{R_1^2}{R_2^2}\omega_0=\frac{0.5^2}{0.1^2}\times 3=75(rad/s)
-\end{gather*}
+\[(mR_1^2)\omega_0=(mR_2^2)\omega\]
+解得$\omega=\frac{R_1^2}{R_2^2}\omega_0=\frac{0.5^2}{0.1^2}\times 3=75\ (\mathrm{rad/s})$。
 
 \exercise{19}0
 
-\solve 棒球沿直线飞行，则速度$ \vec{v} $的方向沿该直线，向径$ \vec{r} $的方向也沿该直线，因此角动量$ L=\vec{r}\times m\vec{v}=0 $
+\solve 棒球沿直线飞行，则速度$ \vec{v} $的方向沿该直线，向径$ \vec{r} $的方向也沿该直线，因此角动量$ L=\vec{r}\times m\vec{v}=0 $。
 
 \exercise{20}$2\sqrt{\frac{g\sin\theta}{3l}}$
 
-\solve 由机械能守恒：
+\solve 由机械能守恒，可列出
 \begin{gather*}
 \hspace{1pt}2mg\left(\frac{l}{2}\sin\theta\right)+mg\left(-\frac{l}{2}\sin\theta\right)+0+0\\
-=0+0+\frac{1}{2}\left(2m\left(\frac{l}{2}\right)^2\right)\omega^2+\frac{1}{2}\left(m\left(\frac{l}{2}\right)^2\right)\omega^2\\
-\therefore \omega=2\sqrt{\frac{g\sin\theta}{3l}}
+=0+0+\frac{1}{2}\left(2m\left(\frac{l}{2}\right)^2\right)\omega^2+\frac{1}{2}\left(m\left(\frac{l}{2}\right)^2\right)\omega^2
 \end{gather*}
+解得$\omega=2\sqrt{\frac{g\sin\theta}{3l}}$。
 
 \section{计算题}
 
@@ -1005,7 +1040,7 @@ mg-T_1=ma\label{eq:c4-t22-1}\\
 (T_1-T_2)R=\frac{1}{4}mR^2\alpha\label{eq:c4-t22-2}\\
 T_2-\frac{1}{2}mg=\frac{1}{2}ma\label{eq:c4-t22-3}
 \end{gather}
-由$(\ref{eq:c4-t22-1})+\frac{(\ref{eq:c4-t22-2})}{R}+(\ref{eq:c4-t22-3})$得：
+按$(\ref{eq:c4-t22-1})+\frac{(\ref{eq:c4-t22-2})}{R}+(\ref{eq:c4-t22-3})$合并三个等式，得
 \begin{align*}
 \frac{1}{2}mg&=\frac{3}{2}ma+\frac{1}{4}ma=\frac{7}{4}ma
 \end{align*}
@@ -1025,8 +1060,8 @@ T_2-\frac{1}{2}mg=\frac{1}{2}ma\label{eq:c4-t22-3}
 \[x=\frac{gt^2}{2+\frac{M}{m}}\]
 代入$t=4$s，便得到
 \begin{gather*}
-\Delta x=x\left.\right|_{t=4}=\frac{16g}{2+\frac{15}{5}}=\frac{16}{5}g=31.36(m)\\
-\Delta\theta=\left.\theta\right|_{t=4}=\frac{x}{R}=\frac{16g}{5\times 0.4}=8g=78.4(rad)
+\Delta x=x\left.\right|_{t=4}=\frac{16g}{2+\frac{15}{5}}=\frac{16}{5}g=31.36(\mathrm{m})\\
+\Delta\theta=\left.\theta\right|_{t=4}=\frac{x}{R}=\frac{16g}{5\times 0.4}=8g=78.4(\mathrm{rad})
 \end{gather*}
 
 \exercise{24}$\frac{3m_2^2(v_1+v_2)^2}{m_1^2l\mu g}$
@@ -1140,7 +1175,7 @@ $\analysis$（1）地面系中看，两信号发出间隔过程飞船走了$0.8c
 
 （2）地面系中发射信号为同地时间，满足钟缓条件，所以在飞船系中观测到两信号发射的时间间隔为
 \begin{equation*}
-\Delta t=\frac{\Delta t_0}{\sqrt{1-(\frac{v}{c})^2}}=\frac{3s}{\sqrt{1-0.8^2}}=5s
+\Delta t=\frac{\Delta t_0}{\sqrt{1-(\frac{v}{c})^2}}=\frac{3s}{\sqrt{1-0.8^2}}=5\mathrm{s}
 \end{equation*}
 
 \exercise{19} $\frac{1-\alpha\beta^2}{\sqrt{1-\beta^2}}L$
@@ -1168,12 +1203,12 @@ L_S=L\sqrt{1-(\frac{u}{c})^2}
 l=\frac{L_S}{v_S+u}\cdot v_S=\frac{1-\alpha\beta^2}{\sqrt{1-\beta^2}}L
 \end{equation*}
 
-\exercise{20}$\tau=1.0\times10^{-5}s$
+\exercise{20}$\tau=1.0\times10^{-5}$ s
 
 \solve
 满足钟缓条件，故
 \begin{equation*}
-\tau=\frac{\tau_0}{\sqrt{1-(\frac{v}{c})^2}}=\frac{2.0\times10^{-6}s}{\sqrt{1-0.98^2}}=1.0\times10^{-5}.
+\tau=\frac{\tau_0}{\sqrt{1-(\frac{v}{c})^2}}=\frac{2.0\times10^{-6}s}{\sqrt{1-0.98^2}}=1.0\times10^{-5}\ \mathrm{s}.
 \end{equation*}
 
 
@@ -1204,7 +1239,7 @@ P^2c^2=M^2c^4-M_0^2c^4
 
 联立解得$v_p=0.106c,v_\pi=0.584c$
 
-所以可得$E_{kp}=5.35MeV,E_{k\pi}=32.35MeV$.
+所以可得$E_{kp}=5.35\ \mathrm{MeV},E_{k\pi}=32.35\ \mathrm{MeV}$.
 
 \exercise{22}
 
@@ -1262,7 +1297,7 @@ v=\frac{2(1+3\sqrt{3})}{13}c
 \end{equation*}
 又由于$l=v\tau$，联立上式可得$v=\sqrt{\frac{225}{901}c}=0.5c$.
 
-\chapter{静电场1}
+\chapter{静电场（一）}
 \section{选择题}
 
 \exercise{1}C
@@ -1327,7 +1362,7 @@ v=\frac{2(1+3\sqrt{3})}{13}c
 \exercise{7}D
 
 \solve
-简单定积分。以棒上远离场点的一端点为原点，指向场点的方向为x轴正方向。
+简单定积分。以棒上远离场点的一端点为原点，指向场点的方向为$x$轴正方向。
 \begin{align*}
 	E&=\int_{0}^{L}\dfrac{1}{4\pi \varepsilon_0}\dfrac{\lambda\di{x}}{{(r+\frac{L}{2}-x)}^2}\\
 	&=\dfrac{Q}{4\pi \varepsilon_0 L}\cdot \dfrac{1}{{r+\frac{L}{2}-x}}\bigg|_0^L\\
@@ -1342,11 +1377,11 @@ v=\frac{2(1+3\sqrt{3})}{13}c
 \exercise{9}D
 
 \solve
-题中所谓的“点”是一个固定的点，只不过刚开始在气球外，最后在气球内。如图1。注意气球是有厚度的！
+题中所谓的“点”是一个固定的点，只不过刚开始在气球外，最后在气球内。如图\ref{fig:c6-t9}。注意气球是有厚度的！
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=\textwidth]{Chp6_illus1.ai}
-	\caption{练习9\quad 气球膨胀}
+	\caption{练习9 气球膨胀}\label{fig:c6-t9}
 \end{figure}
 点在气球外时，球外场强不变；点在球壳中时，高斯面包围的电荷减小，场强减小；点在气球内时，场强为0。
 
@@ -1393,19 +1428,19 @@ E=-\dfrac{2VR}{3r^2}
 \exercise{12}$\dfrac{\lambda_1\lambda_2}{2\pi \varepsilon_0}\ln\dfrac{a+l}{a}$\quad 沿有限长带电线指向无限长带电线（或在纸面上向左）
 
 \solve
-以两直线交点为原点（或有限长带电线左端点），远离无限长直线为x轴正方向，沿有限长带电线建立坐标系。
+以两直线交点为原点（或有限长带电线左端点），远离无限长直线为$x$轴正方向，沿有限长带电线建立坐标系。
 
 由无限长带电直线场强公式得：
 \begin{align*}
 	F&=\int_{a}^{a+l}\dfrac{\lambda_1}{2\pi \varepsilon_0 x}\lambda_2\di{x}\\
 	&=\dfrac{\lambda_1\lambda_2}{2\pi \varepsilon_0}\ln\dfrac{a+l}{a}
 \end{align*}
-两线均带正电，故有限长带电线受力方向为x轴正向。注意题目问的是无限长带电线的受力，而且答题时不要引入“x轴”。
+两线均带正电，故有限长带电线受力方向为$x$轴正向。注意题目问的是无限长带电线的受力，而且答题时不要引入“$x$轴”。
 
 \exercise{13}$-\dfrac{\sigma a^2}{2\varepsilon_0}$\quad$\dfrac{\sigma a^2}{2\varepsilon_0}$\quad 0
 
 \solve
-情景参见练习3、练习5。注意此处考虑曲面的外侧为正向，内侧为负。
+情景参见本章练习3、练习5。注意此处考虑曲面的外侧为正向，内侧为负。
 
 \exercise{14}0\quad $\dfrac{(Q+4a\lambda)}{\varepsilon_0}$
 
@@ -1415,11 +1450,11 @@ E=-\dfrac{2VR}{3r^2}
 \exercise{15}$\dfrac{\sqrt{2}a}{2}$
 
 \solve
-如图2，设$q_0$与$A$的连线和$AB$的夹角为$\theta$。由对称性，合力方向与$AB$平行。
+如图\ref{fig:c6-t15}，设$q_0$与$A$的连线和$AB$的夹角为$\theta$。由对称性，合力方向与$AB$平行。
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{Chp6_illus2.ai}
-	\caption{练习15\quad 受力分析}
+	\caption{练习15 受力分析}\label{fig:c6-t15}
 \end{figure}
 \begin{align*}
 	E&=2\cdot \dfrac{1}{4\pi\varepsilon_0}\dfrac{qq_0}{r^2+a^2}\cos\theta\\
@@ -1440,16 +1475,16 @@ E=-\dfrac{2VR}{3r^2}
 \solve
 均匀带电球面在其表面处产生的电场强度为
 \[
-E=\dfrac{\sigma\cdot 4\pi R^2}{4\pi\varepsilon_0R^2}=\dfrac{\sigma}{\varepsilon_0}\\
+E=\dfrac{\sigma\cdot 4\pi R^2}{4\pi\varepsilon_0R^2}=\dfrac{\sigma}{\varepsilon_0}
 \]
 但该电场也是由所取的面元和剩余部分共同贡献而成（同练习1），故作如下分析：
 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{Chp6_illus3.ai}
-	\caption{练习16\quad 场强分布}
+	\caption{练习16 场强分布}\label{fig:c6-t16}
 \end{figure}
-如图3，红色部分为$\Delta S$，我们分球壳内外来研究。剩余部分球壳在$\Delta S$内、外侧（无限接近$\Delta S$且对称的）两点P、Q处产生的场强均可看作是$E_0$，而$\Delta S$在P、Q处产生的场强$E_1=E_2$。那么由题意知：
+如图\ref{fig:c6-t16}，红色部分为$\Delta S$，我们分球壳内外来研究。剩余部分球壳在$\Delta S$内、外侧（无限接近$\Delta S$且对称的）两点P、Q处产生的场强均可看作是$E_0$，而$\Delta S$在P、Q处产生的场强$E_1=E_2$。那么由题意知：
 \begin{gather*}
 	\text{(P点)}E_0-E_1=0\\
 	\text{(Q点)}E_0+E_1=E\\
@@ -1474,7 +1509,7 @@ E_0=E_1=\dfrac{1}{2}E=\dfrac{\sigma}{2\varepsilon_0}
 \[
 \di{E_x}=\di{E}\cdot (-\cos\theta),\di{E_y}=\di{E}\cdot (-\sin\theta)
 \]
-积分\footnote{此后因对称性而场强为零的情景不再积分计算}得：
+积分\footnote{此后因对称性而场强为零的情景，不再积分计算。}得：
 \begin{gather*}
 	E_x=\dfrac{\lambda}{4\pi \varepsilon_0 R}\int_0^{\pi} -\cos\theta\di{\theta}=0\\
 	E_y=\dfrac{\lambda}{4\pi \varepsilon_0 R}\int_0^{\pi} -\sin\theta\di{\theta}=-\dfrac{\lambda}{2\pi\varepsilon_0R}
@@ -1516,11 +1551,11 @@ E=\dfrac{\lambda d}{4\pi\varepsilon_0{(\frac{a}{2})}^2}=\dfrac{\lambda d}{\pi\va
 \exercise{21}
 
 \solve
-以O为极点，建立如图3所示的坐标系。极轴穿过圆弧的终点。
+以O为极点，建立如图\ref{fig:c6-t21}所示的坐标系。极轴穿过圆弧的终点。
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{Chp6_illus4.ai}
-	\caption{练习21\quad 坐标系}
+	\caption{练习21 坐标系}\label{fig:c6-t21}
 \end{figure}
 把柱面分成无限根无限长直导线（沿母线方向），设无限长导线长度为$l$,则其线密度$\lambda=\dfrac{\di{q}}{l}=\dfrac{\di{(\sigma l\cdot R\theta)}}{l}=\sigma R\di{\theta}$，故有
 \[\di{E}=\dfrac{\lambda}{2\pi\varepsilon_0R}=\dfrac{\sigma}{2\pi\varepsilon_0}\di{\theta}\]
@@ -1529,12 +1564,12 @@ E=\dfrac{\lambda d}{4\pi\varepsilon_0{(\frac{a}{2})}^2}=\dfrac{\lambda d}{\pi\va
 	E_x=\dfrac{\sigma}{2\pi\varepsilon_0}\int_{-\frac{\theta}{2}}^{\frac{\theta}{2}}-\cos\theta\di{\theta}=-\dfrac{\sigma\sin\frac{\theta}{2}}{\pi\varepsilon_0}\\
 	E_y=\dfrac{\sigma}{2\pi\varepsilon_0}\int_{-\frac{\theta}{2}}^{\frac{\theta}{2}}-\sin\theta\di{\theta}=0
 \end{gather*}
-故所求场强大小为$\dfrac{\sigma\sin\frac{\theta}{2}}{\pi\varepsilon_0}$
+故所求场强大小为$\dfrac{\sigma\sin\frac{\theta}{2}}{\pi\varepsilon_0}$。
 
 \exercise{22}
 
 \solve
-由对称性，场强方向沿x轴。取面积微元（见练习2），则：
+由对称性，场强方向沿$x$轴。取面积微元（见练习2），则：
 \begin{align*}
 	E=&\int_0^R\dfrac{1}{4\pi\varepsilon_0}\cdot\dfrac{\frac{\sigma_0r}{R}\cdot 2\pi r\di{r}}{r^2+x^2}\cdot\dfrac{x}{\sqrt{r^2+x^2}}\\
 	&=\dfrac{\sigma_0x}{2\varepsilon_0R}\int_0^R\dfrac{r^2\di{r}}{{(r^2+x^2)}^\frac{3}{2}}\\
@@ -1565,7 +1600,7 @@ E=\dfrac{\lambda d}{4\pi\varepsilon_0{(\frac{a}{2})}^2}=\dfrac{\lambda d}{\pi\va
 \exercise{24}
 
 \solve
-由对称性，场强方向沿$z$轴。以垂直于$z$轴的平面去截球壳得到小圆，取该圆为长、$R\di{\theta}$为宽的面元可得（注意代入$\sigma_0$）：
+由对称性，场强方向沿$z$轴。以垂直于$z$轴的平面去截球壳得到小圆，取以该圆周长$2\pi R\sin\theta$为长、$R\di{\theta}$为宽的面元，可得（注意代入$\sigma_0$）：
 \begin{align*}
 	\di{E}&=\dfrac{\sigma_0\cdot 2\pi R\sin \theta R\di{\theta}}{4\pi \varepsilon_0 R^2}\\
 	&=\dfrac{\sigma}{2\varepsilon_0}\sin\theta\cos\theta\di{\theta}\\
@@ -1573,9 +1608,9 @@ E=\dfrac{\lambda d}{4\pi\varepsilon_0{(\frac{a}{2})}^2}=\dfrac{\lambda d}{\pi\va
 	&=-\dfrac{\sigma_0}{2\varepsilon_0}\int_0^{\frac{\pi}{2}}\sin\theta\cos^2\theta\di{\theta}\\
 	&=-\dfrac{\sigma_0}{6\varepsilon_0}
 \end{align*}
-因此所求电场强度为$\dfrac{\sigma_0}{6\varepsilon_0}$，方向沿z轴负方向。
+因此所求电场强度为$\dfrac{\sigma_0}{6\varepsilon_0}$，方向沿$z$轴负方向。
 
-\chapter{静电场2}  % 使用章节\chapter{}来做一级标题
+\chapter{静电场（二）}  % 使用章节\chapter{}来做一级标题
 \section{选择题}  % 选择题、填空题和解答题使用\section{}
 
 \exercise{1}B  % 题号使用这个命令，会自动生成标记，注记后写主要答案
@@ -1678,7 +1713,7 @@ u&=\int_{\alpha=0}^{\alpha=\pi} \di{u}\\
 &=\frac{\lambda_0}{2\pi\epsilon_0}
 \end{align*}
 
-或由于微元到$O$点距离相同，直接用$Q$作为总电量写为$\frac{Q}{4\pi\epsilon_0 R}$即可
+或由于微元到$O$点距离相同，直接用$Q$作为总电量写为$\frac{Q}{4\pi\epsilon_0 R}$即可。
 
 当取无穷远处为电势零点时，$ u $表示将单位点电荷移动到无穷远处的过程中，电场力做的功，因此此处需要取负号，并乘$q$即可。
 
@@ -1727,7 +1762,7 @@ E=\left\{
 而电势差则需要积分，积分路径为：A-OA连线与外球壳交点-沿外球壳移动到OB与外球壳交点-沿OB到B。球壳为等势面，因此在球壳上移动电场力做功为0。则电势差：
 \begin{align*}
 \Delta u&=\int_{r_1}^{R_2}E\cdot\di{r}+0+\int_{R_2}^{r_2}E\cdot\di{r}\\
-&=\frac{q}{4\pi\epsilon_0}\left(\frac{1}{r_1}-\frac{1}{R_2}\right)+\frac{q+Q}{4\pi\epsilon_0}\left(\frac{1}{R_2}-\frac{1}{r_2}\right)
+&=\frac{q}{4\pi\epsilon_0}\left(\frac{1}{r_1}-\frac{1}{R_2}\right)+\frac{q+Q}{4\pi\epsilon_0}\left(\frac{1}{R_2}-\frac{1}{r_2}\right)\\
 &=\frac{1}{4\pi\epsilon_0}\left(\frac{q}{r_1}+\frac{Q}{R_2}-\frac{q+Q}{r_2}\right)
 \end{align*}
 
@@ -1743,11 +1778,11 @@ E=\left\{
 
 而$ -q $在O点产生的电势为$\frac{-q}{4\pi\epsilon_0 \times 3R}$，两部分相加即得到答案。
 
-\exercise{18} $\frac{2\pi l\epsilon_0\epsilon_r}{\ln \frac{R_2}{R_1}}$
+\exercise{18} $\frac{2\pi l\epsilon_0\epsilon_r}{\ln R_2/R_1}$
 
 \solve 设内外面带电$ +Q $和$ -Q $，$ l>>R_1,R_2 $，因此可以当作无限长圆柱面。
 
-由书P141例6.27，无电介质时电容为$ C=\frac{2\pi l\epsilon_0}{\ln \frac{R_2}{R_1}} $。
+由书P141例6.27，无电介质时电容为$ C=\frac{2\pi l\epsilon_0}{\ln R_2/R_1} $。
 
 插入电介质后电容变为原来的$ \epsilon_r $倍，因此得到答案。
 
@@ -1755,9 +1790,9 @@ E=\left\{
 
 \exercise{20} $ 0 $\quad$ -q_1 $
 
-\solve 外球壳静电平衡，因此为了保证外球壳内部场强为0，由高斯定理，外球壳内表面必须带电荷$ -q1 $。
+\solve 外球壳静电平衡，因此为了保证外球壳内部场强为0，由高斯定理，外球壳内表面必须带电荷$ -q_1 $。
 
-当我们先不考虑外球壳外表面的电荷（如果有的话）时，外球壳外表面所处位置电场强度处处为0。
+当我们先不考虑外球壳外表面的电荷（如果有的话）时，外球壳外表面所处位置电场强度处处为$0$。
 
 由于接地，外球壳外表面和大地电势为0，因此外表面不能带电荷（否则会在外表面和大地的导线处产生电场强度，导致外球壳外表面和大地不为等势体）。
 
@@ -1797,17 +1832,17 @@ E_2&=\frac{q_1+q_2}{4\pi r^2\epsilon_0}\\
 
 解得：$ q_1=-\frac{q_2}{2} $
 
-(2).
-
+(2)
+直接积分得
 \[u_B=\int_{3a}^{+\infty}E_2\cdot \di{r}=\frac{q_1+q_2}{12\pi\epsilon_0a}=\frac{q_2}{24\pi\epsilon_0a}\]
 
-(3).
-
+(3)
 电容大小与电容器实际带电情况无关，因此可以考虑内外球分别带$ +Q/-Q $电荷时，计算出电容，即为答案。此时有：
 \[\Delta u=\int_a^{3a}E\cdot \di{r}=\int_a^{3a}\frac{Q}{4\pi r^2\epsilon_0\epsilon_r}\di{r}=\frac{Q}{24\pi\epsilon_0a}\]
 \[\therefore C=\frac{Q}{\Delta u}=24\pi\epsilon_0a\]
 
-(4).
+(4)
+直接积分得
 \begin{align*}
 W&=\int_a^{3a}\frac{1}{2}\epsilon_0 E_1^2\di{V}+\int_{3a}^{+\infty}\frac{1}{2}\epsilon_0 E_2^2\di{V}\\
 &=\int_a^{3a}\frac{q_2^2}{128\pi r^2\epsilon_0} \di{V}+\int_{3a}^{+\infty}\frac{q_2^2}{32\pi r^2\epsilon_0}\di{V}\\
@@ -1842,7 +1877,7 @@ u_{R_1}-u_{R_2}&=\int_{R_1}^{R_2} \frac{\lambda}{2\pi r\epsilon_0} \di{r}\\
 \exercise{24}
 
 \solve 
-(1).记金属板靠近$ \sigma_1 $一侧的电荷密度为$ \sigma_1' $，靠近$ \sigma_2 $一侧的电荷密度为$ \sigma_2' $。
+(1) 记金属板靠近$ \sigma_1 $一侧的电荷密度为$ \sigma_1' $，靠近$ \sigma_2 $一侧的电荷密度为$ \sigma_2' $。
 
 由静电平衡，则金属板内部一点的场强为$ 0 $，则有：
 \[E=\frac{\sigma_1}{2\epsilon_0}+\frac{\sigma_1'}{2\epsilon_0}-\frac{\sigma_2'}{2\epsilon_0}-\frac{\sigma_2}{2\epsilon_0}=0\]
@@ -1852,7 +1887,7 @@ u_{R_1}-u_{R_2}&=\int_{R_1}^{R_2} \frac{\lambda}{2\pi r\epsilon_0} \di{r}\\
 
 解得：$\sigma_1'=-10^{-8}C/m^2,\sigma_2'=10^{-8}C/m^2$
 
-(2).原电场强度：
+(2) 原电场强度：
 \[E=\frac{\sigma_1}{2\epsilon_0}-\frac{\sigma_2}{2\epsilon_0}=10^{-8}\frac{1}{\epsilon_0}\]
 
 则原电势差：
@@ -1868,7 +1903,7 @@ u_{R_1}-u_{R_2}&=\int_{R_1}^{R_2} \frac{\lambda}{2\pi r\epsilon_0} \di{r}\\
 电势差的变化：
 \[U=2\times10^{-11}\frac{1}{\epsilon_0}=2.26(V)\]
 
-\chapter{恒定磁场1}  % 使用章节\chapter{}来做一级标题
+\chapter{恒定磁场（一）}  % 使用章节\chapter{}来做一级标题
 \section{选择题}  % 选择题、填空题和解答题使用\section{}
 
 \exercise{1}D  % 题号使用这个命令，会自动生成标记，注记后写主要答案
@@ -1899,12 +1934,12 @@ B=B_1+B_2=0+\frac{\mu_0I}{4\pi a}=\frac{\mu_0I}{4\pi a}
 \begin{figure}[htbp]  % 可以使用figure来导入图片
 	\centering
 	\includegraphics[width=15em, height=15em]{Chp8_illus1.jpg}
-	\caption{练习5}
-	\label{fig:c1}
+	\caption{练习5示意图}
+	\label{fig:c8-t5}
 \end{figure}
 
 \solve
-如图\ref{fig:c1}，电流$I$在$AC$两点产生的磁感应强度为$B_1=\frac{\mu_0I}{2\pi\cdot2}=10^{-6}T$，在$A$处方向为$x$轴正向，在$C$处方向为$x$轴负向；所以，$A$点处$B_0$与$B_1$叠加后的$B_A=2\times10^{-6}T$，$C$点处$B_0$与$B_1$叠加后的$B_C=0$.
+如图\ref{fig:c8-t5}，电流$I$在$AC$两点产生的磁感应强度为$B_1=\frac{\mu_0I}{2\pi\cdot2}=10^{-6}T$，在$A$处方向为$x$轴正向，在$C$处方向为$x$轴负向；所以，$A$点处$B_0$与$B_1$叠加后的$B_A=2\times10^{-6}T$，$C$点处$B_0$与$B_1$叠加后的$B_C=0$.
 
 \exercise{6}B
 
@@ -1916,12 +1951,11 @@ B=B_1+B_2=0+\frac{\mu_0I}{4\pi a}=\frac{\mu_0I}{4\pi a}
 \begin{figure}[htbp]  % 可以使用figure来导入图片
 	\centering
 	\includegraphics[width=15em, height=15em]{Chp8_illus2.jpg}
-	\caption{练习7}
-	\label{fig:c2}
+	\caption{练习7示意图}\label{fig:c8-t7}
 \end{figure}
 
 \solve
-如图\ref{fig:c2}所示，取$\di\theta$的微元，所以$\di q=2\lambda R\di\theta$，所以电流微元$\di I=\frac{\di q}{t}=\frac{2\lambda R\di\theta}{\frac{2\pi}{\omega}}=\frac{\lambda\omega R\di\theta}{\pi}$，磁矩微元$\di\mu=\di I\cdot S=\frac{\lambda\omega R\di\theta}{\pi}\cdot\pi(R\sin\theta)^2=\lambda\omega R^3\int_0^\pi\sin^2\theta\di\theta=\frac{\pi\lambda\omega R^3}{2}$.
+如图\ref{fig:c8-t7}所示，取$\di\theta$的微元，所以$\di q=2\lambda R\di\theta$，所以电流微元$\di I=\frac{\di q}{t}=\frac{2\lambda R\di\theta}{\frac{2\pi}{\omega}}=\frac{\lambda\omega R\di\theta}{\pi}$，磁矩微元$\di\mu=\di I\cdot S=\frac{\lambda\omega R\di\theta}{\pi}\cdot\pi(R\sin\theta)^2=\lambda\omega R^3\int_0^\pi\sin^2\theta\di\theta=\frac{\pi\lambda\omega R^3}{2}$.
 
 \exercise{8}B
 
@@ -1981,7 +2015,7 @@ $yOz$平面上的半圆环在$O$点产生的磁感应强度为$\vec{B_1}=\frac{\
 \solve
 长直导线1在$O$点处产生的磁感应强度为$0$；流过$ab$劣弧的电流为$\frac{3}{4}I$，流过$ab$优弧的电流为$\frac{1}{4}I$，再次根据对称性，可知$ab$劣弧和$ab$优弧在$O$点处产生的磁感应强度和为0；最后只剩下长直导线2，它在$O$点处产生的磁感应强度$B=\frac{\mu_0I}{4\pi R}$即为$O$点处的磁感应强度大小.
 
-\exercise{19} $\frac{\sqrt{2}\mu_0I\di l}{16\pi}$\quad z轴正向
+\exercise{19} $\frac{\sqrt{2}\mu_0I\di l}{16\pi}$\quad $z$轴正向
 
 \solve
 电流元$I\di\vec{l}$距离$P$点的距离为$\sqrt{2}$，由毕奥萨法尔定律，$P$点处
@@ -2046,9 +2080,7 @@ B(y)=
 \begin{equation*}
 B=\frac{\mu_0IR^2}{2(R^2+x^2)^{\frac{3}{2}}}
 \end{equation*}
-由题目假设$x\gg R$，所以$B(x)=\frac{\mu_0IR^2}{2x^3}$
-
-又有$x\gg R\gg r$，所以可近似视半径为$r$的圆环处磁感应强度为一常数.综上，小线圈中的磁通量为
+由题目假设$x\gg R$，所以$B(x)=\frac{\mu_0IR^2}{2x^3}$。又有$x\gg R\gg r$，所以可近似视半径为$r$的圆环处磁感应强度为一常数.综上，小线圈中的磁通量为
 \begin{equation*}
 \Phi=B\cdot S=\frac{\mu_0IR^2}{2x^3}\cdot \pi r^2=\frac{\pi\mu_0Ir^2}{2k^3R}
 \end{equation*}
@@ -2061,20 +2093,17 @@ B=\frac{\mu_0IR^2}{2(R^2+x^2)^{\frac{3}{2}}}
 I_1=I_2=\frac{I}{\pi (R_1^2-R_2^2)}\cdot\pi R_2^2=\frac{R_2^2}{R_1^2-R_2^2}I
 \end{equation*}
 
-(1)由对称性，圆柱体$O$与填补上的$I_1$在圆柱体轴线上产生的$B=0$.只需考虑在$O'$处填补的电流$I_2$电流.
-
-由安培环路定理$B_1\cdot2\pi b=\mu_0I_2$，所以
+(1)由对称性，圆柱体$O$与填补上的$I_1$在圆柱体轴线上产生的$B=0$.只需考虑在$O'$处填补的电流$I_2$电流。由安培环路定理$B_1\cdot2\pi b=\mu_0I_2$，所以
 \begin{equation*}
 B_1=\frac{\mu_0I}{2\pi b}\cdot\frac{R_2^2}{R_1^2-R_2^2}
 \end{equation*}
 
-(2)$I_2$在$O'$处轴线上产生的$B=0$，则只需考虑在$O$处的大圆柱电流产生的磁场即可.
-
-由安培环路定理$B_2\cdot2\pi b=\mu_0\frac{I}{R_1^2-R_2^2}b^2$，所以
+(2)$I_2$在$O'$处轴线上产生的$B=0$，则只需考虑在$O$处的大圆柱电流产生的磁场即可。由安培环路定理$B_2\cdot2\pi b=\mu_0\frac{I}{R_1^2-R_2^2}b^2$，所以
 \begin{equation*}
 B_2=\frac{\mu_0I}{2\pi}\cdot\frac{b}{R_1^2-R_2^2}
 \end{equation*}
-\chapter{恒定磁场2}%第九章
+
+\chapter{恒定磁场（二）}%第九章
 \section{选择题}
 
 \exercise{1}A
@@ -2127,12 +2156,12 @@ $\sigma_\text{磁}=\dfrac{I_\text{磁}}{2\pi R}=\dfrac{(1-\mu_r)I}{2\pi R}$
 \exercise{7}D
 
 \solve
-磁感应强度对应y轴，饱和磁感应强度显然为线段OI。
+磁感应强度对应$y$轴，饱和磁感应强度显然为线段OI。
 
 \exercise{8}A
 
 \solve
-磁化率定义为$\mu_r-1$。磁化率大于0但很小的即为顺磁性物质。
+磁化率定义为$\mu_r-1$。磁化率大于$0$但很小的即为顺磁性物质。
 
 \exercise{9}B
 
@@ -2142,8 +2171,8 @@ $\sigma_\text{磁}=\dfrac{I_\text{磁}}{2\pi R}=\dfrac{(1-\mu_r)I}{2\pi R}$
 取距离圆心为$r$、宽度为$\di{r}$的圆环为面积微元，各微元受力矩方向相同，则
 \begin{gather*}
 	\di{I}=\dfrac{\omega}{2\pi}\sigma\cdot 2\pi r\di{r}=\omega\sigma r\di{r}\\
-	||\di{\textbf{m}}||=\di{I}\cdot \pi r^2=\pi\omega\sigma r^3\di{r}\\
-	||\textbf{M}||=\int_{0}^{R}||\di{\textbf{m}}\times \textbf{B}||=\int_{0}^{R}B\pi\omega\sigma r^3\di{r}=\dfrac{\pi\sigma\omega BR^4}{4}
+	\|\di{\textbf{m}}\|=\di{I}\cdot \pi r^2=\pi\omega\sigma r^3\di{r}\\
+	\|\textbf{M}\|=\int_{0}^{R}\|\di{\textbf{m}}\times \textbf{B}\|=\int_{0}^{R}B\pi\omega\sigma r^3\di{r}=\dfrac{\pi\sigma\omega BR^4}{4}
 \end{gather*}
 
 \exercise{10}A
@@ -2159,7 +2188,7 @@ $\sigma_\text{磁}=\dfrac{I_\text{磁}}{2\pi R}=\dfrac{(1-\mu_r)I}{2\pi R}$
 \exercise{11}$\dfrac{a}{3}$
 
 \solve
-由$B=\dfrac{\mu_0I}{2\pi r}$，AB受两导线的磁场的安培力等大反向，故$\dfrac{1}{x}=\dfrac{2}{a-x}$，解得$x=\dfrac{a}{3}$。
+由$B=\dfrac{\mu_0I}{2\pi r}$，$AB$受两导线的磁场的安培力等大反向，故$\dfrac{1}{x}=\dfrac{2}{a-x}$，解得$x=\dfrac{a}{3}$。
 
 \exercise{12}$9.33\times 10^{-19}$A/$\rm{m}^2$ \quad 相反
  
@@ -2174,14 +2203,14 @@ $\sigma_\text{磁}=\dfrac{I_\text{磁}}{2\pi R}=\dfrac{(1-\mu_r)I}{2\pi R}$
 \begin{figure}[!h]	
 	\centering	
 	\includegraphics[width=0.5\textwidth]{Chp9_illus1.png}	
-	\caption{练习12\quad 示意图}
+	\caption{练习12 示意图}\label{fig:c9-t12}
 \end{figure}
-如图1，电子逆时针运动（俯视），其磁矩方向向下，故填“相反”。
+如图\ref{fig:c9-t12}，电子逆时针运动（俯视），其磁矩方向向下，故填“相反”。
 
 \exercise{13}$BIR$\quad 垂直于纸面向里
 
 \solve
-$F=\int ||I\di{l}\times B||$。在这里可以将该电流投影到垂直于$B$的方向上，等效为从a指向圆心的电流。投影长度为$R$，故安培力大小为$BIR$，方向用等效的电流判断即可。
+$F=\int \|I\di{l}\times B\|$。在这里可以将该电流投影到垂直于$B$的方向上，等效为从a指向圆心的电流。投影长度为$R$，故安培力大小为$BIR$，方向用等效的电流判断即可。
 
 \exercise{14}$0.226\textrm{T}$\quad 300\ \textrm{A/m}
 
@@ -2199,7 +2228,7 @@ B=\mu_0\mu_rH=72\pi\times 10^{-3}\textrm{T}=0.226\textrm{T}
 \exercise{15}$5.36\times 10^{-3}\textrm{kg}\cdot \textrm{m}^2/\textrm{s}^2$
 
 \solve
-由题，沿y轴方向的导线固定，故它以及垂直于y轴的导线受的力矩均不影响线圈的运动。设边长为a，转动轴在y轴上，剩下一根导线受的力沿x轴负方向，则力矩为
+由题，沿$y$轴方向的导线固定，故它以及垂直于$y$轴的导线受的力矩均不影响线圈的运动。设边长为$a$，转动轴在$y$轴上，剩下一根导线受的力沿$x$轴负方向，则力矩为
 \begin{align*}
 	M&=Fa\sin \ang{40}\\
 	&=BIa^2\sin \ang{40}\\
@@ -2212,10 +2241,10 @@ B=\mu_0\mu_rH=72\pi\times 10^{-3}\textrm{T}=0.226\textrm{T}
 \solve
 参见练习8。
 
-\exercise{17}0.5T\quad y轴正方向
+\exercise{17}0.5T\quad $y$轴正方向
 
 \solve
-由受力情况2得，磁场沿y轴，与情况1中“z轴正方向”垂直，故$M=m\times B=mB$,$B=
+由受力情况2得，磁场沿$y$轴，与情况1中“$z$轴正方向”垂直，故$M=m\times B=mB$,$B=
 \dfrac{M}{m}=0.5\textrm{T}$。
 
 由情况1及$M=m\times B$也易判断$B$的方向。
@@ -2235,10 +2264,10 @@ B=\mu_0\mu_rH=72\pi\times 10^{-3}\textrm{T}=0.226\textrm{T}
 \begin{figure}[!h]	
 	\centering	
 	\includegraphics[width=0.5\textwidth]{Chp9_illus2.jpg}	
-	\caption{练习19\quad 示意图}
+	\caption{练习19 示意图}
 \end{figure}
 
-根据其磁滞回线，磁化后的磁芯处于曲线与B轴交点处。由题意，外加磁场强度大小等于矫顽力。而由安培环路定理，$H=\dfrac{i}{2\pi r}$，半径越大，磁场强度越小。要使磁芯的磁化方向完全翻转，需要有：
+根据其磁滞回线，磁化后的磁芯处于曲线与$B$轴交点处。由题意，外加磁场强度大小等于矫顽力。而由安培环路定理，$H=\dfrac{i}{2\pi r}$，半径越大，磁场强度越小。要使磁芯的磁化方向完全翻转，需要有：
 \begin{gather*}
 	H_{R_2max}=\dfrac{i_{max}}{2\pi R_2}\geqslant H_c\\
 	i_{max}\geqslant 2\pi R_2H_c=2\pi\cdot \dfrac{0.8\textrm{mm}}{2} \cdot 160\textrm{A/m}=0.402\textrm{A}
@@ -2274,7 +2303,7 @@ $H=\sigma=1000 \textrm{A/m}\footnotemark[3]$
 
 \solve
 由于各段导线为直线，写出其矢量式，利用安培力公式即可\footnotemark[4]。
-\footnotetext[4]{题中已建系或自己建系时，可以用$\vec{i},\vec{j},\vec{k}$表示方向，也可以再用“x轴正向”等描述。}
+\footnotetext[4]{题中已建系或自己建系时，可以用$\vec{i},\vec{j},\vec{k}$表示方向，也可以再用“$x$轴正向”等描述。}
 \begin{gather*}
 	\vec{B}=0.6\vec{i}(\textrm{T})\\
 	F_{ab}=I\cdot 0.6\vec{j}\times 0.6\vec{i}=-1.44\vec{k}(N)\\
@@ -2287,9 +2316,9 @@ $H=\sigma=1000 \textrm{A/m}\footnotemark[3]$
 \exercise{23}
 
 \solve
-（1）由安培环路定理，可知距AB为r处的磁感应强度$B=\dfrac{\mu_0I_1}{2\pi r}$
+（1）由安培环路定理，可知距$AB$为$r$处的磁感应强度$B=\dfrac{\mu_0I_1}{2\pi r}$
 
-以D为原点，DN、DC为x、z轴建立空间直角坐标系。
+以D为原点，$DN$、$DC$为$x$、$z$轴建立空间直角坐标系。
 
 对CD：
 \begin{gather*}
@@ -2329,7 +2358,7 @@ $H=\sigma=1000 \textrm{A/m}\footnotemark[3]$
 	&=-\dfrac{\mu_0I_1I_2b}{2\pi d(d+a)}\vec{i}
 \end{align*}
 
-而$\vec{m},\vec{B}$均沿y轴正向，故$M=m\times B=0$
+而$\vec{m},\vec{B}$均沿$y$轴正向，故$M=m\times B=0$
 \footnotemark[5]。
 \footnotetext[5]{对边受力不仅平行而且共线，线圈无转动趋势，所以力矩为零，不用考虑力矩是对哪个轴或点。}
 
@@ -2337,9 +2366,7 @@ $H=\sigma=1000 \textrm{A/m}\footnotemark[3]$
 
 \solve
 电流密度$i=\dfrac{I}{\pi R^2-\pi r^2}$。
-该系统可看作半径为$R$、电流密度为$i$的无限长圆柱面与半径为$r$、电流密度为$-i$的无限长圆柱面的组合。
-
-由安培环路定理和磁感应强度叠加原理（向下为正向）：
+该系统可看作半径为$R$、电流密度为$i$的无限长圆柱面与半径为$r$、电流密度为$-i$的无限长圆柱面的组合。由安培环路定理和磁感应强度叠加原理（向下为正向）：
 \begin{gather*}
 	B_1\cdot 2\pi\cdot 2R=\mu_0i\cdot\pi R^2\\
 	B_2\cdot 2\pi\cdot (2R+d)=-\mu_0i\cdot\pi r^2\\
@@ -2347,9 +2374,9 @@ $H=\sigma=1000 \textrm{A/m}\footnotemark[3]$
 \end{gather*}
 由题图，$R>d>r$，故$B_Q$方向向下。
 \[
-F=e||v\times B_Q||=evB_Q=\dfrac{\mu_0Iev}{2\pi(R^2-r^2)}(\dfrac{R}{2}-\dfrac{r^2}{2R+d})
+F=e\|v\times B_Q\|=evB_Q=\dfrac{\mu_0Iev}{2\pi(R^2-r^2)}(\dfrac{R}{2}-\dfrac{r^2}{2R+d})
 \]
-由左手定则，$F$方向水平向左（沿OQ方向）。
+由左手定则，$F$方向水平向左（沿$OQ$方向）。
 
 
 
