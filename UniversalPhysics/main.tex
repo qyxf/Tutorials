@@ -1868,7 +1868,7 @@ u_{R_1}-u_{R_2}&=\int_{R_1}^{R_2} \frac{\lambda}{2\pi r\epsilon_0} \di{r}\\
 电势差的变化：
 \[U=2\times10^{-11}\frac{1}{\epsilon_0}=2.26(V)\]
 
-\chapter{磁场1}  % 使用章节\chapter{}来做一级标题
+\chapter{恒定磁场1}  % 使用章节\chapter{}来做一级标题
 \section{选择题}  % 选择题、填空题和解答题使用\section{}
 
 \exercise{1}D  % 题号使用这个命令，会自动生成标记，注记后写主要答案
@@ -2074,7 +2074,7 @@ B_1=\frac{\mu_0I}{2\pi b}\cdot\frac{R_2^2}{R_1^2-R_2^2}
 \begin{equation*}
 B_2=\frac{\mu_0I}{2\pi}\cdot\frac{b}{R_1^2-R_2^2}
 \end{equation*}
-\chapter{磁场2}
+\chapter{恒定磁场2}%第九章
 \section{选择题}
 
 \exercise{1}A
@@ -2117,7 +2117,7 @@ I_\text{磁}=(1-\mu_r)I
 故
 $\sigma_\text{磁}=\dfrac{I_\text{磁}}{2\pi R}=\dfrac{(1-\mu_r)I}{2\pi R}$
 \footnotemark[1]
-\footnotetext[1]{注意，磁化电流面密度的量纲是A/m而非$\textrm{A}/m^2$。}
+\footnotetext[1]{注意，磁化电流面密度的量纲是A/m而非$\textrm{A/m}^2$。}
 
 \exercise{6}D
 
@@ -2162,7 +2162,7 @@ $\sigma_\text{磁}=\dfrac{I_\text{磁}}{2\pi R}=\dfrac{(1-\mu_r)I}{2\pi R}$
 由$B=\dfrac{\mu_0I}{2\pi r}$，AB受两导线的磁场的安培力等大反向，故$\dfrac{1}{x}=\dfrac{2}{a-x}$，解得$x=\dfrac{a}{3}$。
 
 \exercise{12}$9.33\times 10^{-19}$A/$\rm{m}^2$ \quad 相反
-
+ 
 \solve
 \begin{align*}
 	m&=IS\\
@@ -2181,7 +2181,7 @@ $\sigma_\text{磁}=\dfrac{I_\text{磁}}{2\pi R}=\dfrac{(1-\mu_r)I}{2\pi R}$
 \exercise{13}$BIR$\quad 垂直于纸面向里
 
 \solve
-$F=\int I\di{l}\cdot B$。在这里可以将该电流投影到垂直于$B$的方向上，等效为从a指向圆心的电流。投影长度为$R$，故安培力大小为$BIR$，方向用等效的电流判断即可。
+$F=\int ||I\di{l}\times B||$。在这里可以将该电流投影到垂直于$B$的方向上，等效为从a指向圆心的电流。投影长度为$R$，故安培力大小为$BIR$，方向用等效的电流判断即可。
 
 \exercise{14}$0.226\textrm{T}$\quad 300\ \textrm{A/m}
 
@@ -2196,19 +2196,19 @@ $F=\int I\di{l}\cdot B$。在这里可以将该电流投影到垂直于$B$的方
 B=\mu_0\mu_rH=72\pi\times 10^{-3}\textrm{T}=0.226\textrm{T}
 \]
 
-\exercise{15}$5.36\times 10^{-3}\textrm{kg}\cdot m^2/\textrm{s}^2$
+\exercise{15}$5.36\times 10^{-3}\textrm{kg}\cdot \textrm{m}^2/\textrm{s}^2$
 
 \solve
 由题，沿y轴方向的导线固定，故它以及垂直于y轴的导线受的力矩均不影响线圈的运动。设边长为a，转动轴在y轴上，剩下一根导线受的力沿x轴负方向，则力矩为
 \begin{align*}
-	M&=Fa\sin \angle{40}\\
-	&=BIa^2\sin \angle{40}\\
-	&=7.2\sin \angle{40}\times 10^{-3}=5.36\times 10^{-3}
+	M&=Fa\sin \ang{40}\\
+	&=BIa^2\sin \ang{40}\\
+	&=7.2\sin \ang{40}\times 10^{-3}=5.36\times 10^{-3}
 \end{align*}
 保持位置不变，需要一等大反向的力矩。
 
 \exercise{16}$2.3\times 10^{-5}$\quad 顺
-
+ 
 \solve
 参见练习8。
 
@@ -2228,14 +2228,14 @@ B=\mu_0\mu_rH=72\pi\times 10^{-3}\textrm{T}=0.226\textrm{T}
 
 或者使用安培力的左手定则亦可:需要使左侧的电流受力向左而右侧的向右，使圆柱体有上滚的趋势。
 
-\exercise{19}0.402 A
+\exercise{19}0.402A
 
 \solve
 可以参考课本（黑皮）上册\rm{P}422例9.19。
 \begin{figure}[!h]	
 	\centering	
 	\includegraphics[width=0.5\textwidth]{Chp9_illus2.jpg}	
-	\caption{练习12\quad 示意图}
+	\caption{练习19\quad 示意图}
 \end{figure}
 
 根据其磁滞回线，磁化后的磁芯处于曲线与B轴交点处。由题意，外加磁场强度大小等于矫顽力。而由安培环路定理，$H=\dfrac{i}{2\pi r}$，半径越大，磁场强度越小。要使磁芯的磁化方向完全翻转，需要有：
@@ -2262,12 +2262,12 @@ $H=\sigma=1000 \textrm{A/m}\footnotemark[3]$
 
 由$B,H,M$三者的关系得：
 \begin{align*}
-	B&=\mu_0\mu_rH\\
-	&=4\pi\times 10^{-7}\times 500\times 1000 \textrm{T}\\
-	&=\dfrac{\pi}{5} \textrm{T}\\	
-	M&=\dfrac{B}{\mu_0}-H\\
-	&=(\mu_r-1)H\\
-	&=4.99\times 10^5 \textrm{A/m}
+		B&=\mu_0\mu_rH\\
+		&=4\pi\times 10^{-7}\times 500\times 1000 \textrm{T}\\
+		&=\dfrac{\pi}{5} \textrm{T}\\	
+		M&=\dfrac{B}{\mu_0}-H\\
+		&=(\mu_r-1)H\\
+		&=4.99\times 10^5 \textrm{A/m}
 \end{align*}
 
 \exercise{22}
@@ -2337,7 +2337,7 @@ $H=\sigma=1000 \textrm{A/m}\footnotemark[3]$
 
 \solve
 电流密度$i=\dfrac{I}{\pi R^2-\pi r^2}$。
-该系统可看作半径为R、电流密度为i的无限长圆柱面与半径为r、电流密度为-i的无限长圆柱面的组合。
+该系统可看作半径为$R$、电流密度为$i$的无限长圆柱面与半径为$r$、电流密度为$-i$的无限长圆柱面的组合。
 
 由安培环路定理和磁感应强度叠加原理（向下为正向）：
 \begin{gather*}
@@ -2349,7 +2349,7 @@ $H=\sigma=1000 \textrm{A/m}\footnotemark[3]$
 \[
 F=e||v\times B_Q||=evB_Q=\dfrac{\mu_0Iev}{2\pi(R^2-r^2)}(\dfrac{R}{2}-\dfrac{r^2}{2R+d})
 \]
-由左手定则，$F_B$方向水平向左（沿OQ方向）。
+由左手定则，$F$方向水平向左（沿OQ方向）。
 
 
 
