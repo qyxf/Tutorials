@@ -4,7 +4,7 @@
 %%
 %% The original source files were:
 %%
-%% qyxf-book.dtx  (with options: `class')
+%% qyxf.dtx  (with options: `book')
 %% 
 %% This is a generated file.
 %% 
@@ -20,22 +20,40 @@
 %% and version 1.3 or later is part of all distributions of
 %% LaTeX version 2005/12/01 or later.
 %% 
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+%% The Current Maintainer of this work is xjtu-blacksmith.
+%% 
 %% -----------------------------------
 \NeedsTeXFormat{LaTeX2e}[2005/12/01]
 \ProvidesClass{qyxf-book}
-  [2019/04/28 v1.0 nothing but a skeleton]
+  [2019/05/26 v2.1 Template for qyxf's book]
 \typeout{The book template provided by Qian Yuan Xue Fu}
 \LoadClass[10pt,twoside,openany]{book}
-\RequirePackage{kvoptions}
-\SetupKeyvalOptions{family=QYXF,prefix=QYXF@,setkeys=\kvsetkeys}
-\DeclareBoolOption[false]{parskip}
-\DeclareBoolOption[false]{smallersize}
-\DeclareVoidOption{b5paper}{\kvsetkeys{QYXF}{smallersize}}
-\DeclareBoolOption{color}
-\DeclareBoolOption[true]{decoration}
-\DeclareBoolOption[false]{opensource}
-\ProcessKeyvalOptions*
-\RequirePackage[fontset=adobe,heading]{ctex}
+\newif\if@decoration
+\newif\if@opensource
+\newif\if@sourcefont
+\DeclareOption{a4paper}{
+  \setlength\paperheight{297mm}%
+  \setlength\paperwidth{210mm}}
+\DeclareOption{b5paper}{
+  \setlength\paperheight{250mm}%
+  \setlength\paperwidth{176mm}}
+\DeclareOption{color}{}
+\DeclareOption{parskip}{
+  \setlength\parskip{0.2\baselineskip}}
+\DeclareOption{decoration}{\@decorationtrue}
+\DeclareOption{opensource}{\@opensourcetrue}
+\DeclareOption{sourcefont}{\@sourcefonttrue}
+\ProcessOptions
+\if@sourcefont
+  \RequirePackage[SlantFont]{xeCJK}
+  \RequirePackage[heading]{ctex}
+  \setCJKmainfont{思源宋体}
+  \setCJKsansfont{思源黑体}
+\else
+  \RequirePackage[heading]{ctex}
+\fi
 \setmainfont{Cambria}       % 目前默认使用的serif字体
 \setsansfont{Calibri}       % 目前默认使用的sans-serif字体
 \setmonofont{Courier New}   % 目前默认使用的等宽字体
@@ -58,28 +76,25 @@ right=0mm,left=0mm]{\bfseries 练习#1}\ }
 \newcommand{\solve}{\noindent\textbf{解}\ }
 \newcommand{\analysis}{\noindent\textbf{分析}\ }
 \RequirePackage{geometry}
-\ifQYXF@smallersize
-  \setlength{\paperwidth}{176mm}
-  \setlength{\paperheight}{250mm}
-\else
-  \geometry{a4paper}
-\fi
 \geometry{margin=1in}
 \RequirePackage{hyperref}
 \hypersetup{
-    breaklinks,
-    unicode,
-    linktoc=all,
-    bookmarksnumbered=true,
-    bookmarksopen=true,
-    pdfkeywords={qyxf-book},
-    pdfborder={0 0 0},
-    linktocpage,
-    pageanchor=true
-}
+  breaklinks,
+  unicode,
+  linktoc=all,
+  bookmarksnumbered=true,
+  bookmarksopen=true,
+  pdfborder={0 0 0},
+  linktocpage,
+  pageanchor=true}
 \RequirePackage{pgfornament-han}
+\RequirePackage{pgfornament}
 \ctexset{section={name={\S,}}}
 \RequirePackage{titlesec,titletoc}
+\newcommand{\decoration}{\vspace{-.3\baselineskip}\pgfornamenthan[scale=0.2,symmetry=h]{60}}
+\titleformat{\chapter}[block]{\centering\bfseries\Huge}{\CTEXthechapter}
+{1em}{}[\centering\decoration]%
+\titlespacing{\chapter}{0pt}{*1}{*4}
 \titlecontents{chapter}[24pt]{\hspace{-2pc}\filright}
               {\normalsize\bfseries\contentspush{\thecontentslabel\ }}
               {}{\bfseries\titlerule*[8pt]{.}\contentspage}
@@ -111,27 +126,31 @@ right=0mm,left=0mm]{\bfseries 练习#1}\ }
 \RequirePackage{appendix}
 \ctexset{appendix={number={\Roman{chapter}}}}
 \RequirePackage[scale=1.1]{ccicons}
-\ifQYXF@parskip
-     \setlength\parskip{0.3\baselineskip}
-\fi
 \newtoks\subtitle
 \newtoks\typo
 \newtoks\version
 \newtoks\sourcepage
 \renewcommand*{\maketitle}{%
-\hypersetup{pageanchor=false}
+\hypersetup{
+  pageanchor=false,
+  pdfauthor=\@author,
+  pdftitle=\@title,
+  pdfsubject={\@author: \@title - \the\subtitle},
+  pdfkeywords={qyxf, book},
+  pdfcreator={XeLaTeX with qyxf-book class}
+}
 \begin{titlepage}
 \phantom{s}
 \vspace{3cm}
 \begin{center}\large
 \begin{tcolorbox}[blanker,borderline west={1mm}{0pt}{black!80},%
 left=20pt]
-{\fontsize{40pt}{\baselineskip}\selectfont\bfseries\@title}\\[\baselineskip]
-{\Huge\itshape\the\subtitle}
+{\fontsize{40pt}{\baselineskip}\selectfont\bfseries\@title}\\[0.5\baselineskip]
+{\huge\itshape\the\subtitle}
 \end{tcolorbox}
 \begin{tcolorbox}[blanker,borderline west={1mm}{0pt}{black!50},%
 left=20pt]
-{\Large 作者：\@author\\[0.3\baselineskip]
+{\Large 作者：\@author\\[0.2\baselineskip]
 \@date}
 \end{tcolorbox}
 \vfill
@@ -142,7 +161,7 @@ left=20pt]
 \begin{tikzpicture}[remember picture,overlay]
   \begin{pgfonlayer}{background}
   \node at ($(current page.east) +(0in,0in)$) {%
-  \includegraphics[width=0.8\textwidth]{./template/cover.png}};
+  \includegraphics[width=0.8\textwidth]{cover.png}};
   \end{pgfonlayer}
 \end{tikzpicture}
 \end{titlepage}
@@ -161,11 +180,10 @@ left=20pt]
 \centerline{\tcbox{\ccbyncnd\ \fangsong 知识共享 (Creative Commons) BY-NC-ND 4.0 协议}%
 \\[0.3\baselineskip]}
 本作品采用 \href{https://creativecommons.org/licenses/by-nc-nd/4.0/}{\textbf{CC协议}}
-进行许可。使用者可以在给出\emph{作者署名及资料来源}的前提下对本作品进行\emph{转载}，但不得对
-本作品进行\emph{修改}，亦不得基于本作品进行\emph{二次创作}，不得将本作品运用于\emph{商业用途}。
+进行许可。使用者可以在给出作者署名及资料来源的前提下对本作品进行转载，但不得对本作品进行
+修改，亦不得基于本作品进行二次创作，不得将本作品运用于商业用途。
 \end{tcolorbox}
-\newcommand{\opensourceinfo}{根据作者的要求，本作品未公开源码。}
-\ifQYXF@opensource
+\if@opensource
   \begin{tcolorbox}
   本作品已发布于GitHub之上，发布地址为：\\
   \centerline{\the\sourcepage}
@@ -173,6 +191,7 @@ left=20pt]
   \end{tcolorbox}
 \fi
 \newpage
+\pagestyle{fancy}
 }
 \renewcommand\tableofcontents{%
 \pagestyle{empty}
@@ -186,6 +205,7 @@ left=20pt]
 \pagestyle{fancy}
 \setcounter{page}{1}
 }
+
 \endinput
 %%
 %% End of file `qyxf-book.cls'.
