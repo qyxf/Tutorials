@@ -34,9 +34,11 @@
 }
 
 \usepackage{siunitx}%输入角度
+\usepackage{color}
+\renewcommand{\thefootnote}{\color{red}\arabic{footnote}}%更改脚注格式
 
 \begin{document}
-\maketitle
+
 
 \pagestyle{plain}
 \chapter*{前言}
@@ -101,7 +103,7 @@
 \tableofcontents
 
 \setlength{\parindent}{0pt}
-\chapter{质点运动学}
+\chapter{质点运动学及牛顿运动定律}
 \section{选择题}
 \exercise{1}A
 
@@ -114,12 +116,12 @@
 	\includegraphics[width=10em,height=15em]{Chp1_illus2.png}
 \end{figure}
 \begin{equation}
-N\cos\theta=Ma_a\text{(M对地)}
+N\sin\theta=Ma_e\text{(M对地)}
 \end{equation}
 如图1.2，对$m$，以$M$为参考系，$m$受一惯性力，合加速度沿二者接触面。沿$x,y$方向分解：
 \begin{gather}
 mg-N\cos\theta=ma_r\sin\theta\\
-ma_a+N\sin\theta=ma_r\cos\theta
+ma_e+N\sin\theta=ma_r\cos\theta
 \end{gather}
 将(1)代入(2)，由(2)(3)联立解得：
 \[a_r=\dfrac{(M+m)g\sin\theta}{M+m{\sin\theta}^2}\]
@@ -144,18 +146,20 @@ ma_a+N\sin\theta=ma_r\cos\theta
 
 \exercise{4}B
 
-\solve 以前面的货车为参考系，货车静止，火车速率为$v_1-v_2$，加速度为$a$（反向），那么火车最多前进$s={(v_1-v_2)}^2/{2a}$。要求$d>s$，故选B。或采用地面参考系的追逐问题法，计算从$v_1\text{减速到}v_2$两车走过的距离之差为
+\solve 以前面的货车为参考系，货车静止，火车速率为$v_1-v_2$，加速度为$a$（反向），那么火车最多前进$s=\dfrac{{(v_1-v_2)}^2}{2a}$。要求$d>s$，故选B。或采用地面参考系的追逐问题法，计算从$v_1\text{减速到}v_2$两车走过的距离之差为
 \[
 s=\dfrac{{v_1}^2-{v_2}^2}{2a}-v_2\cdot \dfrac{v_1-v_2}{a}=\dfrac{{(v_1-v_2)}^2}{2a}.
 \]
 
 \exercise{5}C
 
-\solve 两次求导得：$a=30t\neq$常数而大于零。
+\solve 两次求导得：$a=30t$，不等于常数而大于零。
 
 \exercise{6}B
 
-\solve 求导得$v=8t-6t^2,a=8-12t$.令$y=0$，可得$t=0$（舍去）或$t=2$，代入后者即得结果。
+\solve 求导得：$v=8t-6t^2,a=8-12t$
+
+令$y=0\Rightarrow t=0\text{（舍去）或}2$s，代入得结果。
 
 \exercise{7}B
 
@@ -168,12 +172,11 @@ t=\sqrt{\dfrac{2s}{a}}=\sqrt{\dfrac{4b}{g\sin(2\alpha)}}
 
 \exercise{8}B
 
-\solve 类比从静止出发的匀加速直线运动。$t=\dfrac{2\cdot 2\pi}{\beta}$
+\solve 类比从静止出发的匀加速直线运动。$\dfrac{1}{2}\beta t^2=2\pi$
 
 \exercise{9}B
 
-\solve 曲线的定义：“动点运动方向连续变化的轨迹”\footnote{来源：汉典网，\url{http://www.zdic.net/c/2/111/299079.htm}}。
-A、C的反例：匀速圆周运动。
+\solve 曲线的定义：“动点运动方向连续变化的轨迹\footnote{来源：汉典网http://www.zdic.net/c/2/111/299079.htm}”。A,C的反例：匀速圆周运动。做曲线运动的物体一定有加速度。
 
 \exercise{10}D
 
@@ -182,17 +185,19 @@ A、C的反例：匀速圆周运动。
 \section{填空题}
 \exercise{11}$0$\qquad$2g$
 
-\solve 设A、B质量为$m$。抽走C之前，弹簧中的弹力大小为$mg$。撤去C时，弹簧长度未突变，
-弹力不变,A受合力为0；支持力则消失。故$a_A=0,a_B=\dfrac{mg+mg}{m}=2g$,竖直向下。
+\solve 设A、B质量为m。抽走C之前，弹簧中的弹力大小为mg。撤去C时，弹簧长度未突变，弹力不变，A受合力为0；支持力则消失。
 
-\exercise{12}\ $\dfrac{25}{12}\pi$\ rad/s${}^2$ \qquad$\dfrac{24}{5}$s
+故$a_A=0$，$a_B=\dfrac{mg+mg}{m}=2g$，竖直向下。
+
+\exercise{12}$\dfrac{25}{12}\pi$ rad/$\textrm{s}^2$ \qquad$\dfrac{24}{5} \textrm{s}$
 
 \solve 简单公式应用。
 \begin{gather*}
-\theta=60\times2\pi=120\pi\\
-\beta=\dfrac{\omega_2^2-\omega_1^2}{2\theta}=\dfrac{25}{12}\pi\text{\ rad/s}^2\\
-\delta t=\dfrac{\omega_2-\omega_1}{\beta}=\dfrac{24}{5}\mathrm{s}
+\text{}\theta=60\times2\pi=120\pi\\
+\beta=\dfrac{\omega_2^2-\omega_1^2}{2\theta}=\dfrac{25}{12}\pi\ rad/s^2\\
+\Delta t=\dfrac{\omega_2-\omega_1}{\beta}=\dfrac{24}{5}s
 \end{gather*}
+
 \exercise{13}$m(\sin\theta-\omega^2l\sin\theta\cos\theta)$
 
 \begin{figure}[!htbp]
@@ -213,21 +218,34 @@ T\cos\theta+N\sin\theta=mg
 
 \exercise{14}\ $2\sqrt{\dfrac{r}{g}}$ \qquad $2\sqrt{\dfrac{r}{g}}$
 
-\solve 设弦与PC的夹角为$\theta$，则有$s=2r\cos\theta$，$a=g\cos\theta$，故$t=\sqrt{\dfrac{2s}{a}}=2\sqrt{\dfrac{r}{g}}$。
+\solve 
+设弦与PC的夹角为$\theta$，则有：
+\begin{gather*}
+s=2r\cos\theta,a=g\cos\theta\\
+t=\sqrt{\dfrac{2s}{a}}=2\sqrt{\dfrac{r}{g}}
+\end{gather*}
+结果与$\theta$无关。
 
 
-\exercise{15}\ $4\sqrt{5}$m/s \qquad 16m/s${}^2$ 
+\exercise{15}$4\sqrt{5}\textrm{m/s}$ \qquad $16\textrm{m/s}^2$
 
-\solve 抛物线的切线方向即为质点的速度方向，且$x=4t$，故
-\[\dfrac{v_y}{v_x}=\dy{y}{x}=x\ \Rightarrow\ v_y=4x=16t\]
-而$t=2$时，$v_y=8\mathrm{m/s}$，故
-\[v=\sqrt{{v_x}^2+{v_y}^2}=4\sqrt{5}\mathrm{m/s}\]
-$v_x$不变，故
-\[a=a_y=\dy{v_y}{t}=16\mathrm{m/s^2}\]
+\solve 抛物线的切线方向即为质点的速度方向，且$x=v_xt$。
+\[
+\dfrac{v_y}{v_x}=\dy{y}{x}=x\Rightarrow v_y=4x=16t
+\]
+$x=2$m时，$t=0.5$s，则：
+\begin{gather*}
+v_y=8\textrm{m/s}\\
+v=\sqrt{{v_x}^2+{v_y}^2}=4\sqrt{5}\mathrm{m/s}
+\end{gather*}
+$v_x$不变，故：
+\[
+a=a_y=\dy{v_y}{t}=16\textrm{m/s}^2
+\]
 
 \exercise{16} 长度、质量、时间
 
-\solve 见课本，解答略。
+\solve 见课本。
 
 \exercise{17} 3\quad 3\quad 6
 
@@ -235,45 +253,62 @@ $v_x$不变，故
 
 \exercise{18} $y={(x+5)}^3$
 
-\solve 由题，$x=2t-5\Rightarrow 2t=x+5$，代入$y=8t^3={(2t)}^3$，消去t即可。
+\solve 由题，$x=2t-5\Rightarrow 2t=x+5$。
 
-\exercise{19} $\dfrac{1}{2}g$\qquad 竖直向下
+代入$y=8t^3={(2t)}^3$，消去t即可。
+
+\exercise{19}$\dfrac{1}{2}g$\qquad 竖直向下
 
 \solve 初始时受力平衡，两根弹簧上力均为$\dfrac{1}{2}mg$；一根断掉后，向上的力减半，则小球受的合力是$\dfrac{1}{2}mg$，竖直向下。
 
-\exercise{20}\ 9m/s 
+\exercise{20}$9$m/s
 
-\solve 直接求导得
-\[\text{(SI)} x=3t+6t^2-2t^3\xrightarrow{\text{求导}}v=3+12t-6t^2
-\xrightarrow{\text{求导}}a=12-12t\]
-令$a=0$，解得$t=1$，代入得$v(1)=9\mathrm{m/s}$。
+\solve 
+\begin{align*}
+\text{(SI)} x=3t+6t^2-2t^3&\xrightarrow{\text{求导}}v=3+12t-6t^2\\
+&\xrightarrow{\text{求导}}a=12-12t
+\end{align*}
+令$a=0$，解得
+\[
+t=1\xrightarrow{\text{代入得}} v(1)=9\mathrm{m/s}
+\]
 
 \section{计算题}
-
-%21，22，24题对原作者代码有改动
-
 \exercise{21}
 
-\solve 由图知$\tan\alpha=\dfrac{|\vec{a}_n|}{|\vec{a}_\tau|}=\dfrac{v^2/R}{\di{v}/\di{t}}$，故得
-\[\dy{v}{t}\frac{1}{v^2}=\frac{1}{R\tan\alpha}\]
-积分得
-\[-\frac{1}{v}=\frac{1}{R\tan\alpha}t+C\]
-代入$t=0,v=v_0$就有
-\[\frac{1}{v_0}-\frac{1}{v}=\frac{1}{R\tan\alpha}t
-\text{，即}v=\frac{v_0R\tan\alpha}{\tan\alpha-v_0t}
+\solve 
+由图知：
+\begin{gather*}
+\tan\alpha=\dfrac{|\vec{a}_n|}{|\vec{a}_\tau|}=\dfrac{\frac{v^2}{R}}{\dy{v}{t}}\\
+\frac{\di{v}}{v^2}=\frac{\di{t}}{R\tan\alpha}
+\end{gather*}
+积分得：
+\[
+-\frac{1}{v}=\frac{1}{R\tan\alpha}t+C
+\]
+代入$t=0,v=v_0$：
+\[
+C=-\dfrac{1}{v_0}\Rightarrow -\frac{1}{v}=\frac{t}{R\tan\alpha}-\dfrac{1}{v_0}
+\]
+所以：
+\[
+v=\frac{v_0R\tan\alpha}{R\tan\alpha-v_0t}
 \]
 
 \exercise{22}
 
-\solve 根据已知条件，可以依次求导得到
+\solve 
 \begin{gather*}
 \vec{v}=\dy{s}{t}\vec{\tau}=(c+2dt)\vec{\tau}\\  
 \vec{a}_n=\frac{v^2}{R}\vec{n}=\frac{(c+2dt)^2}{R}\vec{n}\\
 \vec{a}_\tau=\dy{v}{t}\vec{\tau}=2d\vec{\tau}
 \end{gather*}
-令$|\vec{a}_n|=|\vec{a}_\tau|$，则有$\frac{(c+2dt)^2}{R}=2d$，故
-\[t_1=\frac{\sqrt{2dR}-c}{2d}\ \left(t_2=\frac{-\sqrt{2dR}-c}{2d}<0\text{,舍去}\right)\]
-可见，要使$t\geqslant\text0$，条件为$\sqrt{2dR}-c\geqslant0$，即$2dR\leqslant c^2$。
+令$|\vec{a}_n|=|\vec{a}_\tau|$，则
+\begin{gather*}
+\frac{(c+2dt)^2}{R}=2d\\
+t=t_1=\frac{\sqrt{2dR}-c}{2d}\left(t_2=\frac{-\sqrt{2dR}-c}{2d}<0\text{，舍去}\right)
+\end{gather*}
+$\therefore$要使$t\geqslant0$，条件为$\sqrt{2dR}-c\geqslant0$，即$2dR\geqslant c^2$。
 
 
 \exercise{23}
@@ -308,7 +343,7 @@ $v_x$不变，故
 t^2-10t+50,&t\in[5,+\infty)
 \end{cases}$
 
-\chapter{牛顿运动定律}
+\chapter{功和能}
 \section{选择题}
 
 \exercise{1}C
@@ -371,7 +406,7 @@ E_k=2\times\left(\frac{1}{2}k'A'^2\right)=\left(2k\right)\times\left(\frac{1}{4}
 
 \exercise{8}C
 
-\solve 若合外力的冲量为0，则由冲量定义$\vec{I}=\int_{t1}^{t2}\vec{F}\di{t}$知，$\vec{F}=\vec{0}$，因此合外力做的功为0。其它选项，AD可举匀速圆周运动的反例；对于B，合外力不为0，必有加速度，而质量不改变，因此$\vec{v}$必然改变，即动量必改变。\\
+\solve 若合外力的冲量为0，则由冲量定义$\vec{I}=\int_{t_1}^{t_2}\vec{F}\di{t}$知，$\vec{F}=\vec{0}$，因此合外力做的功为0。其它选项，AD可举匀速圆周运动的反例；对于B，合外力不为0，必有加速度，而质量不改变，因此$\vec{v}$必然改变，即动量必改变。\\
 
 \exercise{9}B
 
@@ -460,9 +495,9 @@ mgh=\frac{1}{2}mv_1^2+\frac{1}{2}Mv_2^2
 \solve 参照下面的图\ref{fig:t20}，功可直接按定义计算为：
 
 \begin{figure}[htbp]
-\centering
-\includegraphics[height=100pt]{Chp2_illus1.png}
-\caption{练习20示意图}\label{fig:t20}
+	\centering
+	\includegraphics[height=100pt]{Chp2_illus1.png}
+	\caption{练习20示意图}\label{fig:t20}
 \end{figure}
 
 \begin{align*}
@@ -520,9 +555,9 @@ A&=\int_{\frac{L}{3}}^{0} -\frac{Mg}{L}[\mu L+(1-\mu)l] \di{l}=\frac{Mg}{L}\left
 \[m\dfrac{v^2}{R}=mg\cos\theta-N\]
 
 \begin{figure}[htbp]
-\centering
-\includegraphics[height=100pt]{Chp2_illus2.png}
-\caption{练习23示意图1}\label{fig:t23-1}
+	\centering
+	\includegraphics[height=100pt]{Chp2_illus2.png}
+	\caption{练习23示意图1}\label{fig:t23-1}
 \end{figure}
 
 由受力分析（参见图\ref{fig:t23-2}）知，圆环竖直方向受力$F$为
@@ -531,9 +566,9 @@ F=(N'+N')\cos\theta=2N\cos\theta
 \]
 
 \begin{figure}[htbp]
-\centering
-\includegraphics[height=100pt]{Chp2_illus3.png}
-\caption{练习23示意图2}\label{fig:t23-2}
+	\centering
+	\includegraphics[height=100pt]{Chp2_illus3.png}
+	\caption{练习23示意图2}\label{fig:t23-2}
 \end{figure}
 
 当$\theta\in[0,\frac{\pi}{2}]$时，$\cos\theta>0$，故当$N<0$时，$F$向上，圆环上升。从而有
@@ -542,9 +577,9 @@ F=(N'+N')\cos\theta=2N\cos\theta
 \[\frac{1}{2}mv^2=mgh=mg(1-\cos\theta)R\]
 
 \begin{figure}[htbp]
-\centering
-\includegraphics[height=100pt]{Chp2_illus4.png}
-\caption{练习23示意图3}\label{fig:t23-3}
+	\centering
+	\includegraphics[height=100pt]{Chp2_illus4.png}
+	\caption{练习23示意图3}\label{fig:t23-3}
 \end{figure}
 
 代入$N<0$的条件便得
@@ -591,23 +626,23 @@ v_{\text{max}}=\sqrt{\frac{0-\frac{4m_2^2g^2}{m_1^2}}{4\left(-\frac{k_1}{m_1}\ri
 \exercise{6}C
 
 \solve A人向右跳落入B船后，由动量守恒，A船具有向左的速度，A人具有向右的速度，落入B船后使得A人，B人，B船都具有了向右的速度。B人再跳回A船后，由动量守恒，B人获得的动量朝左，A人和B船获得的动量向右，因此最终B船的速度向右，\(v_B>0\)。B人和A船的动量都向左，因此最终B人落入A船后，A船速度向左，\(v_A<0\)。
-			
+
 \exercise{7}A
 
 \solve 由公式\(E=\frac{p^2}{2m}\)，\(p_1=\sqrt{2mE}\)，\(p_2=\sqrt{2\times 4m\times E}=2\sqrt{2mE}\)（此处\(p_1\)，\(p_2\)均为大小）。由于两个质点面对面运动，\(p_1\)和\(p_2\)符号相反，因此系统动量大小为\(p=p_2-p_1=\sqrt{2mE}\)。
-			
+
 \exercise{8}A
 
 \solve 小球转一周后速度大小和方向都与转前相同，因此动量增量为0，A对。由冲量定义式\(I=F\Delta t\)，\(F\)和\(\Delta t\)均不为0，因此\(I\)也不为0，B错，同理可知C错误。在转动过程中小球速度的方向发生了改变，因此过程中动量不守恒，D错。
-			
+
 \exercise{9}C
-			
-\solve 小球下落直到与板碰撞之前，对小球分析，有\(v=\sqrt{2gh}\)，对板和弹簧分析，设此时弹簧的压缩量为\(x_0\)，由胡克定律有\(x_0=Mg/k\)；此后对球与板的碰撞过程，有动量守恒\(mv=(m+M)v_0\)，解得\(v_0=\frac{m}{m+M}\sqrt{2gh}\)；此后，小球与板一起运动，设弹簧最大压缩量为\(x\)，由能量守恒可列出
-\[\frac{1}{2}(m+M)v_0^2+(M+m)gx+\frac{1}{2}kx^2=\frac{1}{2}k(x+x_0)^2\]
+
+\solve 小球下落直到与板碰撞之前，对小球分析，有\(v=\sqrt{2gh}\)，对板和弹簧分析，设此时弹簧的压缩量为\(x_0\)，由胡克定律有\(x_0=Mg/k\)；此后对球与板的碰撞过程，有动量守恒\(mv=(m+M)v_0\)，解得\(v_0=\frac{m}{m+M}\sqrt{2gh}\)；此后，小球与板一起运动，设两者一起运动的距离为\(x\)，由能量守恒可列出
+\[\frac{1}{2}(m+M)v_0^2+(M+m)gx+\frac{1}{2}kx_0^2=\frac{1}{2}k(x+x_0)^2\]
 代入数据解得\(x=\frac{mg}{k}(1+\sqrt{1+\frac{2kh}{(M+m)g}})\)，所以选择C项。
-			
+
 \exercise{10}A
-			
+
 \solve 两球碰撞后以相同速度运动，则为完全非弹性碰撞，必有机械能损失，与完全弹性碰撞矛盾，A错误；若两球碰撞前速度大小相同，方向相反，则碰撞后速度互换，B正确；完全弹性碰撞的定义即为机械能守恒的碰撞，C正确；碰撞过程中动量守恒，D正确。
 
 \section{填空题}
@@ -658,7 +693,7 @@ I = \int_0^1 2t \di t + \int_1^2 2(2-t)^2 \di t = \frac{5}{3}\text{N} \cdot \tex
 v_0=\frac{m+M}{m}\sqrt{2 \mu gs}.
 \end{equation*}
 
-\exercise{17}$\sqrt{\frac{kMl_0^2}{(M+m)^2}}$ \hspace{4em} $\sqrt{\frac{M}{M+nm}}l_0$
+\exercise{17}$\sqrt{\frac{kMl_0^2}{(M+m)^2}}$ \hspace{2em} $\sqrt{\frac{M}{M+nm}}l_0$
 
 \analysis 每次油滴落入容器等价于油滴与容器发生了一次完全非弹性碰撞，该过程满足动量守恒；此后直到下一滴油滴落入容器之前，整体运动满足能量守恒。
 
@@ -695,13 +730,13 @@ x_n=\sqrt{\frac{M}{M+nm}}l_0.
 \exercise{18}$m(\alpha\sin(\omega t)\vec{i}-(\beta\cos(\omega t)-\beta)\vec{j})$
 
 \solve 由已知条件$a_x=\omega\alpha\cos(\omega t)，a_y=\omega\beta\sin(\omega t)$，所以$v_x=\int a_x\di t=\alpha\sin(\omega t)+C_1$，$v_y=\int a_y\di t=-\beta\cos(\omega t)+C_2$，又由初始条件$t=0$时，$vec{v}=0$，可得$C_1=0$，$C_2=\beta$，所以质点在任一时刻的动量$\vec{p}(t)=m(\alpha\sin(\omega t)\vec{i}-(\beta\cos(\omega t)-\beta)\vec{j})$。
-			
+
 \exercise{19}$mv/\Delta t$
-			
+
 \solve 由平均力计算公式可得$\overline{F}=\frac{I}{\Delta t}=\frac{mv}{\Delta t}$。
 
 \exercise{20}$\frac{1}{6}m(2v_B-v_A)^2$
-			
+
 \solve 因为发生完全弹性碰撞，结合能量守恒，可得碰撞过程中系统动能最小的时刻为弹性势能最大的时刻，亦即A、B共速的时刻，设共速时速度为$v$，则设B运动的方向为正方向由动量守恒有$2mv_B-mv_A=3mv$，此时的动能为
 \begin{equation*}
 E_k=\frac{1}{2}\cdot 3mv^2=\frac{1}{6}m(2v_B-v_A)^2.
@@ -730,6 +765,16 @@ $(2)$设球对地面的平均冲力为$F$，地面对球的平均冲力为$F_0$�
 \end{equation*}
 方向竖直向下。
 
+注：实际上最好还是不要忽略重力，因为在这里考虑重力也是可计算的。那么此时有
+\begin{equation*}
+\overline{F_0}-mg=\frac{I}{t}
+\end{equation*}
+再由牛顿第三定律可得
+\begin{equation*}
+\overline{F}=\overline{F_0}+mg=1759.8\footnote{注意$g$取9.8$\mathrm{N/s}^2$}\mathrm{N}
+\end{equation*}
+方向竖直向下。
+
 \exercise{22}
 
 \analysis 全过程可分为两部分：一是子弹嵌入木块过程，动量守恒，二是子弹木块整体沿斜面上滑，能量守恒。
@@ -747,17 +792,17 @@ V=v'\cos\theta
 \frac{1}{2}(m+M)V^2=(M+m)gl\sin\theta
 \end{equation*}
 联立上述三式可解得：
-\begin{equation*}
-V=\frac{mv\cos\theta}{M+m}
+\begin{gather*}
+V=\frac{mv\cos\theta}{M+m}\\
 l=\frac{m^2v^2\cos^2\theta}{2(M+m)^2g\sin\theta}.
-\end{equation*}
+\end{gather*}
 
 \exercise{23}
 
 \analysis 对于碰撞问题可以从能量守恒动量守恒两方面考虑。
 
 \noindent\textbf{证明}\ 设运动的小球为球1，质量为$m_1$，静止的小球为球2，质量为$m_2$，碰撞前球1的速度为$\vec{v}_0$，碰撞后球1、球2的速度分别为$\vec{v}_1$、$\vec{v}_2$，且有$\vec{v}_1$垂直于$\vec{v}_2$。
-			
+
 对碰撞过程，由能量守恒有：
 \begin{equation*}
 \frac{1}{2}m_1v_0^2=\frac{1}{2}m_1v_1^2+\frac{1}{2}m_2v_2^2
@@ -787,7 +832,7 @@ $(\ref{eq:c3-t23-2})-(\ref{eq:c3-t23-1})$得
 \exercise{24}
 
 \analysis 将尘埃与飞船共同作为研究对象，则系统动量守恒，从而得到通过$m$与$v$的关系，再通过$\di m$的表达式与前式联立可以消去$\di m$再积分得到$v$和$t$的关系
-			
+
 \solve 设$t$时刻飞船的质量为$m$，速度为$v$。由初末状态系统动量守恒，有$m_0 v_0=mv$，即
 \begin{equation}
 m=\frac{m_0 v_0}{v}
@@ -805,7 +850,7 @@ $(\ref{eq:c3-t24-1})(\ref{eq:c3-t24-2})$两式联立消去$\di m$，再求积分
 -\int_{v_0}^v \frac{\di v}{v^3}=\int_0^t \frac{\rho s}{m_0 v_0} \di t
 \end{equation*}
 
-解得$v=\sqrt{\frac{m_0}{\rho sv_0 t+m_0}v_0}$.
+解得$v=\sqrt{\frac{m_0}{2\rho sv_0 t+m_0}}v_0$.
 
 
 \chapter{刚体运动学}
@@ -818,7 +863,7 @@ $(\ref{eq:c3-t24-1})(\ref{eq:c3-t24-2})$两式联立消去$\di m$，再求积分
 
 从定量计算来看，显然$ T_B=F=Mg $。对A滑轮，对物体应用牛顿第二定律$F=ma$，对滑轮应用转动定律$M=J\beta$：
 \[Mg-T_A=Ma\]
-			\[T_A\times R=J\beta\]
+\[T_A\times R=J\beta\]
 与$ a=\beta R $联立解得：
 \[T_A=\frac{Mg}{\frac{MR^2}{J}+1}\]
 则有$ T_A< Mg=T_B$
@@ -830,48 +875,48 @@ $(\ref{eq:c3-t24-1})(\ref{eq:c3-t24-2})$两式联立消去$\di m$，再求积分
 解得$ \beta=\frac{3Mg\sin\theta}{2ml} $，可知$ \beta $随下落过程中$ \theta $的减少而减少，因此角加速度从大到小。
 
 \begin{figure}[htbp]
-\centering
-\begin{tikzpicture}
-\draw[dashed](0,0) -- (3,0);
-\draw[dashed](0,0) -- (0,-3);
-\draw[dashed](3,0) arc (0:-90:3);
-\draw(0,0) -- (2.4,-1.8);
-\draw(0.5,0) arc (0:-36.87:0.5) node[right=5pt] {$ \theta $};
-\end{tikzpicture}
-\caption{练习2示意图}\label{fig:c4-t2}
+	\centering
+	\begin{tikzpicture}
+	\draw[dashed](0,0) -- (3,0);
+	\draw[dashed](0,0) -- (0,-3);
+	\draw[dashed](3,0) arc (0:-90:3);
+	\draw(0,0) -- (2.4,-1.8);
+	\draw(0.5,0) arc (0:-36.87:0.5) node[right=5pt] {$ \theta $};
+	\end{tikzpicture}
+	\caption{练习2示意图}\label{fig:c4-t2}
 \end{figure}
-			
+
 \exercise{3}D
 
 \solve 本题默认水平圆盘放在桌子上，力矩均指对轴的力矩。在玻璃球自由滚动的时候，系统受三个力：重力，支持力（与重力抵消，合力矩为0），还受轴对圆盘的支持力，但由于该力的$ \vec{r}=0 $，因此该力力矩也为0，合外力矩也为0。由动量矩定理$ M=\dy{L}{t} $知，此系统角动量守恒，D正确。若小球处于滚动状态，则轴对圆盘可能会有支持力的作用，由冲量定理$ (I=\Delta p) $，动量不守恒，A，B均错误。若小球与轴或者盘边缘碰撞，由于题目中未说明小球与轴或盘边缘的碰撞是否是完全弹性碰撞，因此碰撞可能会产生机械能损失，C错误。
 
 \begin{note}
-笔者希望同学们对这类圆盘（或细棒）受到固定轴约束转动的问题有更多了解。轴对圆盘的力有且仅有两个，分别是摩擦力和支持力。对于支持力，其垂直于作用面，因此总是指向轴心，$ \vec{r}=0 $，该力对转轴的力矩为0。至于摩擦力，由于其与相对转动速度相反，因此该力与轴相切，由于轴是有半径的（不是一条线），因此$ \vec{r}=R $（R为转轴的半径，显然摩擦力的力矩不为0（但在碰撞过程中，由于$ \Delta t\to 0 $，由动量矩定理，该力矩导致的角动量变化$ \Delta L\to 0 $，因此也可认为角动量守恒）。该题中已经说明忽略轴的摩擦，因此圆盘和小球受到的合外力矩为0。更多相关内容请参考舒幼生著《力学（物理类）》
-\footnote{舒幼生. 力学: 物理类[M]. 北京大学出版社, 2005.}
-。
+	笔者希望同学们对这类圆盘（或细棒）受到固定轴约束转动的问题有更多了解。轴对圆盘的力有且仅有两个，分别是摩擦力和支持力。对于支持力，其垂直于作用面，因此总是指向轴心，$ \vec{r}=0 $，该力对转轴的力矩为0。至于摩擦力，由于其与相对转动速度相反，因此该力与轴相切，由于轴是有半径的（不是一条线），因此$ \vec{r}=R $（R为转轴的半径，显然摩擦力的力矩不为0（但在碰撞过程中，由于$ \Delta t\to 0 $，由动量矩定理，该力矩导致的角动量变化$ \Delta L\to 0 $，因此也可认为角动量守恒）。该题中已经说明忽略轴的摩擦，因此圆盘和小球受到的合外力矩为0。更多相关内容请参考舒幼生著《力学（物理类）》
+	\footnote{舒幼生. 力学: 物理类[M]. 北京大学出版社, 2005.}
+	。
 \end{note}
-			
+
 \exercise{4}C
-			
+
 \solve 角动量的定义为$ L=\vec{r}\times m\vec{v} $，$ m $为质点质量，$ \vec{v} $为质点速度（运动状态），$ \vec{r} $为质点的向径（与坐标原点有关），C正确，ABD均错误。
-			
+
 \exercise{5}D
 
 \solve 参见图\ref{fig:c4-t5}，微元$ \di{\sigma} $到轴的距离为$ x $。由于积分域关于$ x $轴对称，被积函数关于$ y $为偶函数，因此$ J=2J_1 $，$ J_1 $为第一象限部分的转动惯量。
 
 \begin{figure}[htbp]
-\centering		
-\begin{tikzpicture}
-\zbj{-0.5}{3}{-2}{2}
-\draw (0,-1) node[left] {$ -\frac{a}{2} $}
--- (0,1) node[left] {$ \frac{a}{2} $}
--- (1.732,0) node[below right] {$ \frac{\sqrt{3}}{2}a $}
--- cycle;
-\draw [dashed](0.9,0.28) -- (0.9,0);
-\node[dashed,below left] at (0.9,0) {$ x $};
-\draw (0.9,0.280) rectangle (1,0.38) node [left]{$\di{\sigma}$};
-\end{tikzpicture}
-\caption{练习5示意图}\label{fig:c4-t5}
+	\centering		
+	\begin{tikzpicture}
+	\zbj{-0.5}{3}{-2}{2}
+	\draw (0,-1) node[left] {$ -\frac{a}{2} $}
+	-- (0,1) node[left] {$ \frac{a}{2} $}
+	-- (1.732,0) node[below right] {$ \frac{\sqrt{3}}{2}a $}
+	-- cycle;
+	\draw [dashed](0.9,0.28) -- (0.9,0);
+	\node[dashed,below left] at (0.9,0) {$ x $};
+	\draw (0.9,0.280) rectangle (1,0.38) node [left]{$\di{\sigma}$};
+	\end{tikzpicture}
+	\caption{练习5示意图}\label{fig:c4-t5}
 \end{figure}
 
 按转动惯量之定义作积分，可得：
@@ -894,22 +939,22 @@ J&=2J_1=2\iint\limits_{\sigma_1}x^2\cdot\di{m}=2\iint\limits_{\sigma_1}x^2\cdot\
 \solve 碰撞过程中$ \Delta t\to 0 $，小球和系杆组成的系统受到4个力：重力，支持力（与重力相互抵消），O点对杆的支持力，O点对杆的摩擦力。因此系统角动量守恒（详细分析可见选择题3的“注”部分），有：
 \[0+rmv=\left[\frac{1}{12}ml^2+m\left(\frac{l}{2}\right)\right]^2\omega\]
 解得$\omega=\dfrac{3v}{2l}$.
-		
+
 \exercise{8}C
 
 \begin{figure}[htbp]
-\centering
-\begin{tikzpicture}
-\zbj{-0.5}{3}{-2}{2}
-\draw (0,0)-- (1.732,1) -- (1.732,-1) -- cycle;
-\draw[dashed] (1.732,1) -- (0,1) node[left] {$ \frac{a}{2} $};
-\draw[dashed] (1.732,-1) -- (0,-1) node[left] {$ -\frac{a}{2} $};
-\node[below right] at (1.732,0) {$\frac{\sqrt{3}}{2}a$};
-\draw (0.8,0.3) rectangle (0.9,0.4);
-\draw [dashed](0.8,0.3) -- node[above left] {$ r $} (0,0);
-\node [below right] at (0.9,0.5) {$\di{\sigma}$};
-\end{tikzpicture}
-\caption{练习8参考图}\label{fig:c4-t8}
+	\centering
+	\begin{tikzpicture}
+	\zbj{-0.5}{3}{-2}{2}
+	\draw (0,0)-- (1.732,1) -- (1.732,-1) -- cycle;
+	\draw[dashed] (1.732,1) -- (0,1) node[left] {$ \frac{a}{2} $};
+	\draw[dashed] (1.732,-1) -- (0,-1) node[left] {$ -\frac{a}{2} $};
+	\node[below right] at (1.732,0) {$\frac{\sqrt{3}}{2}a$};
+	\draw (0.8,0.3) rectangle (0.9,0.4);
+	\draw [dashed](0.8,0.3) -- node[above left] {$ r $} (0,0);
+	\node [below right] at (0.9,0.5) {$\di{\sigma}$};
+	\end{tikzpicture}
+	\caption{练习8参考图}\label{fig:c4-t8}
 \end{figure}
 
 \solve 参考图\ref{fig:c4-t8}，微元$ \di{\sigma} $到轴（就是到原点）的距离为$ \sqrt{x^2+y^2} $。由于积分域关于$ x $轴对称，被积函数关于$ y $为偶函数，因此$ J=2J_1 $，$ J_1 $为第一象限部分的转动惯量。则
@@ -922,7 +967,7 @@ J&=2J_1=2\iint\limits_{\sigma_1}\left(m\frac{\di{\sigma}}{\frac{\sqrt{3}}{4}a^2}
 \exercise{9}A
 
 \solve 由动量矩定理易知A正确。BCD均为充分条件。小球在绳子的束缚下绕定点做匀速圆周运动，则所受合外力不为0（绳子的拉力），B错误，且小球受到的重力和支持力对定点的力矩均不为0，因此受到了外力矩的作用，C错误。对于D，可令$ J=t,\omega=\frac{1}{t} $，则$ L=J\omega=1 $，角动量守恒，但转动惯量和角速度都在随时间变化，因此D错误。
-			
+
 \exercise{10}A
 
 \solve 卫星做匀速圆周运动，则$ m,v,r $均不变，$ \vec{r}\times\vec{v} $的方向也不变，因此角动量守恒。卫星与地球的万有引力与卫星的运动方向恒垂直，因此卫星与地球构成的系统的内力（万有引力）不做功，同时又不受外力作用，因此卫星的动能守恒。
@@ -995,17 +1040,17 @@ l\sin 30^\circ mv_0+J\omega_1=(J+ml^2)\omega\\
 由对称性，薄板分别相对于两条对角线的转动惯量相等，均为$J_1$；分别相对过其中心且平行于一边的轴的转动惯量也相等，均为$J_2$，如图\ref{fig:c4-t17}所示。
 
 \begin{figure}[htbp]
-\centering
-\begin{tikzpicture}
-\draw [rotate around={45:(4,0)}] (3,-1) rectangle (5,1);
-\draw (5.75,0) node[right] {$ J_1 $} -- (2.25,0);
-\draw (4,1.8) node[above] {$ J_1 $} -- (4,-1.8);
-\draw [dashed] (2,1.5) -- (2,-1.5);
-\draw (-1,-1) rectangle (1,1);
-\draw (1.5,0) node[right] {$ J_2 $} -- (-1.5,0);
-\draw (0,1.5) node[above] {$ J_2 $} -- (0,-1.5);
-\end{tikzpicture}
-\caption{练习17参考图}\label{fig:c4-t17}
+	\centering
+	\begin{tikzpicture}
+	\draw [rotate around={45:(4,0)}] (3,-1) rectangle (5,1);
+	\draw (5.75,0) node[right] {$ J_1 $} -- (2.25,0);
+	\draw (4,1.8) node[above] {$ J_1 $} -- (4,-1.8);
+	\draw [dashed] (2,1.5) -- (2,-1.5);
+	\draw (-1,-1) rectangle (1,1);
+	\draw (1.5,0) node[right] {$ J_2 $} -- (-1.5,0);
+	\draw (0,1.5) node[above] {$ J_2 $} -- (0,-1.5);
+	\end{tikzpicture}
+	\caption{练习17参考图}\label{fig:c4-t17}
 \end{figure}
 
 由垂直轴定理，$ J=2J_1=2J_2 $，因此$ J_1=J_2 $。
@@ -1032,7 +1077,7 @@ l\sin 30^\circ mv_0+J\omega_1=(J+ml^2)\omega\\
 \section{计算题}
 
 \exercise{21}$\frac{m}{m+\frac{1}{2}M}\frac{Sg}{rl}$
-			
+
 \solve 对左端下垂链条应用牛顿第二定律$F=ma$，对上端链条和飞轮应用转动定律$M=J\beta$，右端下垂链条应用牛顿第二定律$F=ma$：
 \begin{gather}
 m\frac{l-\pi r+S}{2l}g-T_1=m\frac{l-\pi r+S}{2l}a\label{eq:c4-t21-1}\\
@@ -1079,6 +1124,8 @@ T_2-\frac{1}{2}mg=\frac{1}{2}ma\label{eq:c4-t22-3}
 \Delta\theta=\left.\theta\right|_{t=4}=\frac{x}{R}=\frac{16g}{5\times 0.4}=8g=78.4(\mathrm{rad})
 \end{gather*}
 
+\note 这三道题是同一类型的问题，都可以用角动量定理和受力分析（如练习21、22）两种方法来求解。前者指的是，把系统中平动的链条、重物都看作都是转动的，写出其对滑轮转轴的角动量的表达式，用角动量定理解出角加速度，再求解其他物理量；后者则分别研究每一部分的转动或平动，分别列运动学基本方程，用角加速度和加速度的关系联系起来。但求解时可以发现，消去拉力后得到的就是角动量定理的表达式，而用第一种方法求拉力时，又要列出第二种方法的受力分析。所以说，两种方法本质是也一样的，如果只问与加速度有关的量就选用第一种。我们希望，读者在复习时，能使用角动量定理自己把以上三道题再做一遍，以体会其中深意，尤其是受力方向和角动量方向之区别，及所导致列式上的不同。如果要问诸如下降的距离等，也可采用练习23的解法，就可避过求加速度，也是一种好的思路。这是最基本的题型之一，问法相对固定，难度不大，老师希望通过这三道题来让同学们掌握这类题型。在2019年期末试题中，就有一道解答题是这个题型。
+
 \exercise{24}$\frac{3m_2^2(v_1+v_2)^2}{m_1^2l\mu g}$
 
 \solve 本题所述力矩，全部指对O点的力矩。
@@ -1092,7 +1139,7 @@ T_2-\frac{1}{2}mg=\frac{1}{2}ma\label{eq:c4-t22-3}
 故有$\frac{M}{J}\di{\theta}=\omega\di{\omega}$。由$\theta=0$时$\omega=0$，对等式两边从$\theta=0$开始积分可得
 \[\frac{M}{J}\theta=\frac{1}{2}\omega^2\]
 故最终得到
-\[\theta=\frac{\omega^2}{2}\frac{J}{M}=\frac{1}{2}\frac{9m_2^2(v_1+v_2)^2}{m_1^2l^2}\frac{\frac{1}{3}m_1l^2}{\frac{\mu m_1gl}{2}}=\frac{3m_2^2(v_1+v_2)^2}{m_1^2l\mu g}\]
+\[\theta=\frac{\omega^2}{2}\frac{J}{M}=\frac{1}{2}\frac{9m_2^2(v_1+v_2)^2}{m_1^2l^2}\frac{\frac{1}{3}m_1l^2}{\frac{\mu m_1gl}{2}}=\frac{3m_2^2(v_1+v_2)^2}{\mu m_1^2gl}\]
 
 \chapter{狭义相对论}  % 使用章节\chapter{}来做一级标题
 \section{选择题}  % 选择题、填空题和解答题使用\section{}
@@ -1106,12 +1153,27 @@ T_2-\frac{1}{2}mg=\frac{1}{2}ma\label{eq:c4-t22-3}
 \exercise{2}A
 
 \solve
-因为该立方体是沿面对角线方向运动，所以在地面系中观察，面对角线方向上发生尺缩，正方形底面不再是正方形，而是菱形，菱形的其中一条对角线仍为$\sqrt{2}L$，另一条对角线尺缩后为$\sqrt{2}L\sqrt{1-(\frac{v}{c})^2}$，面积就变成了$S=\frac{1}{2}\sqrt{2}L\sqrt{2}L\sqrt{1-(\frac{v}{c})^2}$，在地面系中看，它的体积为$V=SL=0.8L^3$.
+因为该立方体是沿（体）对角线方向运动，所以在地面系中观察，体对角线方向上尺缩为原来的$\sqrt{1-(\frac{v}{c})^2}=0.8$倍，而其他方向的尺寸并未改变，所以，在地面系中看，它的体积为$V=0.8L^3$。
+
+事实上，不管在什么方向上尺缩，体积的变化应该是一样的。如果不能理解，可以在垂直运动方向上将物体截成无限个薄片（就像微分那样），他们的底面积没有改变而高缩短为0.8倍，总体积也变为0.8倍。
 
 \exercise{3}A
 
 \solve
-题中仅说了在$S$系中观察到一物体以$0.3c$的速度运动，并没有说速度的方向，所以可以假设该物体沿$x$轴正向运动或沿$x$轴负向运动用速度变换求出在$S'$系中可能观测到的最大最小速度，得到速度范围为$\frac{4}{17}c<v<\frac{16}{23}c$，约为$0.24c<v<0.70c$.
+题中仅说了在$S$系中观察到一物体以$0.3c$的速度运动，并没有说速度的方向，所以可以假设该物体沿$x$轴正向运动或沿$x$轴负向运动，用速度变换求出在$S'$系中可能观测到的最大最小速度。得到速度范围为$\frac{4}{17}c<v<\frac{16}{23}c$，约为$0.24c<v<0.70c$。
+
+严格的来说（假设坐标系是二维的），我们应该设物体在$S$系中速度方向与x轴正向夹角为$\theta$，则$S'$系中：(SI)
+\begin{align*}
+v_y&=0.3c\sin\theta\\
+v_x&=\dfrac{0.3c\cos\theta-0.5c}{1-\frac{0.5c\cdot 0.3c\cos\theta}{c^2}}=c(\dfrac{1.5}{1-0.15\cos\theta}-2)\\
+v&=\sqrt{v_x^2+v_y^2}\\
+&=c\cdot \sqrt{(0.3\sin\theta)^2+{\big(\frac{0.3\cos\theta-0.5}{1-0.15\cos\theta}\big)}^2}
+\end{align*}
+可以研究该函数单调性，但手动计算过于麻烦，故作如下分析：
+
+由于对称性，取$\theta\in[0,\pi]$。当$\theta$从$\pi$减小到$\frac{\pi}{2}$时，$v_y$增大，$v_x$绝对值减小；但当$\theta$从$\frac{\pi}{2}$减小到$0$时，$v_y$减小，$v_x$绝对值仍减小，可以确定$v$是单调递减的，所以计算此范围内$\frac{4}{17}c<v<\frac{\sqrt{13}}{6}c$，足以囊括B、C、D选项，所以可以选A了。
+
+事实上，可以借助函数绘图软件，发现$v$一直是单调递减的。
 
 \exercise{4}C
 
@@ -1328,12 +1390,12 @@ v=\frac{2(1+3\sqrt{3})}{13}c
 取以O为圆心、$r,r+\Delta r$为内、外径的圆环面元，其上各点到通过圆心、垂直盘面的轴线上的任一点距离相等。
 则:
 \begin{gather*}
-	\Delta S=2\pi r\di{r}\\
-	\sigma=\dfrac{q}{\pi R^2}
+\Delta S=2\pi r\di{r}\\
+\sigma=\dfrac{q}{\pi R^2}
 \end{gather*}
 故
 \begin{equation*}
-	\di{q}=\sigma \Delta S=\dfrac{2q}{R^2}r\di{r}
+\di{q}=\sigma \Delta S=\dfrac{2q}{R^2}r\di{r}
 \end{equation*}
 
 \exercise{3}C
@@ -1341,7 +1403,7 @@ v=\frac{2(1+3\sqrt{3})}{13}c
 \solve
 计算面积分即可。在这里$x=x_0$,$\vec{E}$与$S$垂直。
 \begin{equation*}
-	 \iint\limits_S \vec{E}\di{S}=bx_0\cdot S=x_0bS
+\iint\limits_S \vec{E}\di{S}=bx_0\cdot S=x_0bS
 \end{equation*}
 
 \exercise{4}A
@@ -1359,19 +1421,19 @@ v=\frac{2(1+3\sqrt{3})}{13}c
 \solve
 由高斯定理：
 \begin{align*}
-	E\cdot 4\pi r^2&=\dfrac{1}{\varepsilon_0}\int_0^r\rho\cdot 4\pi r^2\di{r}\\
-	&=\dfrac{4\pi b}{\varepsilon_0}\int_0^r e^{-kr}\di{r}\\
-	&=\dfrac{4\pi b}{\varepsilon_0 k}(1-e^{-kr})\\
+E\cdot 4\pi r^2&=\dfrac{1}{\varepsilon_0}\int_0^r\rho\cdot 4\pi r^2\di{r}\\
+&=\dfrac{4\pi b}{\varepsilon_0}\int_0^r e^{-kr}\di{r}\\
+&=\dfrac{4\pi b}{\varepsilon_0 k}(1-e^{-kr})\\
 \end{align*}
 所以
 \begin{gather*}
-	E=\dfrac{b}{\varepsilon_0 k}\dfrac{1-e^{-kr}}{r^2}\\
-	r=\dfrac{1}{k}\textbf{时,}E_1=\dfrac{b}{\varepsilon_0}\cdot k(1-e^{-1})\\
-	r=\dfrac{2}{k}\textbf{时,}E_2=\dfrac{b}{\varepsilon_0}\cdot \dfrac{k}{4}(1-e^{-2})
+E=\dfrac{b}{\varepsilon_0 k}\dfrac{1-e^{-kr}}{r^2}\\
+r=\dfrac{1}{k}\text{时,}E_1=\dfrac{b}{\varepsilon_0}\cdot k(1-e^{-1})\\
+r=\dfrac{2}{k}\text{时,}E_2=\dfrac{b}{\varepsilon_0}\cdot \dfrac{k}{4}(1-e^{-2})
 \end{gather*}
 故
 \begin{equation*}
-	E_2=\dfrac{1-e^{-2}}{4(1-e^{-1})}E_1\approx 0.34E_1
+E_2=\dfrac{1-e^{-2}}{4(1-e^{-1})}E_1\approx 0.34E_1
 \end{equation*}
 
 \exercise{7}D
@@ -1379,9 +1441,9 @@ v=\frac{2(1+3\sqrt{3})}{13}c
 \solve
 简单定积分。以棒上远离场点的一端点为原点，指向场点的方向为$x$轴正方向。
 \begin{align*}
-	E&=\int_{0}^{L}\dfrac{1}{4\pi \varepsilon_0}\dfrac{\lambda\di{x}}{{(r+\frac{L}{2}-x)}^2}\\
-	&=\dfrac{Q}{4\pi \varepsilon_0 L}\cdot \dfrac{1}{{r+\frac{L}{2}-x}}\bigg|_0^L\\
-	&=\dfrac{Q}{\pi \varepsilon_0(4r^2-L^2)}
+E&=\int_{0}^{L}\dfrac{1}{4\pi \varepsilon_0}\dfrac{\lambda\di{x}}{{(r+\frac{L}{2}-x)}^2}\\
+&=\dfrac{Q}{4\pi \varepsilon_0 L}\cdot \dfrac{1}{{r+\frac{L}{2}-x}}\bigg|_0^L\\
+&=\dfrac{Q}{\pi \varepsilon_0(4r^2-L^2)}
 \end{align*}
 
 \exercise{8}B
@@ -1410,14 +1472,14 @@ v=\frac{2(1+3\sqrt{3})}{13}c
 	\dfrac{\rho}{3\varepsilon_0}\vec{r} & r\leqslant R,\\
 	\dfrac{\rho R^3}{3\varepsilon_0 r^3}\vec{r} & r > R
 	\end{cases}$
-
+	
 	标量式中，$r>R$时，$E=\dfrac{\rho R^3}{3\varepsilon_0 r^2}$。
 }得：
 \begin{align*}
-	E&=\dfrac{\rho}{3\varepsilon_0}\vec{r}_1+\dfrac{-\rho}{3\varepsilon_0}\vec{r}_2\\
-	&\text{($r_1,r_2$分别是$O_1,O_2$到场点的矢径)}\\
-	&=\dfrac{\rho}{3\varepsilon_0}(\vec{r}_1-\vec{r}_2)\\
-	&=\dfrac{\rho}{3\varepsilon_0}\overrightarrow{O_1O_2}
+E&=\dfrac{\rho}{3\varepsilon_0}\vec{r}_1+\dfrac{-\rho}{3\varepsilon_0}\vec{r}_2\\
+&\text{($r_1,r_2$分别是$O_1,O_2$到场点的矢径)}\\
+&=\dfrac{\rho}{3\varepsilon_0}(\vec{r}_1-\vec{r}_2)\\
+&=\dfrac{\rho}{3\varepsilon_0}\overrightarrow{O_1O_2}
 \end{align*}
 即空腔内为匀强电场。
 
@@ -1447,8 +1509,8 @@ E=-\dfrac{2VR}{3r^2}
 
 由无限长带电直线场强公式得：
 \begin{align*}
-	F&=\int_{a}^{a+l}\dfrac{\lambda_1}{2\pi \varepsilon_0 x}\lambda_2\di{x}\\
-	&=\dfrac{\lambda_1\lambda_2}{2\pi \varepsilon_0}\ln\dfrac{a+l}{a}
+F&=\int_{a}^{a+l}\dfrac{\lambda_1}{2\pi \varepsilon_0 x}\lambda_2\di{x}\\
+&=\dfrac{\lambda_1\lambda_2}{2\pi \varepsilon_0}\ln\dfrac{a+l}{a}
 \end{align*}
 两线均带正电，故有限长带电线受力方向为$x$轴正向。注意题目问的是无限长带电线的受力，而且答题时不要引入“$x$轴”。
 
@@ -1472,16 +1534,16 @@ E=-\dfrac{2VR}{3r^2}
 	\caption{练习15 受力分析}\label{fig:c6-t15}
 \end{figure}
 \begin{align*}
-	E&=2\cdot \dfrac{1}{4\pi\varepsilon_0}\dfrac{qq_0}{r^2+a^2}\cos\theta\\
-	&=\dfrac{qq_0}{2\pi\varepsilon_0}\dfrac{r}{{(r^2+a^2)}^{\frac{3}{2}}}
+E&=2\cdot \dfrac{1}{4\pi\varepsilon_0}\dfrac{qq_0}{r^2+a^2}\cos\theta\\
+&=\dfrac{qq_0}{2\pi\varepsilon_0}\dfrac{r}{{(r^2+a^2)}^{\frac{3}{2}}}
 \end{align*}
 令$f(r)=\dfrac{r}{{(r^2+a^2)}^{3/2}}$，则$f'(r)=\dfrac{a^2-2r^2}{{(r^2+a^2)}^{5/2}}$。
 由导数知识得：$a^2-2r^2=0\text{即}r=\dfrac{\sqrt{2}}{2}a$时，$f(r)$取得极大值。
 
 或者用三角换元。令$r=a\tan\theta$，则
 \begin{gather*}
-	f(\theta)=\dfrac{1}{a^2}\sin\theta\cos^2\theta\\
-	f'(\theta)=\dfrac{1}{a^2}\cos\theta(\cos^2\theta-2\sin^2\theta)
+f(\theta)=\dfrac{1}{a^2}\sin\theta\cos^2\theta\\
+f'(\theta)=\dfrac{1}{a^2}\cos\theta(\cos^2\theta-2\sin^2\theta)
 \end{gather*}
 由导数知识得：$\tan\theta=\dfrac{\sqrt{2}}{2}\text{即}r=\dfrac{\sqrt{2}}{2}a$时，$f(\theta)$取得极大值。
 
@@ -1501,8 +1563,8 @@ E=\dfrac{\sigma\cdot 4\pi R^2}{4\pi\varepsilon_0R^2}=\dfrac{\sigma}{\varepsilon_
 \end{figure}
 如图\ref{fig:c6-t16}，红色部分为$\Delta S$，我们分球壳内外来研究。剩余部分球壳在$\Delta S$内、外侧（无限接近$\Delta S$且对称的）两点P、Q处产生的场强均可看作是$E_0$，而$\Delta S$在P、Q处产生的场强$E_1=E_2$。那么由题意知：
 \begin{gather*}
-	\text{(P点)}E_0-E_1=0\\
-	\text{(Q点)}E_0+E_1=E\\
+\text{(P点)}E_0-E_1=0\\
+\text{(Q点)}E_0+E_1=E\\
 \end{gather*}
 解得：
 \[
@@ -1510,8 +1572,8 @@ E_0=E_1=\dfrac{1}{2}E=\dfrac{\sigma}{2\varepsilon_0}
 \]
 那么
 \begin{gather*}
-	q_S=\sigma\Delta S\\
-	F=E_0q_S=\dfrac{\sigma^2\Delta S}{2\varepsilon_0}
+q_S=\sigma\Delta S\\
+F=E_0q_S=\dfrac{\sigma^2\Delta S}{2\varepsilon_0}
 \end{gather*}
 
 \exercise{17}$-\dfrac{\lambda}{2\pi\varepsilon_0R}\vec{j}$
@@ -1526,8 +1588,8 @@ E_0=E_1=\dfrac{1}{2}E=\dfrac{\sigma}{2\varepsilon_0}
 \]
 积分\footnote{此后因对称性而场强为零的情景，不再积分计算。}得：
 \begin{gather*}
-	E_x=\dfrac{\lambda}{4\pi \varepsilon_0 R}\int_0^{\pi} -\cos\theta\di{\theta}=0\\
-	E_y=\dfrac{\lambda}{4\pi \varepsilon_0 R}\int_0^{\pi} -\sin\theta\di{\theta}=-\dfrac{\lambda}{2\pi\varepsilon_0R}
+E_x=\dfrac{\lambda}{4\pi \varepsilon_0 R}\int_0^{\pi} -\cos\theta\di{\theta}=0\\
+E_y=\dfrac{\lambda}{4\pi \varepsilon_0 R}\int_0^{\pi} -\sin\theta\di{\theta}=-\dfrac{\lambda}{2\pi\varepsilon_0R}
 \end{gather*}
 故得$E=-\dfrac{\lambda}{2\pi\varepsilon_0R}\vec{j}$
 
@@ -1536,13 +1598,13 @@ E_0=E_1=\dfrac{1}{2}E=\dfrac{\sigma}{2\varepsilon_0}
 \solve
 设电偶极子的两电荷电量为$q$，距离为$l$。
 \begin{align*}
-	E&=\dfrac{q}{4\pi\varepsilon_0}\cdot \dfrac{1}{(x-\frac{l}{2})^2}+\dfrac{-q}{4\pi\varepsilon_0}\cdot \dfrac{1}{(x+\frac{l}{2})^2}\\
-	&=\dfrac{q}{2\pi\varepsilon_0}\dfrac{xl}{{(x^2-\frac{l^2}{4})}^2}
+E&=\dfrac{q}{4\pi\varepsilon_0}\cdot \dfrac{1}{(x-\frac{l}{2})^2}+\dfrac{-q}{4\pi\varepsilon_0}\cdot \dfrac{1}{(x+\frac{l}{2})^2}\\
+&=\dfrac{q}{2\pi\varepsilon_0}\dfrac{xl}{{(x^2-\frac{l^2}{4})}^2}
 \end{align*}
 $x\gg l$时，$x^2-\dfrac{l^2}{4}\approx x^2$。同时考虑方向，可以得到：
 \begin{align*}
-	E&=\dfrac{q\vec{l}}{2\pi\varepsilon_0x^3}\\
-	&=\dfrac{\vec{p}}{2\pi\varepsilon_0x^3}
+E&=\dfrac{q\vec{l}}{2\pi\varepsilon_0x^3}\\
+&=\dfrac{\vec{p}}{2\pi\varepsilon_0x^3}
 \end{align*}
 
 \exercise{19}0
@@ -1561,8 +1623,6 @@ E=\dfrac{\lambda d}{4\pi\varepsilon_0{(\frac{a}{2})}^2}=\dfrac{\lambda d}{\pi\va
 
 \section{解答题}
 
-
-%注：改
 \exercise{21}
 
 \solve
@@ -1576,8 +1636,8 @@ E=\dfrac{\lambda d}{4\pi\varepsilon_0{(\frac{a}{2})}^2}=\dfrac{\lambda d}{\pi\va
 \[\di{E}=\dfrac{\lambda}{2\pi\varepsilon_0R}=\dfrac{\sigma}{2\pi\varepsilon_0}\di{\theta}\]
 再由$\di{E_x}=-\di{E}\cos\theta,\di{E_y}=-\di{E}\sin\theta$可进一步求得：
 \begin{gather*}
-	E_x=\dfrac{\sigma}{2\pi\varepsilon_0}\int_{-\frac{\theta}{2}}^{\frac{\theta}{2}}-\cos\theta\di{\theta}=-\dfrac{\sigma\sin\frac{\theta}{2}}{\pi\varepsilon_0}\\
-	E_y=\dfrac{\sigma}{2\pi\varepsilon_0}\int_{-\frac{\theta}{2}}^{\frac{\theta}{2}}-\sin\theta\di{\theta}=0
+E_x=\dfrac{\sigma}{2\pi\varepsilon_0}\int_{-\frac{\theta}{2}}^{\frac{\theta}{2}}-\cos\theta\di{\theta}=-\dfrac{\sigma\sin\frac{\theta}{2}}{\pi\varepsilon_0}\\
+E_y=\dfrac{\sigma}{2\pi\varepsilon_0}\int_{-\frac{\theta}{2}}^{\frac{\theta}{2}}-\sin\theta\di{\theta}=0
 \end{gather*}
 故所求场强大小为$\dfrac{\sigma\sin\frac{\theta}{2}}{\pi\varepsilon_0}$。
 
@@ -1586,10 +1646,10 @@ E=\dfrac{\lambda d}{4\pi\varepsilon_0{(\frac{a}{2})}^2}=\dfrac{\lambda d}{\pi\va
 \solve
 由对称性，场强方向沿$x$轴。取面积微元（见练习2），则：
 \begin{align*}
-	E=&\int_0^R\dfrac{1}{4\pi\varepsilon_0}\cdot\dfrac{\frac{\sigma_0r}{R}\cdot 2\pi r\di{r}}{r^2+x^2}\cdot\dfrac{x}{\sqrt{r^2+x^2}}\\
-	&=\dfrac{\sigma_0x}{2\varepsilon_0R}\int_0^R\dfrac{r^2\di{r}}{{(r^2+x^2)}^\frac{3}{2}}\\
-	&=\dfrac{\sigma_0x}{2\varepsilon_0R}[-\dfrac{r}{\sqrt{r^2+x^2}}+\ln(r+\sqrt{r^2+x^2})]\Big|_0^R\\
-	&=\dfrac{\sigma_0x}{2\varepsilon_0R}\big(\ln\dfrac{R+\sqrt{R^2+x^2}}{x}-\dfrac{R}{\sqrt{R^2+x^2}}\big)
+E=&\int_0^R\dfrac{1}{4\pi\varepsilon_0}\cdot\dfrac{\frac{\sigma_0r}{R}\cdot 2\pi r\di{r}}{r^2+x^2}\cdot\dfrac{x}{\sqrt{r^2+x^2}}\\
+&=\dfrac{\sigma_0x}{2\varepsilon_0R}\int_0^R\dfrac{r^2\di{r}}{{(r^2+x^2)}^\frac{3}{2}}\\
+&=\dfrac{\sigma_0x}{2\varepsilon_0R}[-\dfrac{r}{\sqrt{r^2+x^2}}+\ln(r+\sqrt{r^2+x^2})]\Big|_0^R\\
+&=\dfrac{\sigma_0x}{2\varepsilon_0R}\big(\ln\dfrac{R+\sqrt{R^2+x^2}}{x}-\dfrac{R}{\sqrt{R^2+x^2}}\big)
 \end{align*}
 方向沿$x$轴正向。
 
@@ -1598,45 +1658,42 @@ E=\dfrac{\lambda d}{4\pi\varepsilon_0{(\frac{a}{2})}^2}=\dfrac{\lambda d}{\pi\va
 \solve
 由题，取半径为$r(R_1<r<R_2)$的球面为高斯面。由高斯定理：
 \begin{equation*}
-	E\cdot 4\pi r^2=\dfrac{1}{\varepsilon_0}(Q+\int_{R_1}^r\dfrac{A}{r}\cdot 4\pi r^2\di{r})
+E\cdot 4\pi r^2=\dfrac{1}{\varepsilon_0}(Q+\int_{R_1}^r\dfrac{A}{r}\cdot 4\pi r^2\di{r})
 \end{equation*}
 计算得：
 \begin{equation*}
-	E=\dfrac{A}{2\varepsilon_0}+\dfrac{Q-2\pi AR_1^2}{4\pi r^2\varepsilon_0}
+E=\dfrac{A}{2\varepsilon_0}+\dfrac{Q-2\pi AR_1^2}{4\pi r^2\varepsilon_0}
 \end{equation*}
 题目中$E$与$r$无关，故：
 \begin{gather*}
-	Q-2\pi AR_1^2=0\\
-	A=\dfrac{Q}{2\pi R_1^2}
+Q-2\pi AR_1^2=0\\
+A=\dfrac{Q}{2\pi R_1^2}
 \end{gather*}
 
-
-%画图？？
 \exercise{24}
 
 \solve
 由对称性，场强方向沿$z$轴。以垂直于$z$轴的平面去截球壳得到小圆，取以该圆周长$2\pi R\sin\theta$为长、$R\di{\theta}$为宽的面元，可得（注意代入$\sigma_0$）：
 \begin{align*}
-	\di{E}&=\dfrac{\sigma_0\cdot 2\pi R\sin \theta R\di{\theta}}{4\pi \varepsilon_0 R^2}\\
-	&=\dfrac{\sigma}{2\varepsilon_0}\sin\theta\cos\theta\di{\theta}\\
-	E_z&=\int_0^{\frac{\pi}{2}}\di{E}\cdot(-\cos\theta)\di{\theta}\\
-	&=-\dfrac{\sigma_0}{2\varepsilon_0}\int_0^{\frac{\pi}{2}}\sin\theta\cos^2\theta\di{\theta}\\
-	&=-\dfrac{\sigma_0}{6\varepsilon_0}
+\di{E}&=\dfrac{\sigma_0\cdot 2\pi R\sin \theta R\di{\theta}}{4\pi \varepsilon_0 R^2}\\
+&=\dfrac{\sigma}{2\varepsilon_0}\sin\theta\cos\theta\di{\theta}\\
+E_z&=\int_0^{\frac{\pi}{2}}\di{E}\cdot(-\cos\theta)\di{\theta}\\
+&=-\dfrac{\sigma_0}{2\varepsilon_0}\int_0^{\frac{\pi}{2}}\sin\theta\cos^2\theta\di{\theta}\\
+&=-\dfrac{\sigma_0}{6\varepsilon_0}
 \end{align*}
 因此所求电场强度为$\dfrac{\sigma_0}{6\varepsilon_0}$，方向沿$z$轴负方向。
 
-\chapter{静电场（二）}  % 使用章节\chapter{}来做一级标题
-\section{选择题}  % 选择题、填空题和解答题使用\section{}
+\chapter{静电场（二）} 
+\section{选择题} 
 
-\exercise{1}B  % 题号使用这个命令，会自动生成标记，注记后写主要答案
+\exercise{1}B 
 
-\solve  % 解答使用这个命令，解答与题号之间空一行
+\solve
 两个平板之间的电场为匀强电场，若记向右为正方向，则电场强度：
 \[E=\frac{\sigma}{2\epsilon_0}-\frac{2\sigma}{2\epsilon_0}=-\frac{\sigma}{2\epsilon_0}\]
 
 即电场强度向左，电场线也指向左。由于电势沿着电场线降低，因此$V_B>V_A$。
 
-%% 空一行开始下一个题目
 \exercise{2}B
 
 \solve 加入电介质之前，$ C_1,C_2 $电容相同，由于并联，则$ U $也相同，由电容定义$ C=\frac{Q}{U} $，两个电容器所带电荷$ Q_1=Q_2 $。
@@ -1740,7 +1797,7 @@ u&=\int_{\alpha=0}^{\alpha=\pi} \di{u}\\
 E=\left\{
 \begin{aligned}
 &\frac{Q}{4\pi\epsilon_0 r^2}\quad &R_2\leqslant r\\
-&\frac{Q}{4\pi\epsilon_0\epsilon r^2}\quad &R_1\leqslant r<R_2\\
+&\frac{Q}{4\pi\epsilon r^2}\quad &R_1\leqslant r<R_2\\
 &0	&r<R_1
 \end{aligned}
 \right.
@@ -1751,8 +1808,8 @@ E=\left\{
 \begin{align*}
 u&=\int_r^{+\infty}E\cdot\di{r}\\
 &=\int_r^{R_1}E\cdot\di{r}+\int_{R_1}^{R_2}E\cdot\di{r}+\int_{R_2}^{+\infty}E\cdot\di{r}\\
-&=0+\frac{Q}{4\pi\epsilon_0 R_2}+\frac{Q}{4\pi\epsilon_0\epsilon}\left(\frac{1}{R_1}-\frac{1}{R_2}\right)\\
-&=\frac{Q}{4\pi\epsilon_0\epsilon}\left(\frac{1}{R_1}+\frac{\epsilon-1}{R_2}\right)
+&=0+\frac{Q}{4\pi\epsilon_0 R_2}+\frac{Q}{4\pi\epsilon}\left(\frac{1}{R_1}-\frac{1}{R_2}\right)\\
+&=\frac{Q}{4\pi\epsilon}\left(\frac{1}{R_1}+\frac{\epsilon-\epsilon_0}{\epsilon_0R_2}\right)
 \end{align*}
 
 \exercise{14} $1:1$
@@ -2147,8 +2204,8 @@ B_2=\frac{\mu_0I}{2\pi}\cdot\frac{b}{R_1^2-R_2^2}
 设磁化电流强度$I_\text{磁}$。
 由安培环路定理：
 \begin{gather*}
-	H\cdot 2\pi R=I\\
-	B\cdot 2\pi R=\mu_0(I-I_\text{磁})
+H\cdot 2\pi R=I\\
+B\cdot 2\pi R=\mu_0(I-I_\text{磁})
 \end{gather*}
 而
 \[
@@ -2185,9 +2242,9 @@ $\sigma_\text{磁}=\dfrac{I_\text{磁}}{2\pi R}=\dfrac{(1-\mu_r)I}{2\pi R}$
 
 取距离圆心为$r$、宽度为$\di{r}$的圆环为面积微元，各微元受力矩方向相同，则
 \begin{gather*}
-	\di{I}=\dfrac{\omega}{2\pi}\sigma\cdot 2\pi r\di{r}=\omega\sigma r\di{r}\\
-	\|\di{\textbf{m}}\|=\di{I}\cdot \pi r^2=\pi\omega\sigma r^3\di{r}\\
-	\|\textbf{M}\|=\int_{0}^{R}\|\di{\textbf{m}}\times \textbf{B}\|=\int_{0}^{R}B\pi\omega\sigma r^3\di{r}=\dfrac{\pi\sigma\omega BR^4}{4}
+\di{I}=\dfrac{\omega}{2\pi}\sigma\cdot 2\pi r\di{r}=\omega\sigma r\di{r}\\
+\|\di{\textbf{m}}\|=\di{I}\cdot \pi r^2=\pi\omega\sigma r^3\di{r}\\
+\|\textbf{M}\|=\int_{0}^{R}\|\di{\textbf{m}}\times \textbf{B}\|=\int_{0}^{R}B\pi\omega\sigma r^3\di{r}=\dfrac{\pi\sigma\omega BR^4}{4}
 \end{gather*}
 
 \exercise{10}A
@@ -2206,13 +2263,13 @@ $\sigma_\text{磁}=\dfrac{I_\text{磁}}{2\pi R}=\dfrac{(1-\mu_r)I}{2\pi R}$
 由$B=\dfrac{\mu_0I}{2\pi r}$，$AB$受两导线的磁场的安培力等大反向，故$\dfrac{1}{x}=\dfrac{2}{a-x}$，解得$x=\dfrac{a}{3}$。
 
 \exercise{12}$9.33\times 10^{-19}$A/$\rm{m}^2$ \quad 相反
- 
+
 \solve
 \begin{align*}
-	m&=IS\\
-	&=\dfrac{e}{T}\cdot \pi r^2\\
-	&=\dfrac{e^2B}{2\pi m}\cdot \pi\dfrac{m^2v^2}{e^2B^2}\\
-	&=\dfrac{mv^2}{2B}
+m&=IS\\
+&=\dfrac{e}{T}\cdot \pi r^2\\
+&=\dfrac{e^2B}{2\pi m}\cdot \pi\dfrac{m^2v^2}{e^2B^2}\\
+&=\dfrac{mv^2}{2B}
 \end{align*}
 代入数据（$m=9.1\times 10^{-31}$kg）即得结果。
 \begin{figure}[!h]	
@@ -2232,8 +2289,8 @@ $F=\int \|I\di{l}\times B\|$。在这里可以将该电流投影到垂直于$B$�
 \solve
 “细环”指细螺绕环，内部磁感应强度可看做处处相等。由安培环路定理：
 \begin{gather*}
-	H\cdot C=nI\\
-	H=\dfrac{nI}{C}=300\ \textrm{A/m}
+H\cdot C=nI\\
+H=\dfrac{nI}{C}=300\ \textrm{A/m}
 \end{gather*}
 即先算出第二空。那么
 \[
@@ -2245,21 +2302,21 @@ B=\mu_0\mu_rH=72\pi\times 10^{-3}\textrm{T}=0.226\textrm{T}
 \solve
 由题，沿$y$轴方向的导线固定，故它以及垂直于$y$轴的导线受的力矩均不影响线圈的运动。设边长为$a$，转动轴在$y$轴上，剩下一根导线受的力沿$x$轴负方向，则力矩为
 \begin{align*}
-	M&=Fa\sin \ang{40}\\
-	&=BIa^2\sin \ang{40}\\
-	&=7.2\sin \ang{40}\times 10^{-3}=5.36\times 10^{-3}
+M&=Fa\sin\ang{40}\\
+&=BIa^2\sin\ang{40}\\
+&=7.2\sin\ang{40}\times 10^{-3}=5.36\times 10^{-3}
 \end{align*}
 保持位置不变，需要一等大反向的力矩。
 
 \exercise{16}$2.3\times 10^{-5}$\quad 顺
- 
+
 \solve
 参见练习8。
 
 \exercise{17}0.5T\quad $y$轴正方向
 
 \solve
-由受力情况2得，磁场沿$y$轴，与情况1中“$z$轴正方向”垂直，故$M=m\times B=mB$,$B=
+由受力情况2得，磁场沿$y$轴，与情况1中“$z$轴正方向”垂直，故$M=m\times B=mB$，$B=
 \dfrac{M}{m}=0.5\textrm{T}$。
 
 由情况1及$M=m\times B$也易判断$B$的方向。
@@ -2284,8 +2341,8 @@ B=\mu_0\mu_rH=72\pi\times 10^{-3}\textrm{T}=0.226\textrm{T}
 
 根据其磁滞回线，磁化后的磁芯处于曲线与$B$轴交点处。由题意，外加磁场强度大小等于矫顽力。而由安培环路定理，$H=\dfrac{i}{2\pi r}$，半径越大，磁场强度越小。要使磁芯的磁化方向完全翻转，需要有：
 \begin{gather*}
-	H_{R_2max}=\dfrac{i_{max}}{2\pi R_2}\geqslant H_c\\
-	i_{max}\geqslant 2\pi R_2H_c=2\pi\cdot \dfrac{0.8\textrm{mm}}{2} \cdot 160\textrm{A/m}=0.402\textrm{A}
+H_{R_2max}=\dfrac{i_{max}}{2\pi R_2}\geqslant H_c\\
+i_{max}\geqslant 2\pi R_2H_c=2\pi\cdot \dfrac{0.8\textrm{mm}}{2} \cdot 160\textrm{A/m}=0.402\textrm{A}
 \end{gather*}
 注意题中给的是直径。
 
@@ -2306,12 +2363,12 @@ $H=\sigma=1000 \textrm{A/m}\footnotemark[3]$
 
 由$B,H,M$三者的关系得：
 \begin{align*}
-		B&=\mu_0\mu_rH\\
-		&=4\pi\times 10^{-7}\times 500\times 1000 \textrm{T}\\
-		&=\dfrac{\pi}{5} \textrm{T}\\	
-		M&=\dfrac{B}{\mu_0}-H\\
-		&=(\mu_r-1)H\\
-		&=4.99\times 10^5 \textrm{A/m}
+B&=\mu_0\mu_rH\\
+&=4\pi\times 10^{-7}\times 500\times 1000 \textrm{T}\\
+&=\dfrac{\pi}{5} \textrm{T}\\	
+M&=\dfrac{B}{\mu_0}-H\\
+&=(\mu_r-1)H\\
+&=4.99\times 10^5 \textrm{A/m}
 \end{align*}
 
 \exercise{22}
@@ -2320,12 +2377,12 @@ $H=\sigma=1000 \textrm{A/m}\footnotemark[3]$
 由于各段导线为直线，写出其矢量式，利用安培力公式即可\footnotemark[4]。
 \footnotetext[4]{题中已建系或自己建系时，可以用$\vec{i},\vec{j},\vec{k}$表示方向，也可以再用“$x$轴正向”等描述。}
 \begin{gather*}
-	\vec{B}=0.6\vec{i}(\textrm{T})\\
-	F_{ab}=I\cdot 0.6\vec{j}\times 0.6\vec{i}=-1.44\vec{k}(N)\\
-	F_{bc}=I\cdot (0.6\vec{i}-0.6\vec{k})\times 0.6\vec{i}=-1.44\vec{j}(N)\\
-	F_{cd}=I\cdot (0.6\vec{k}-0.6\vec{j})\times 0.6\vec{i}=1.44(\vec{j}+\vec{k})(N)\\
-	F_{de}=I\cdot (-0.6\vec{k})\times 0.6\vec{i}=-1.44\vec{j}(N)\\
-	F_{ef}=I\cdot (-0.6\vec{i})\times 0.6\vec{i}=0
+\vec{B}=0.6\vec{i}(\textrm{T})\\
+F_{ab}=I\cdot 0.6\vec{j}\times 0.6\vec{i}=-1.44\vec{k}(N)\\
+F_{bc}=I\cdot (0.6\vec{i}-0.6\vec{k})\times 0.6\vec{i}=-1.44\vec{j}(N)\\
+F_{cd}=I\cdot (0.6\vec{k}-0.6\vec{j})\times 0.6\vec{i}=1.44(\vec{j}+\vec{k})(N)\\
+F_{de}=I\cdot (-0.6\vec{k})\times 0.6\vec{i}=-1.44\vec{j}(N)\\
+F_{ef}=I\cdot (-0.6\vec{i})\times 0.6\vec{i}=0
 \end{gather*}
 
 \exercise{23}
@@ -2337,14 +2394,14 @@ $H=\sigma=1000 \textrm{A/m}\footnotemark[3]$
 
 对CD：
 \begin{gather*}
-	\vec{B}=\dfrac{\mu_0I_1}{2\pi d}\vec{j}\\
-	F_{CD}=I_2\cdot b\vec{k}\times \vec{B}=-\dfrac{\mu_0I_1I_2b}{2\pi d}\vec{i}
+\vec{B}=\dfrac{\mu_0I_1}{2\pi d}\vec{j}\\
+F_{CD}=I_2\cdot b\vec{k}\times \vec{B}=-\dfrac{\mu_0I_1I_2b}{2\pi d}\vec{i}
 \end{gather*}
 
 对MN：
 \begin{gather*}
-	\vec{B}=\dfrac{\mu_0I_1}{2\pi (d+a)}\vec{j}\\
-	F_{MN}=I_2\cdot b(-\vec{k})\times \vec{B}=\dfrac{\mu_0I_1I_2b}{2\pi (d+a)}\vec{i}
+\vec{B}=\dfrac{\mu_0I_1}{2\pi (d+a)}\vec{j}\\
+F_{MN}=I_2\cdot b(-\vec{k})\times \vec{B}=\dfrac{\mu_0I_1I_2b}{2\pi (d+a)}\vec{i}
 \end{gather*}
 
 对CM：
@@ -2352,9 +2409,9 @@ $H=\sigma=1000 \textrm{A/m}\footnotemark[3]$
 \vec{B}=\dfrac{\mu_0I_1}{2\pi (d+x)}\vec{j}
 \]
 \begin{align*}
-	F_{CM}&=\int_{0}^{a}I_2\di{x}\cdot\vec{i}\times \vec{B}\\
-	&=\dfrac{\mu_0I_1I_2}{2\pi}\vec{k}\int_{0}^{a}\dfrac{\di{x}}{x+d}\\
-	&=\dfrac{\mu_0I_1I_2}{2\pi}\ln\dfrac{a+d}{d}\vec{k}
+F_{CM}&=\int_{0}^{a}I_2\di{x}\cdot\vec{i}\times \vec{B}\\
+&=\dfrac{\mu_0I_1I_2}{2\pi}\vec{k}\int_{0}^{a}\dfrac{\di{x}}{x+d}\\
+&=\dfrac{\mu_0I_1I_2}{2\pi}\ln\dfrac{a+d}{d}\vec{k}
 \end{align*}
 
 对DN：
@@ -2362,15 +2419,15 @@ $H=\sigma=1000 \textrm{A/m}\footnotemark[3]$
 \vec{B}=\dfrac{\mu_0I_1}{2\pi (d+x)}\vec{j}
 \]
 \begin{align*}
-	F_{DN}&=\int_{0}^{a}I_2\di{x}\cdot(-\vec{i})\times \vec{B}\\
-	&=-\dfrac{\mu_0I_1I_2}{2\pi}\vec{k}\int_{0}^{a}\dfrac{\di{x}}{x+d}\\
-	&=-\dfrac{\mu_0I_1I_2}{2\pi}\ln\dfrac{a+d}{d}\vec{k}
+F_{DN}&=\int_{0}^{a}I_2\di{x}\cdot(-\vec{i})\times \vec{B}\\
+&=-\dfrac{\mu_0I_1I_2}{2\pi}\vec{k}\int_{0}^{a}\dfrac{\di{x}}{x+d}\\
+&=-\dfrac{\mu_0I_1I_2}{2\pi}\ln\dfrac{a+d}{d}\vec{k}
 \end{align*}
 （2）
 \begin{align*}
-	F_\text{合}&=F_{CD}+F_{MN}+F_{CM}+F_{DN}\\
-	&=\dfrac{\mu_0I_1I_2b}{2\pi}(\dfrac{1}{d+a}-\dfrac{1}{d})\vec{i}\\
-	&=-\dfrac{\mu_0I_1I_2b}{2\pi d(d+a)}\vec{i}
+F_\text{合}&=F_{CD}+F_{MN}+F_{CM}+F_{DN}\\
+&=\dfrac{\mu_0I_1I_2b}{2\pi}(\dfrac{1}{d+a}-\dfrac{1}{d})\vec{i}\\
+&=-\dfrac{\mu_0I_1I_2b}{2\pi d(d+a)}\vec{i}
 \end{align*}
 
 而$\vec{m},\vec{B}$均沿$y$轴正向，故$M=m\times B=0$
@@ -2383,16 +2440,9 @@ $H=\sigma=1000 \textrm{A/m}\footnotemark[3]$
 电流密度$i=\dfrac{I}{\pi R^2-\pi r^2}$。
 该系统可看作半径为$R$、电流密度为$i$的无限长圆柱面与半径为$r$、电流密度为$-i$的无限长圆柱面的组合。由安培环路定理和磁感应强度叠加原理（向下为正向）：
 \begin{gather*}
-	B_1\cdot 2\pi\cdot 2R=\mu_0i\cdot\pi R^2\\
-	B_2\cdot 2\pi\cdot (2R+d)=-\mu_0i\cdot\pi r^2\\
-	B_Q=B_1+B_2=\dfrac{\mu_0iR}{4}-\dfrac{\mu_0ir^2}{2(2R+d)}=\dfrac{\mu_0i}{2}(\dfrac{R}{2}-\dfrac{r^2}{2R+d})
+B_1\cdot 2\pi\cdot 2R=\mu_0i\cdot\pi R^2\\
+B_2\cdot 2\pi\cdot (2R+d)=-\mu_0i\cdot\pi r^2\\
+B_Q=B_1+B_2=\dfrac{\mu_0iR}{4}-\dfrac{\mu_0ir^2}{2(2R+d)}=\dfrac{\mu_0i}{2}(\dfrac{R}{2}-\dfrac{r^2}{2R+d})
 \end{gather*}
-由题图，$R>d>r$，故$B_Q$方向向下。
-\[
-F=e\|v\times B_Q\|=evB_Q=\dfrac{\mu_0Iev}{2\pi(R^2-r^2)}(\dfrac{R}{2}-\dfrac{r^2}{2R+d})
-\]
-由左手定则，$F$方向水平向左（沿$OQ$方向）。
-
-
 
 \end{document}
