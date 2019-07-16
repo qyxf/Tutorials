@@ -1,0 +1,167 @@
+\documentclass[cn]{elegantbook}
+
+ \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}%使表格内可手动换行
+ \newcommand\Emph{\textbf}
+
+ \let\widering\relax
+
+%%%%%  TimeLine preamble  %%%%%%%%%
+
+\usepackage[utf8]{inputenc}
+\usepackage[TS1,T1]{fontenc}
+\usepackage{fourier, heuristica}
+\usepackage{array, booktabs}
+\usepackage{graphicx}
+%\usepackage[x11names]{xcolor}
+%\usepackage{colortbl}
+\usepackage{caption}
+%\DeclareCaptionFont{blue}{\color{LightSteelBlue3}}
+\newcommand{\foo}{\makebox[0pt]{\textbullet}\hskip-0.5pt\vrule width 1pt\hspace{\labelsep}}
+
+ %%%%%  TimeLine preamble  %%%%%%%%%
+ 
+%\input{./subfile/preamble}
+\title{数试学习生活指南}
+\subtitle{钱院学辅}
+
+\author{程闽华,牛嘉豪}
+\institute{钱院学辅}
+\date{\today}
+
+\version{1.1}
+\equote{Victory won\rq t come to us unless we go to it. --- M. Moore}
+\logo{logo.png}
+\cover{cover.jpg}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+\clearpage
+\thispagestyle{empty}
+
+\mainmatter
+\hypersetup{pageanchor=true}
+
+\chapter*{写在前面}
+\addcontentsline{toc}{chapter}{写在前面}
+\markboth{写在前面}{}
+首先欢迎学弟学妹们加入到数学试验班的大家庭！\par 
+会想到写这份指南，是因为我们深感大学的模式，无论是学习还是生活上，都和高中有很大的不一样：一方面大学的班级概念过于弱化，小班级又过多，
+各种形式的活动、通知又很繁多，此外大学的科目较高中也精深得多，这些变化势必让人感觉无所适从——面对大学的学习与生活，就像老虎吃天一样，让人感觉无处下手；而另一方面
+这些困难在经历过后再回看时，感觉也不过如此，事实上也确实不过如此。\par
+这样的矛盾是很不合理的。\par
+在这种情况下，一些比较幸运的同学通过各种渠道认识了一些学长，通过学长的帮扶走适应的快速通道：直系学长可以指点学习上的方向，其他专业的学长可以解答生活上的一些困惑。
+但剩下的绝大多数同学可能就不那么幸运了，面对纷繁复杂的大学学习生活，他们只能如盲人过河一样，在迷茫中度过前两年，
+从而也把许多精力浪费在一些没有必要的事情上。\par
+或许有人认为这也考验了我们获取信息的能力，但我们仍然认为，这些摸索的代价大于收获，希望这份
+数试学习生活指南能引领你快速进入大学的学习生活状态，然后专注于自己真正感兴趣的并且有意义的事情上。\par
+在这份指南里，我们将你可能遇到的困惑分为“学习”、“生活”两大部分，其中“学习”部分指狭义的学习，即只涉及学习本身，而不涉及与之间接相关的其他内容，并且集中在数学的学习上；
+其余与学习不直接相关的内容，都放在“生活”部分。
+另外还单独设置了“出国”这一部分，具体介绍试验班出国交流项目。\par
+我们推荐同学们浏览一下所有的内容，这样很多时候如果遇到了里面提及的问题后可以拿来参考，并且整个文章可以给你一个大学生活的一个初步的感觉。\par
+
+
+最新版本下载地址：\href{https://github.com/ElegantLaTeX/ElegantBook/releases}{Github:ElegantBook/releases}。本文将介绍本模板的一些设置内容以及基本使用方法。如果您在使用此模板，欢迎把您使用此模板制作的成品发一份给我们，谢谢！如果您有其他问题，建议或者意见，欢迎联系我们。\par
+
+本指南使用了开源的\LaTeX{}模版—— ElegantBook, 最新版本下载地址：\href{https://github.com/ElegantLaTeX/ElegantBook/releases}{Github:ElegantBook/releases}。
+
+
+
+
+
+
+\chapter{学习}
+作为试验班的学生，学习自然是很重要的一环。下面先讲讲学习成绩的功利性作用。
+\begin{enumerate}
+ \item 从大二开始，每个学年第一个学期初，都会在专业内对上个学年进行综合素质评测（简称“综测”），其中学分绩占比占主导地位，
+ 并且综测排名直接决定了你是否能获得奖学金以及获得的奖学金数额；
+ \item 出国读研、读博的一个硬性标准——GPA，指的也是成绩，具体地说是平均学分成绩， 即按学分加权平均。
+\end{enumerate}
+除此之外，你需要明确的是，成绩并不是学习的全部，它只是你学习的一部分，而且是极其表面的一部分。
+极端地说，你可以考得差，但一定要学得好。其中学得好的唯一标准，便是你能把你所学的东西纳入到自己的直观中，能够随时（至少那个学期能够随时）和人讲解这些内容。
+
+
+\input{./subfile/study_attitude}
+%\newpage
+
+\input{./subfile/study_book}
+%\newpage
+
+\input{./subfile/study_math}
+%\newpage
+
+\input{./subfile/study_others}
+%\newpage
+
+\input{./subfile/study_electives}
+%\newpage
+
+
+\chapter{生活}
+
+\input{./subfile/living_basic}
+%\newpage
+       
+\input{./subfile/living_place}
+%\newpage
+
+\input{./subfile/living_exchange}
+%\newpage
+
+\input{./subfile/living_accidence}
+%\newpage
+
+
+
+\chapter{出国}
+\input{./subfile/program_alberta}
+\input{./subfile/program_msu}
+\input{./subfile/program_gt}
+\input{./subfile/program_nus}
+\input{./subfile/program_ucb}
+\input{./subfile/applying }
+
+\appendix
+\chapter{}
+\section{时间线}
+\begin{table}
+    \renewcommand\arraystretch{1.4}
+    \captionsetup{singlelinecheck=false, labelfont=sc, labelsep=quad}
+    \caption*{本科四年时间线}\vskip -0.5ex
+    \begin{tabular}{@{\,}l @{\,}l <{\hskip 2pt} !{\foo} >{\raggedright\arraybackslash}p{10cm}}
+    \toprule
+    \addlinespace[1.5ex]
+    大一 &3月中旬 & 暑期交流项目（阿尔伯塔大学）开始申请\\
+    大一 &3月下旬 & 暑期交流项目答辩\\
+    大一&小学期 & 英语强化（托福），讨论班{\color{red}（如果积极主动思考并尝试解决一两个问题，这次的讨论班可看作一次科研训练）}\\
+    大一 &6月底-8月初 & 阿尔伯塔交流项目\\
+    大二 & 9月中旬 & 综测成绩公示\\
+    大二 & 9月底 & 奖助学金、表彰奖励的申请、分配\\
+    大二 & 10月初 & 优秀学生干部、社会活动积极分子答辩\\
+    大二 & 10月底 & 珠峰奖学金申请\\
+    大二 & 11月初 & 珠峰奖学金答辩\\
+    大二 & 11月10左右 & 学校奖学金、珠峰奖学金、表彰奖励公示\\
+    大二 &3月中旬 & 暑期交流项目（阿尔伯塔大学）开始申请\\
+    大二 &3月下旬 & 暑期交流项目答辩\\
+    大二 &5月12日左右 & MSU宣讲（含MSU面试），出国交流项目介绍\\
+    大二 &5月底6月初 & 大三出国交流的答辩 \\
+    大二 &5月底-6月中旬 & 自行联系小学期科研训练的导师\\
+    大二 & 6月底 & 出国交流面试（主要为英语测试），确定出国交流学校的意向\\
+    大二 & 小学期 & 科研训练，金工实习\\
+    大二 &6月底-8月初 & 阿尔伯塔交流项目\\
+    大三 & 9月-11月 & 奖学金事宜\\
+    大三 & 1月3左右-5月 & 出国交流\\
+    大三 & 3月下旬 & 北大直博生考试报名，时间地点将根据报名情况另行通知报名的同学（基础数学、概率统计、计算数学、信息科学、金融数学）\\
+    大三 & 4月中旬 & 清华数学系直博生招生考试（考试地址就在校内）\\
+    大三 & 4月下旬 & 浙大硕士、直博生招生宣讲、考试\\
+    大三 & 小学期 & 科研训练 \\
+    大四 & 11月中旬 & 出国申请截止\\
+    大四 & 2月-6月 & 北大基础强化班 \\
+
+
+    \end{tabular}
+\end{table}
+    
+
+\end{document}

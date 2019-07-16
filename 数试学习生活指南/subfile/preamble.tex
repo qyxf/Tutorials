@@ -1,0 +1,73 @@
+    \newsavebox{\mybox}
+    \usepackage{titlesec}%定制section的样式
+    \usepackage{geometry}
+    \usepackage{cite}
+    
+    \usepackage{varwidth}
+    \usepackage[thmmarks]{ntheorem}
+    \usepackage{float}%优化插图位置
+    \usepackage{wrapfig}%插入图片使之被文字环绕
+    \usepackage{multirow}%表内多行合并
+    \usepackage{array}%表格内自动换行命令所需 \begin{tabular}{m{5cm}}
+    
+    % {
+    %  \theoremheaderfont{\bfseries}
+    %  \theorembodyfont{\normalfont}
+    %  \newtheorem*{pf}{证}
+     
+    % }
+    % {
+    %  \theoremheaderfont{\bfseries}
+    %  \theorembodyfont{\normalfont}
+    %  \newtheorem{example}{例}
+     
+    % }
+    \usepackage{enumerate}%定制enumerate环境
+    %\usepackage{enumitem}%定制enumerate环境的序号样式
+    %\AddEnumerateCounter{\chinese}{\chinese}{}%增加中文序号样式到enumerate环境，使用示例：
+                               %\begin{enumerate}[label={\chinese*、},labelsep=0pt]
+    \usepackage{extarrows}
+    \usepackage{mathtools}
+    \usepackage{amsfonts}
+    \usepackage{color}
+    \usepackage{float}
+    \usepackage{geometry}
+    \usepackage{theorem}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{ulem}%记号
+    \usepackage{bm}
+   % \newtheorem{definition}{定义}
+    \newtheorem{thm}{定理}
+ %   \newtheorem{lemma}{引理}
+    \newtheorem{prop}{性质}
+    \newtheorem{method}{解法}
+    \newtheorem{notice}{注}
+    %\newtheorem{example}{例}
+    %\newtheorem{proof}{证}
+    \newtheorem{cor}{推论}
+    
+    
+    \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}%使表格内可手动换行
+    \newcommand{\mylim}{\lim\limits_{n\to\infty}}
+    \newcommand\Emph{\textbf}
+    \newcommand\degree{^\circ}
+    \newcommand\red{\color{red}}
+    \newcommand\ue{\mathrm{e}}%e的正体版
+    \newcommand\dif{\mathrm{d}}%dx正体版.
+    \newcommand\diff{\mathrm{D}}%D正体版.
+    \newcommand\mx{\boldsymbol}%粗体.
+    \makeatletter
+    \newcommand{\rmnum}[1]{\romannumeral#1}
+    \newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral#1@}
+    \newcommand{\tr}{\mathop{\mathrm{tr}}}%\trace 
+    \makeatother
+    
+    \bibliographystyle{plain}
+    
+    \renewcommand\qedsymbol{\ensuremath{\Box}}
+    %\renewcommand\refname{参考文献}
+    
+    \usepackage[pdftex, bookmarksnumbered, bookmarksopen, colorlinks, citecolor=blue, linkcolor=blue]{hyperref}%定制目录样式
+ %   \geometry{a4paper,margin=1in}
+  %  \pagestyle{plain}
