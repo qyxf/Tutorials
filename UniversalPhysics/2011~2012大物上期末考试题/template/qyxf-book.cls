@@ -161,7 +161,7 @@ left=20pt]
 \begin{tikzpicture}[remember picture,overlay]
   \begin{pgfonlayer}{background}
   \node at ($(current page.east) +(0in,0in)$) {%
-  \includegraphics[width=0.8\textwidth]{cover.png}};
+  \includegraphics[width=0.8\textwidth]{./template/cover.png}};
   \end{pgfonlayer}
 \end{tikzpicture}
 \end{titlepage}
