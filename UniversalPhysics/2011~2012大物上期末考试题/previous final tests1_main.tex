@@ -1,0 +1,158 @@
+\documentclass[b5paper,opensource]{qyxf-book}%模板内添加了一些命令
+
+\usepackage{siunitx}%输入角度
+\usepackage{color}
+\renewcommand{\thefootnote}{\color{red}\arabic{footnote}}%更改脚注格式
+%\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}%单元格内强制换行
+\usepackage{subfigure}%并排图片
+%\renewcommand{\figurename}{图}
+%\renewcommand{\thefigure}{}
+%如何去掉子图下面的标注(a)？从代码中把 \subfigure[]的中括号去掉即可。
+\usepackage{float}%图片插入在文字右侧，\begin{figure}[H]尝试失败
+%这里面有很多图片被迫转到下一页的，还有就是无法环绕文字，即图题分离，造成麻烦，怎么办？
+\usepackage{CJKfntef}%文字下加点
+
+\newcommand{\di}[1]{\mathrm{d}#1}%微分
+\newcommand{\p}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\pp}[2]{\dfrac{\partial ^2 #1}{\partial #2 ^2}}
+\newcommand{\dy}[2]{\dfrac{\di{#1}}{\di{#2}}}
+\newcommand{\ddy}[2]{\dfrac{\mathrm{d} ^2 #1}{\mathrm{d} #2 ^2}}
+\newcommand{\zbj}[4]
+{
+	\draw (0,0) node[below left] {$ O $};
+	\draw [->] (#1,0) -- (#2,0) node[right] {$ x $};
+	\draw [->] (0,#3) -- (0,#4) node[right] {$ y $};
+}
+\newcommand{\tips}{\noindent\textbf{提示}\ }
+\RequirePackage{tabularx}%改变表格宽度
+%下面新定义了几个选项的样式
+\newcommand{\option}[4]{
+	\begin{center}
+		\begin{tabularx}{\textwidth}{*{4}{>{\arraybackslash}X}}
+			\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries A.} $#1$&
+			\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries B.} $#2$&
+			\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries C.} $#3$&
+			\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries D.} $#4$
+		\end{tabularx}
+	\end{center}
+}%选项，横排1*4
+\newcommand{\options}[4]{\\
+	\begin{tabularx}{\textwidth}{*{1}{>{\arraybackslash}X}}
+		\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries A.} #1\\
+		\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries B.} #2\\
+		\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries C.} #3\\
+		\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries D.} #4
+	\end{tabularx}
+}%选项，竖排4*1
+\RequirePackage{siunitx}
+%\renewcommand{\arraystretch}{2}%调整矩阵行间距，这本来应该调行距的，但我没成功
+%{l@{\extracolsep{\fill}}l}
+\newcommand{\optionss}[4]{
+	\renewcommand{\arraystretch}{1.5}%调整表格行间距
+	\begin{center}
+		\begin{tabularx}{\textwidth}{*{2}{>{\arraybackslash}X}}
+			\linespread{2}
+			\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries A.} $#1$&
+			\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries B.} $#2$\\
+			\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries C.} $#3$&
+			\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries D.} $#4$
+		\end{tabularx}
+	\end{center}
+}%选项，横排2*2
+\newcommand{\ul}{\underline{\quad\quad\quad\quad\quad\quad}}%填空题的下划线
+\newcommand{\ull}{\underline{\quad\quad\quad\quad\quad\quad\quad\quad\quad}}%加长版
+\newcommand{\choosing}[2]{\noindent\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries 选择#1$\sim$#2}\ }%选择题答案
+\newcommand{\filling}[8]{
+	\renewcommand{\arraystretch}{1.6}%调整表格行间距
+	\begin{tabularx}{\textwidth}{*{1}{>{\arraybackslash}X}}
+		\noindent\leftline{\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries 填空1} $#1$}\\
+		\noindent\leftline{\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries 填空2} $#2$}\\
+		\noindent\leftline{\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries 填空3} $#3$}\\
+		\noindent\leftline{\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries 填空4} $#4$}\\
+		\noindent\leftline{\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries 填空5} $#5$}\\
+		\noindent\leftline{\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries 填空6} $#6$}\\
+		\noindent\leftline{\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries 填空7} $#7$}\\
+		\noindent\leftline{\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries 填空8} $#8$}
+	\end{tabularx}
+}%填空题答案
+\newcommand{\exerciseanswer}[2]{\noindent\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries #1#2}\ }%选填解析
+\newcommand{\exercisequestion}[1]{\quad\tcbox[on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\bfseries (#1)}\ }%解答题号
+\newcommand{\solves}[1]{\exercise{#1}\\ \solve}%解答题题头
+\newcommand{\amperecircuitaltheorem}[1]{在距离电流$r$处，取一半径为$r$的环路，由安培环路定理：
+	\begin{gather*}
+	B\cdot 2\pi r=\mu_0I_{#1}\\
+	B=\dfrac{\mu_0I_{#1}}{2\pi r}
+	\end{gather*}
+}
+%\renewcommand{\sqrt}{\sqrt[\uproot{12}]}算了，在文中用吧
+
+
+\title{大学物理往年期末试题（上）}
+\subtitle{Key to Previous Final Tests of University Physics: Part I}
+\author{钱院学辅大物编写小组}
+\typo{钱院学辅排版组}
+%\date{2019 年 6 月 9 日}
+\version{v1.0}
+\sourcepage{\url{https://github.com/qyxf/BookHub/}}
+
+%本资料目前仅限钱学森书院内部使用
+%图片的大小和位置还请排版组调一下，很多需要换页不方便，如果能放在题目右侧也行
+%物体名和点未用斜体
+%看到用\big调大小的就帮我改成\left吧
+
+%\exercise,\note,\solve,\analysis,\tips提示
+%\option,\options,\optionss（数学环境）：选项排版
+%\choosing{1}{10}：选择题答案
+%\filling：填空题答案
+%\exerciseanswer选填解析
+%\exercisequestion解答题号
+%\solves解答题题头
+%\amperecircuitaltheorem 由安培环路定理，参数是I的下标
+
+\begin{document}
+\maketitle
+\pagestyle{plain}
+\chapter*{前言}%简单说一下
+在排版这套资料之前，笔者刚刚经历大学物理上的期末考试，做了一些往年的试题。但市面上流通的资料有太多错漏，这让笔者颇为恼火。为了让学弟学妹们少遇到一些麻烦，笔者才产生了重新排版往年题的想法。本题册中，部分原版中的错误已经被改正，有的题目也进行了修改。这些修改以促进使用者思考、培养使用者思路为目的，并不再在题册中标注。
+
+2017年以后（我不确定时间），我校开始实行大学物理两次阶段测试和一次期末考试的制度，这期间的考试真题大多没有拿在同学们的手上；2014~2016年考察的内容与现在不同（应该是大学物理下）；2012年之前的题与现在考察的内容相似。不过2019年的题中，选择题10$\times$3，填空题改成了简答题(4$\times$5)，形式类似于解答题(5$\times$10)，但比真正的解答题或填空题简单很多（怕是想给大家加分……）。2019年的考试题很简单，考察的也多是简单概念，没有用什么高超的技巧。这毕竟不是竞赛，而且会做许多难的物理题在大学也用处不大。如果成绩好，笔者建议参加大学物理研讨班，（尽管笔者的专业是化生试验班）它培养了一种解决问题的方法，对我们更加有用，还有成绩加成。
+
+根据徐忠锋老师的说法，我校大学物理只是一门“通识课”，重在体会其思想，并不建议大家做很多题；再者，考试题目难度本身就低于作业题，考前看一遍课本，过一遍作业题（欢迎大家参考钱院学辅出版的《大学物理题解》系列），其价值更高，对付考试没有问题；其三，作业题一直在更新，比起多年前的考试题更有参考价值。只是说，对于考前才突击和考前心里没底、想找感觉的同学，往年题才有一定的作用。如果先做了这些题，最好再看看老师提供的复习提纲（知识框架），找找遗漏的点（比如，静电平衡的性质，不起眼但很致命）；做题时，回溯课本也往往能找到某些想要的答案。
+
+%为了给使用者充分的自由，我们建议使用者自己找一张纸，或利用题册的背面来作答。
+电子版使用者可以打开PDF阅读器的目录部分，方便跳转到答案；对于纸质版使用者，我们将题目答案设在每章的后面，以方便查看，也避免误看到下一章的答案。
+
+由于题目难度不大，我们只给出所有更正后的答案和部分题目解析，如还有问题，欢迎各位使用者来钱学森书院三楼自习室答疑。限于笔者水平，笔误、错漏等在所难免，给使用者带来的不便敬请谅解，也恳请各位使用者帮助我们指正。
+
+如果有近年的试题流出，我们也将尽快整理出来供大家使用。
+\vspace{2em}
+
+\begin{flushright}
+	高旭帆
+\end{flushright}
+\vspace{1.0cm}
+\begin{figure}[!h]
+	\centering
+	\begin{minipage}[c]{0.5\textwidth}
+		\centering
+		\includegraphics[scale=0.5]{qrcode2.png}
+	\end{minipage}%
+	\begin{minipage}[c]{0.5\textwidth}
+		\centering
+		\includegraphics[scale=0.5]{qxf.png}
+	\end{minipage}
+\end{figure}
+
+
+
+\newpage
+\tableofcontents
+\setlength{\parindent}{0pt}
+\input{test2012.tex}
+\newpage
+\input{test2011.tex}
+\newpage
+
+
+
+\end{document}
